@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-9 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-9 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-9.css" rel="stylesheet" />
+
+      <div class="lesson19-container">
+        <header data-role="Header" class="lesson19-header-lesson">
+          <a href="index.html" class="lesson19-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson19-image img_logo"
+            />
+          </a>
+          <div class="lesson19-nav">
+            <nav class="lesson19-nav1">
+              <a href="index.html" class="lesson19-navlink1">Головна</a>
+              <a href="index.html" class="lesson19-navlink2">Уроки</a>
+              <a href="index.html" class="lesson19-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson19-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson19-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson19-mobile-menu">
+            <div class="lesson19-nav2">
+              <div class="lesson19-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson19-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson19-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson19-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson19-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson19-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson19-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson19-hero">
+          <div class="lesson19-container02">
+            <h1 class="lesson19-text">Розділ №1. Урок №9</h1>
+            <span class="lesson19-text001">
+              Ключові слова та ідентифікатори
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson19-lessons">
+          <section class="lesson19-container03 container_lessons">
+            <div class="lesson19-section0">
+              <div class="lesson19-container04">
+                <div class="lesson19-tocmobile mobile toc">
+                  <span class="lesson19-text002">Зміст</span>
+                  <div class="lesson19-toclist">
+                    <ul class="lesson19-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson19-link">
+                          Ідентифікатори
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson19-link1">Тест</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson19-left-content">
+                  <p class="item_sub-heading margin-butttom lesson19-text003">
+                    <span>
+                      Як ми вже знаємо з попередніх уроків, при виконанні
+                      процесором стейтменту int х; створюється змінна. Виникає
+                      питання: «Коли ця змінна знищується?”.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      Область видимості змінної визначає, хто може бачити і
+                      використовувати змінну під час її існування. І параметри
+                      функції, і змінні, які оголошені всередині функції, мають
+                      локальну область видимості. Іншими словами, ці змінні
+                      використовуються тільки всередині функції, в якій вони
+                      оголошені. Локальні змінні створюються в точці оголошення
+                      і знищуються, коли виходять із області видимості.
+                    </span>
+                    <br />
+                    <br />
+                    <span>Розглянемо наступну програму:</span>
+                  </p>
+                  <div class="margin-butttom table lesson19-container05">
+                    <code class="weight-100% text-block code lesson19-text011">
+                      <span>alignas (C++11)</span>
+                      <br />
+                      <span>alignof (C++11)</span>
+                      <br />
+                      <span>and</span>
+                      <br />
+                      <span>and_eq</span>
+                      <br />
+                      <span>asm</span>
+                      <br />
+                      <span>auto</span>
+                      <br />
+                      <span>bitand</span>
+                      <br />
+                      <span>bitor</span>
+                      <br />
+                      <span>bool</span>
+                      <br />
+                      <span>break</span>
+                      <br />
+                      <span>case</span>
+                      <br />
+                      <span>catch</span>
+                      <br />
+                      <span>char</span>
+                      <br />
+                      <span>char16_t (C++11)</span>
+                      <br />
+                      <span>char32_t (C++11)</span>
+                      <br />
+                      <span>class</span>
+                      <br />
+                      <span>compl</span>
+                      <br />
+                      <span>const</span>
+                      <br />
+                      <span>constexpr (C++11)</span>
+                      <br />
+                      <span>const_cast</span>
+                      <br />
+                      <span>continue</span>
+                    </code>
+                    <code class="weight-100% text-block code lesson19-text053">
+                      <span>decltype (C++11)</span>
+                      <br />
+                      <span>default</span>
+                      <br />
+                      <span>delete</span>
+                      <br />
+                      <span>do</span>
+                      <br />
+                      <span>double</span>
+                      <br />
+                      <span>dynamic_cast</span>
+                      <br />
+                      <span>else</span>
+                      <br />
+                      <span>enum</span>
+                      <br />
+                      <span>explicit</span>
+                      <br />
+                      <span>export</span>
+                      <br />
+                      <span>extern</span>
+                      <br />
+                      <span>false</span>
+                      <br />
+                      <span>float</span>
+                      <br />
+                      <span>for</span>
+                      <br />
+                      <span>friend</span>
+                      <br />
+                      <span>goto</span>
+                      <br />
+                      <span>if</span>
+                      <br />
+                      <span>inline</span>
+                      <br />
+                      <span>int</span>
+                      <br />
+                      <span>long</span>
+                      <br />
+                      <span>mutable</span>
+                    </code>
+                    <code class="weight-100% text-block code lesson19-text095">
+                      <span>namespace</span>
+                      <br />
+                      <span>new</span>
+                      <br />
+                      <span>noexcept (C++11)</span>
+                      <br />
+                      <span>not</span>
+                      <br />
+                      <span>not_eq</span>
+                      <br />
+                      <span>nullptr (C++11)</span>
+                      <br />
+                      <span>operator</span>
+                      <br />
+                      <span>or</span>
+                      <br />
+                      <span>or_eq</span>
+                      <br />
+                      <span>private</span>
+                      <br />
+                      <span>protected</span>
+                      <br />
+                      <span>public</span>
+                      <br />
+                      <span>register</span>
+                      <br />
+                      <span>reinterpret_cast</span>
+                      <br />
+                      <span>return</span>
+                      <br />
+                      <span>short</span>
+                      <br />
+                      <span>signed</span>
+                      <br />
+                      <span>sizeof</span>
+                      <br />
+                      <span>static</span>
+                      <br />
+                      <span>static_assert (C++11)</span>
+                      <br />
+                      <span>static_cast</span>
+                    </code>
+                    <code class="weight-100% text-block code lesson19-text137">
+                      <span>struct</span>
+                      <br />
+                      <span>switch</span>
+                      <br />
+                      <span>template</span>
+                      <br />
+                      <span>this</span>
+                      <br />
+                      <span>thread_local (C++11)</span>
+                      <br />
+                      <span>throw</span>
+                      <br />
+                      <span>true</span>
+                      <br />
+                      <span>try</span>
+                      <br />
+                      <span>typedef</span>
+                      <br />
+                      <span>typeid</span>
+                      <br />
+                      <span>typename</span>
+                      <br />
+                      <span>union</span>
+                      <br />
+                      <span>unsigned</span>
+                      <br />
+                      <span>using</span>
+                      <br />
+                      <span>virtual</span>
+                      <br />
+                      <span>void</span>
+                      <br />
+                      <span>volatile</span>
+                      <br />
+                      <span>wchar_t</span>
+                      <br />
+                      <span>while</span>
+                      <br />
+                      <span>xor</span>
+                      <br />
+                      <span>xor_eq</span>
+                    </code>
+                  </div>
+                  <p class="item_sub-heading margin-butttom lesson19-text179">
+                    <span>В</span>
+                    <a href="lesson1-1.html" class="lesson19-navlink4">
+                      версії C++11
+                    </a>
+                    <span>
+                      також було додано два спеціальних ідентифікатори:
+                    </span>
+                    <span class="lesson19-text182">override</span>
+                    <span>і</span>
+                    <span class="lesson19-text184">final</span>
+                    <span>
+                      . Вони мають особливе значення при використанні в певних
+                      контекстах, але не є зарезервованими ключовими словами.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      Ми вже стикалися з деякими ключовими словами, такими як
+                    </span>
+                    <span class="lesson19-text189">int</span>
+                    <span>,</span>
+                    <span class="lesson19-text191">void</span>
+                    <span>і</span>
+                    <span class="lesson19-text193">return</span>
+                    <span>
+                      . Разом з набором операторів, ключові слова визначають всю
+                      мову програмування C++ (не включаючи команд препроцесора).
+                      Оскільки вони мають особливі значення, то різні IDE
+                      виділяють/підсвічують їх різними кольорами.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      До кінця цих уроків по С++ ви дізнаєтесь суть більшості з
+                      вищезазначених ключових слів.
+                    </span>
+                  </p>
+                  <div id="toc-1" class="lesson19-container06 section_lesson">
+                    <h3 class="lesson19-text198 heading_h3">Ідентифікатори</h3>
+                    <p class="lesson19-text199 text-block margin-butttom">
+                      <span class="textBold">Ідентифікатор</span>
+                      <span>
+                        — це ім’я змінної, функції, класу або іншого об’єкту в
+                        C++. Ми можемо визначати ідентифікатори будь-якими
+                        словами/іменами. Тим не менш, є
+                      </span>
+                      <span class="textBold">
+                        кілька загальних правил, яких необхідно дотримуватися
+                      </span>
+                      <span>:</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Правило №1</span>
+                      <span>
+                        : Ідентифікатор не може бути ключовим словом. Ключові
+                        слова зарезервовані.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Правило №2</span>
+                      <span>
+                        : Ідентифікатор може складатися тільки з букв (нижнього
+                        або верхнього регістру), цифр або символів підкреслення.
+                        Це означає, що всі інші символи та пробіли заборонені.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Правило №3</span>
+                      <span>
+                        : Ідентифікатор повинен починатися з літери (нижнього
+                        або верхнього регістру). Він не повинен починатися з
+                        цифри.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Правило №4</span>
+                      <span>
+                        : Мова C++ розрізняє нижній регістр від верхнього.
+                        nvalue відрізняється від nValue і відрізняється від
+                        NVALUE.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Тепер, коли ви знаєте, як можна називати об’єкти,
+                        давайте поговоримо про те, як їх потрібно називати.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        По-перше, в C++ імена змінних починаються з літери в
+                        нижньому регістрі. Якщо іменем змінної є одне слово, то
+                        це слово повинно бути записано в нижньому регістрі:
+                      </span>
+                    </p>
+                    <code class="lesson19-text226 text-block code">
+                      <span>int value; // коректно</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        int Value; // некоректно (повинно починатися з літери в
+                        нижньому регістрі)
+                      </span>
+                      <br />
+                      <span>
+                        int VALUE; // некоректно (повинно починатися з літери в
+                        нижньому регістрі)
+                      </span>
+                      <br />
+                      <span>
+                        int VaLuE; // некоректно (повинно починатися з літери в
+                        нижньому регістрі)
+                      </span>
+                    </code>
+                    <p class="lesson19-text236 text-block margin-butttom">
+                      <span>
+                        Як правило, імена функцій також починаються з літери в
+                        нижньому регістрі (хоча не завжди). Ми будемо
+                        дотримуватися цього стилю, оскільки навіть функція
+                        main() (головна функція у всіх програмах) починається з
+                        букви в нижньому регістрі, як і всі функції зі
+                        Стандартної бібліотеки C++.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Імена ідентифікаторів, які починаються з великої літери,
+                        використовуються для структур та класів (про це
+                        пізніше).
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Якщо ім’я змінної або функції складається з декількох
+                        слів, то є два варіанти: розділити підкресленням або
+                        використовувати
+                      </span>
+                      <span class="textBold">принцип CamelCase</span>
+                      <span>
+                        — коли декілька слів пишуться разом, без пробілів, і
+                        кожне нове слово пишеться з великої літери. CamelCase (в
+                        перекладі як «ВерблюжийСтиль») отримав свою назву через
+                        використання великих літер, які нагадують верблюжі
+                        горби.
+                      </span>
+                    </p>
+                    <code class="lesson19-text246 text-block code">
+                      <span>
+                        int my_variable_name; // коректно (розділяється символом
+                        підкреслення)
+                      </span>
+                      <br />
+                      <span>
+                        void my_function_name(); // коректно (розділяється
+                        символом підкреслення)
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        int myVariableName; // коректно (використовується
+                        CamelCase)
+                      </span>
+                      <br />
+                      <span>
+                        void myFunctionName(); // коректно (використовується
+                        CamelCase)
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        int my variable name; // некоректно (пробіли заборонені)
+                      </span>
+                      <br />
+                      <span>
+                        void my function name(); // некоректно (пробіли
+                        заборонені)
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        int MyVariableName; // працює, але не рекомендується
+                        (варто починати з літери в нижньому регістрі)
+                      </span>
+                      <br />
+                      <span>
+                        void MyFunctionName(); // працює, але не рекомендується
+                      </span>
+                    </code>
+                    <p class="lesson19-text268 text-block margin-butttom">
+                      <span>
+                        Хоча навіть Стандартна бібліотека C++ використовує
+                        символ підкреслення для змінних і функцій, ми все ж
+                        будемо використовувати CamelCase для кращої
+                        читабельності коду. Іноді ви будете бачити поєднання
+                        двох способів: підкреслення для змінних і CamelCase для
+                        функцій.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Варто відзначити, що якщо ви працюєте з чужим кодом, то
+                        хорошою практикою буде дотримуватися стилю, в якому
+                        написаний цей код, навіть якщо він не відповідає
+                        вищевказаним рекомендаціям.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        По-друге, не починайте ваші імена з символу
+                        підкреслення, тому що такі імена вже зарезервовані для
+                        операційної системи, бібліотек і/або використовуються
+                        компілятором.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        По-третє, (це, мабуть, найважливіше правило з усіх)
+                        використовуйте в якості ідентифікаторів тільки ті імена,
+                        які реально описують те, чим є об’єкт. Дуже характерно
+                        для недосвідчених програмістів скорочувати назви
+                        змінних, щоб заощадити час при наборі коду або тому що
+                        вони думають, що все і так зрозуміло. У більшості
+                        випадків не все завжди є зрозумілим і очевидним. В
+                        ідеалі, змінні потрібно називати так, щоб людина, яка
+                        перший раз побачила ваш код, зрозуміла якнайшвидше, що
+                        цей код виконує. Через 3 місяці, коли ви будете
+                        переглядати свої програми, ви забудете, як вони
+                        працюють, і будете вдячні самому собі за те, що називали
+                        змінні по суті, а не “як попало”. Чим складніший код,
+                        тим простішими і зрозумілішими повинні бути
+                        ідентифікатори.
+                      </span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/c01adc84-acf7-498c-bfd2-e635673e99af?org_if_sml=174354"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson19-text279 text-block margin-butttom">
+                      <span>
+                        Можна використовувати тривіальні імена для змінних, які
+                        мають тривіальне використання (наприклад, для змінних в
+                        циклі, в простих математичних функціях тощо).
+                      </span>
+                      <br />
+                      <br />
+                      <span>По-четверте, уточнюючий</span>
+                      <span class="textBold">коментар</span>
+                      <span>
+                        завжди буде тільки плюсом. Наприклад, ми оголосили
+                        змінну з ім’ям numberOfChars, яка повинна зберігати
+                        кількість символів певної частини рядка. Скільки
+                        символів в рядку Hello, world!: 10, 11, 12 чи 13? Це
+                        залежить від того, враховуємо ми пробіли і розділові
+                        знаки чи ні. Замість того, щоб називати змінну
+                        numberOfCharsIncludingWhitespaceAndPunctuation, краще
+                        записати хороший коментар поруч, який прояснить
+                        ситуацію:
+                      </span>
+                    </p>
+                    <code class="lesson19-text286 text-block code">
+                      <span>
+                        // Ця змінна рахує кількість символів частини рядка,
+                        включаючи пробіли і розділові знаки
+                      </span>
+                      <br />
+                      <span>int numberOfChars;</span>
+                    </code>
+                  </div>
+                  <div id="toc-2" class="lesson19-container07 section_lesson">
+                    <h3 class="lesson19-text290 heading_h3">Тест</h3>
+                    <p class="lesson19-text291 text-block margin-butttom">
+                      <span class="lesson19-text292">
+                        Які з наступних змінних неправильно названі і чому?
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text295"></span>
+                      <span class="lesson19-text296">int result;</span>
+                      <br class="lesson19-text297" />
+                      <br class="lesson19-text298" />
+                      <span class="lesson19-text299">int _oranges;</span>
+                      <br class="lesson19-text300" />
+                      <br class="lesson19-text301" />
+                      <span class="lesson19-text302">int NUMBER;</span>
+                      <br class="lesson19-text303" />
+                      <br class="lesson19-text304" />
+                      <span class="lesson19-text305">
+                        int the name of a variable;
+                      </span>
+                      <br class="lesson19-text306" />
+                      <br class="lesson19-text307" />
+                      <span class="lesson19-text308">int TotalCustomers;</span>
+                      <br class="lesson19-text309" />
+                      <br class="lesson19-text310" />
+                      <span class="lesson19-text311">int void;</span>
+                      <br class="lesson19-text312" />
+                      <br class="lesson19-text313" />
+                      <span class="lesson19-text314">int countFruit;</span>
+                      <br class="lesson19-text315" />
+                      <br class="lesson19-text316" />
+                      <span class="lesson19-text317">int 4orYou;</span>
+                      <br class="lesson19-text318" />
+                      <br class="lesson19-text319" />
+                      <span class="lesson19-text320">
+                        int kilograms_of_pipe;
+                      </span>
+                      <br />
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь</span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text327"></span>
+                      <span class="lesson19-text328">int result.</span>
+                      <span class="lesson19-text329">Все ок.</span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text332"></span>
+                      <span class="lesson19-text333">int _oranges</span>
+                      <span class="lesson19-text334">
+                        . Імена змінних не повинні починатися з символів
+                        підкреслення.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text337"></span>
+                      <span class="lesson19-text338">int NUMBER.</span>
+                      <span class="lesson19-text339">
+                        Імена змінних повинні починатися з літери в нижньому
+                        регістрі.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text342"></span>
+                      <span class="lesson19-text343">
+                        int the name of a variable.
+                      </span>
+                      <span class="lesson19-text344">
+                        Імена змінних не можуть мати пробіли.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text347"></span>
+                      <span class="lesson19-text348">int TotalCustomers.</span>
+                      <span class="lesson19-text349">
+                        Імена змінних повинні починатися з букви в нижньому
+                        регістрі.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text352"></span>
+                      <span class="lesson19-text353">int void.</span>
+                      <span class="lesson19-text354">
+                        void — це ключове слово і його не можна використовувати
+                        в якості ідентифікатора для своїх змінних чи функцій.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text357"></span>
+                      <span class="lesson19-text358">int countFruit.</span>
+                      <span class="lesson19-text359">Все ок.</span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text362"></span>
+                      <span class="lesson19-text363">int 4orYou</span>
+                      <span class="lesson19-text364">
+                        . Імена змінних не можуть починатися з цифр.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson19-text367"></span>
+                      <span class="lesson19-text368">
+                        int kilograms_of_pipe.
+                      </span>
+                      <span class="lesson19-text369">Все ок.</span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-8.html">
+                      <div class="lesson19-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson19-arrowdown1"
+                        />
+                        <span class="lesson19-text370">Урок №8</span>
+                      </div>
+                    </a>
+                    <a href="lesson1-10.html">
+                      <div class="lesson19-item1 item_nav_right">
+                        <span class="lesson19-text371">Урок №10</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson19-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson19-toc toc">
+                  <span class="lesson19-text372">Зміст</span>
+                  <div class="lesson19-toclist1">
+                    <ul class="lesson19-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson19-link2">
+                          Ідентифікатори
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson19-link3">Тест</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson19-footer footer_">
+          <div class="lesson19-container08 container_footer">
+            <div class="lesson19-container09">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson19-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson19-link5 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson19-link6 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson19-separator"></div>
+            <div class="lesson19-container10">
+              <span class="lesson19-text373">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson19-text374">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson19-link7"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

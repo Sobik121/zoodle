@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-20 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-20 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-20.css" rel="stylesheet" />
+
+      <div class="lesson120-container">
+        <header data-role="Header" class="lesson120-header-lesson">
+          <a href="index.html" class="lesson120-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson120-image img_logo"
+            />
+          </a>
+          <div class="lesson120-nav">
+            <nav class="lesson120-nav1">
+              <a href="index.html" class="lesson120-navlink1">Головна</a>
+              <a href="index.html" class="lesson120-navlink2">Уроки</a>
+              <a href="index.html" class="lesson120-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson120-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson120-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson120-mobile-menu">
+            <div class="lesson120-nav2">
+              <div class="lesson120-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson120-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson120-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson120-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg
+                viewBox="0 0 950.8571428571428 1024"
+                class="lesson120-icon04"
+              >
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson120-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson120-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson120-hero">
+          <div class="lesson120-container02">
+            <h1 class="lesson120-text">Розділ №1. Урок №20</h1>
+            <span class="lesson120-text001">
+              Відлагодження програм: стек викликів і відстеження змінних
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson120-lessons">
+          <section class="lesson120-container03 container_lessons">
+            <div class="lesson120-section0">
+              <div class="lesson120-container04">
+                <div class="lesson120-tocmobile mobile toc">
+                  <span class="lesson120-text002">Зміст</span>
+                  <div class="lesson120-toclist">
+                    <ul class="lesson120-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson120-link">
+                          Відстеження змінних
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson120-link01">
+                          Вікно перегляду
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson120-link02">
+                          Стек викликів
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson120-link03">Висновки</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson120-left-content">
+                  <p class="item_sub-heading margin-butttom lesson120-text003">
+                    <span>
+                      Як не дивно, програмування може бути складним і помилок
+                      може бути дуже багато. Помилки, як правило, потрапляють в
+                      одну з двох категорій: синтаксичні або семантичні
+                      (смислові).
+                    </span>
+                    <br />
+                  </p>
+                  <div class="info lesson120-info">
+                    <p class="lesson120-text006 text-block heading">Примітка</p>
+                    <div class="lesson120-container05">
+                      <p class="color-primary-2 text-block">
+                        <span>
+                          Перед тим, як продовжити, переконайтеся, що ви
+                          знаходитеся в
+                        </span>
+                        <a href="lesson0-7.html" class="lesson120-navlink4">
+                          режимі конфігурації “Debug”.
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson120-container06">
+                    <div
+                      id="toc-1"
+                      class="lesson120-container07 section_lesson"
+                    >
+                      <h3 class="lesson120-text009 heading_h3">
+                        <span>Відстеження змінних</span>
+                        <br />
+                      </h3>
+                      <p class="lesson120-text012 text-block margin-butttom">
+                        <span>
+                          Відстеження змінних — це процес перевірки значень
+                          змінних під час відлагодження. Наприклад:
+                        </span>
+                        <br class="textBold" />
+                      </p>
+                      <code class="lesson120-text015 text-block code">
+                        <span>#include &lt;iostream&gt;</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>int main()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>int x = 1;</span>
+                        <br />
+                        <span>std::cout &lt;&lt; x &lt;&lt; " ";</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>x = x + 1;</span>
+                        <br />
+                        <span>std::cout &lt;&lt; x &lt;&lt; " ";</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>x = x + 2;</span>
+                        <br />
+                        <span>std::cout &lt;&lt; x &lt;&lt; " ";</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>x = x + 4;</span>
+                        <br />
+                        <span>std::cout &lt;&lt; x &lt;&lt; " ";</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>return 0;</span>
+                        <br />
+                        <span>}</span>
+                      </code>
+                      <p class="lesson120-text051 text-block margin-butttom">
+                        <span>Результат виконання програми:</span>
+                        <br />
+                        <br />
+                        <span class="lesson120-text055">1 2 4 8</span>
+                        <br />
+                        <br />
+                        <span>Використовуючи команду</span>
+                        <span class="lesson120-text059">
+                          "Выполнить до текущей позиции"
+                        </span>
+                        <span>перейдіть до рядка</span>
+                        <span class="lesson120-text061">
+                          std::cout &lt;&lt; x &lt;&lt; " ";:
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/23c70704-9b4d-43b3-b806-6ce9c7490c01?org_if_sml=132280"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text062 text-block margin-butttom">
+                        <span>
+                          До цього моменту змінна х вже створена і
+                          ініціалізована, тому при перевірці цієї змінної ми
+                          побачимо число 1.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Найпростіший спосіб відстеження простих змінних (як х)
+                          — це наведення курсору миші на елемент. Більшість
+                          сучасних відлагоджувачів підтримують цю можливість:
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/b8f6c4bd-f833-4eb1-afb9-9cab30139e5b?org_if_sml=130935"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text067 text-block margin-butttom">
+                        <span>
+                          Зверніть увагу, ви можете навести курсор миші на
+                          будь-яку іншу змінну (і на будь-якому рядку):
+                        </span>
+                        <br />
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/049fe25e-5342-411d-bca9-d66ac89a09b3?org_if_sml=131164"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text070 text-block margin-butttom">
+                        <span>В Visual Studio є ще одна можливість —</span>
+                        <span class="lesson120-text072">
+                          "Быстрая проверка".
+                        </span>
+                        <span>Виділіть змінну х за допомогою миші</span>
+                        <span class="lesson120-text074">
+                          &gt; ПКМ (права кнопка миші) &gt; "Быстрая
+                          проверка...":
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/fb1f7f2c-9b84-46c4-b01e-7fee3ea1e970?org_if_sml=180712"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text075 text-block margin-butttom">
+                        <span>В Visual Studio є ще одна можливість —</span>
+                        <span class="lesson120-text077">
+                          "Быстрая проверка".
+                        </span>
+                        <span>Виділіть змінну х за допомогою миші</span>
+                        <span class="lesson120-text079">
+                          &gt; ПКМ (права кнопка миші) &gt; "Быстрая
+                          проверка...":
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/d9314846-8c76-4d7a-a5ce-b37ff9c7311a?org_if_sml=112767"
+                        class="img_lesson"
+                      />
+                      <p class="lesson120-text080 text-block margin-butttom">
+                        <span>Добре, тепер закриваємо це вікно.</span>
+                        <br />
+                        <br />
+                        <span>
+                          Значення змінних можна відстежувати і під час
+                          виконання відлагодження. Перемістіться за допомогою
+                          команди “Шаг с обходом” до рядка
+                        </span>
+                        <span class="lesson120-text085">
+                          std::cout &lt;&lt; x &lt;&lt; " ";:
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/2c84bdb5-d2e4-4046-814a-079a932b2ae2?org_if_sml=131182"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text086 text-block margin-butttom">
+                        <span>Значення змінної х повинно змінитися на</span>
+                        <span class="lesson120-text088">2</span>
+                        <span>. Перевірте!</span>
+                      </p>
+                    </div>
+                    <div
+                      id="toc-2"
+                      class="lesson120-container08 section_lesson"
+                    >
+                      <h3 class="lesson120-text090 heading_h3">
+                        Вікно перегляду
+                      </h3>
+                      <p class="lesson120-text091 text-block margin-butttom">
+                        <span>Команда</span>
+                        <span class="lesson120-text093">
+                          "Быстрая проверка"
+                        </span>
+                        <span>
+                          або наведення курсору на елемент підходять для
+                          статичного перегляду змінних, але не дуже підходять
+                          для відстеження модифікацій змінних під час виконання
+                          програми, так як з кожним новим виконаним рядком
+                          доведеться заново наводити курсор на елемент або
+                          використовувати
+                        </span>
+                        <span class="lesson120-text095">
+                          "Быстрая проверка"
+                        </span>
+                        <span>.</span>
+                        <br class="textBold" />
+                        <br class="textBold" />
+                        <span>
+                          Для вирішення цієї проблеми, всі сучасні
+                          відлагоджувачі пропонують ще один інструмент — вікно
+                          перегляду.
+                        </span>
+                        <span class="textBold">Вікно перегляду</span>
+                        <span>
+                          — це вікно, в яке можна додавати змінні для постійного
+                          відстеження, вони будуть автоматично оновлюватися при
+                          послідовному виконанні програми. Вікно перегляду вже
+                          може бути підключене і відображатися у вашій робочій
+                          області, але якщо це не так, то ви можете це
+                          виправити, перейшовши в налаштування вашої IDE.
+                        </span>
+                        <br class="textBold" />
+                        <br class="textBold" />
+                        <span>
+                          У Visual Studio для відображення вікна перегляду вам
+                          потрібно перейти в
+                        </span>
+                        <span class="lesson120-text105">
+                          "Отладка" &gt; "Окна" &gt; "Контрольные значения" &gt;
+                          "Контрольные значения 1":
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/8c4e85bf-5749-4ac5-be53-26d0cdf9a896?org_if_sml=1122236"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <div class="info margin-butttom lesson120-info1">
+                        <p class="lesson120-text106 text-block heading">
+                          Примітка
+                        </p>
+                        <div class="lesson120-container09">
+                          <p class="color-primary-2 text-block">
+                            Ви повинні знаходитися в режимі відлагодження —
+                            використайте для цього команду “Шаг с заходом”.
+                          </p>
+                        </div>
+                      </div>
+                      <p class="lesson120-text108 text-block margin-butttom">
+                        <span>Ви повинні побачити наступне:</span>
+                        <br />
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/7066859c-fd14-4017-a2cf-72af91abc74b?org_if_sml=161545"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text111 text-block margin-butttom">
+                        <span>
+                          Поки що в цьому вікні нічого немає, так як ми ще
+                          нічого не додавали. Є 2 шляхи:
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Ввести ім’я змінної, яку ми хочемо відстежувати, в
+                          колонку
+                        </span>
+                        <span class="lesson120-text116">"Имя"</span>
+                        <span>в вікні перегляду.</span>
+                        <br />
+                        <br />
+                        <span>Виділити змінну, яку ми хочемо відстежувати</span>
+                        <span class="lesson120-text121">
+                          &gt; клацнути правою кнопкою миші і вибрати "Добавить
+                          контрольное значение".
+                        </span>
+                        <br />
+                        <br />
+                        <span>Спробуйте додати змінну</span>
+                        <span class="lesson120-text125">х</span>
+                        <span>в вікно перегляду:</span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/29a8c321-1991-4568-972d-939e98d6da4d?org_if_sml=163226"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text127 text-block margin-butttom">
+                        <span>Тепер виберіть команду</span>
+                        <span class="lesson120-text129">"Шаг с обходом"</span>
+                        <span>
+                          декілька разів і стежте за змінами значення вашої
+                          змінної!
+                        </span>
+                        <br />
+                      </p>
+                    </div>
+                    <div
+                      id="toc-3"
+                      class="lesson120-container10 section_lesson"
+                    >
+                      <h3 class="lesson120-text132 heading_h3">
+                        <span>Стек викликів</span>
+                        <br />
+                      </h3>
+                      <p class="lesson120-text135 text-block margin-butttom">
+                        <span class="lesson120-text136">
+                          Сучасні відлагоджувачі мають ще одне інформаційне
+                          вікно, яке може бути дуже корисним при відлагодженні
+                          програм — стек викликів.
+                        </span>
+                        <br />
+                        <br />
+                        <span class="lesson120-text139">
+                          При виконанні функції, як ви вже знаєте, програма
+                          залишає закладку в поточному місцезнаходженні, виконує
+                          функцію, а потім повертається в місце, де залишила
+                          закладку. Програма відстежує всі виклики функцій в
+                          стеці викликів.
+                        </span>
+                        <br />
+                        <br />
+                        <span class="textBold">Стек викликів</span>
+                        <span class="lesson120-text143">
+                          — це список всіх активних функцій, які викликалися до
+                          поточного місцезнаходження. В стек викликів
+                          записується функція, що викликається, і рядок, який
+                          виконується. Всякий раз, коли відбувається виклик
+                          нової функції, ця нова функція додається в самий верх
+                          стеку. Коли виконання поточної функції зупиняється,
+                          вона видаляється з верхньої частини стеку і управління
+                          переходить до функції, яка розміщена нижче (тобто,
+                          друга за рахунком).
+                        </span>
+                        <br />
+                        <br />
+                        <span class="lesson120-text146">
+                          Відобразити вікно стеку викликів в Visual Studio можна
+                          через
+                        </span>
+                        <span class="lesson120-text147">
+                          "Отладка" &gt; "Окна"&gt; "Стек вызовов"
+                        </span>
+                        <span class="lesson120-text148">:</span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/0651c68d-7858-4404-be31-98077ba22578?org_if_sml=1120081"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <div class="info margin-butttom lesson120-info2">
+                        <p class="lesson120-text149 text-block heading">
+                          Примітка
+                        </p>
+                        <div class="lesson120-container11">
+                          <p class="color-primary-2 text-block">
+                            Ви повинні знаходитися в режимі відлагодження —
+                            використайте для цього команду "Шаг с заходом".
+                          </p>
+                        </div>
+                      </div>
+                      <p class="lesson120-text151 text-block margin-butttom">
+                        <span>Розглянемо приклад:</span>
+                        <br />
+                      </p>
+                      <code class="lesson120-text154 text-block code">
+                        <span>#include &lt;iostream&gt;</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>void CallC()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>
+                          std::cout &lt;&lt; "C called" &lt;&lt; std::endl;
+                        </span>
+                        <br />
+                        <span>}</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>void CallB()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>
+                          std::cout &lt;&lt; "B called" &lt;&lt; std::endl;
+                        </span>
+                        <br />
+                        <span>CallC();</span>
+                        <br />
+                        <span>}</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>void CallA()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>CallB();</span>
+                        <br />
+                        <span>CallC();</span>
+                        <br />
+                        <span>}</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>int main()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>CallA();</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>return 0;</span>
+                        <br />
+                        <span>}</span>
+                      </code>
+                      <p class="lesson120-text204 text-block margin-butttom">
+                        <span>
+                          Вкажіть точку зупину у функції CallC(), а потім
+                          запустіть відлагодження. Програма виконається до точки
+                          зупину.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Незважаючи на те, що ви знаєте, що зараз виконується
+                          CallC(), в програмі є два виклики CallC() (в функції
+                          CallB() і в функції CallA()). Яка функція
+                          відповідальна за виклик CallC() в даний момент? Стек
+                          викликів нам це покаже:
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/4105defb-f528-43cd-bb37-c59f3f370336?org_if_sml=178358"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson120-text209 text-block margin-butttom">
+                        <span>
+                          Спочатку виконується функція main(). Потім main()
+                          викликає CallA(), яка, в свою чергу, викликає CallB().
+                          Функція CallB() викликає CallC(). Ви можете клацнути
+                          двічі по різним рядкам у вікні
+                        </span>
+                        <span class="lesson120-text211">"Стек вызовов"</span>
+                        <span>
+                          , щоб побачити більше інформації про функції, що
+                          викликаються. Деякі IDE переносять курсор
+                          безпосередньо до виклику зазначеної функції. Visual
+                          Studio переносить курсор до наступного рядка, який
+                          знаходиться після виклику функції. Спробуйте! Для
+                          того, щоб відновити степпінг, клацніть двічі по самому
+                          верхньому (першому) рядку в вікні
+                        </span>
+                        <span class="lesson120-text213">"Стек вызовов"</span>
+                        <span>
+                          і ви повернетеся до поточної точки виконання.
+                        </span>
+                        <br />
+                        <br />
+                        <span>Виберіть команду</span>
+                        <span class="lesson120-text218">"Продолжить".</span>
+                        <span>
+                          Точка зупину повинна спрацювати вдруге, коли буде
+                          повторний виклик функції CallC() (на цей раз з функції
+                          CallA()). Все, що відбувається, ви повинні побачити у
+                          вікні
+                        </span>
+                        <span class="lesson120-text220">"Стек вызовов"</span>
+                        <span>:</span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/0b3e32a9-2023-4323-a210-e7bc77f03f67?org_if_sml=176767"
+                        class="img_lesson no-padding-LR"
+                      />
+                    </div>
+                    <div
+                      id="toc-4"
+                      class="lesson120-container12 section_lesson"
+                    >
+                      <h3 class="lesson120-text222 heading_h3">Висновки</h3>
+                      <p class="lesson120-text223 text-block margin-butttom">
+                        <span>
+                          Тепер ви знаєте про основні можливості вбудованих
+                          відлагоджувачів! Використовуючи степпінг, точки
+                          зупину, відстеження змінних і вікно
+                        </span>
+                        <span class="lesson120-text225">"Стек вызовов"</span>
+                        <span>
+                          ви можете успішно проводити відлагодження програм.
+                        </span>
+                        <br />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-19.html">
+                      <div class="lesson120-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson120-arrowdown1"
+                        />
+                        <span class="lesson120-text228">Урок №19</span>
+                      </div>
+                    </a>
+                    <a href="lesson-final-test.html">
+                      <div class="lesson120-item1 item_nav_right">
+                        <span class="lesson120-text229">Підсумковий тест</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson120-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson120-toc toc">
+                  <span class="lesson120-text230">Зміст</span>
+                  <div class="lesson120-toclist1">
+                    <ul class="lesson120-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson120-link04">
+                          Відстеження змінних
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson120-link05">
+                          Вікно перегляду
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson120-link06">
+                          Стек викликів
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson120-link07">Висновки</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson120-footer footer_">
+          <div class="lesson120-container13 container_footer">
+            <div class="lesson120-container14">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson120-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson120-link09 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson120-link10 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson120-separator"></div>
+            <div class="lesson120-container15">
+              <span class="lesson120-text231">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson120-text232">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson120-link11"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

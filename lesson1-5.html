@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-5 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-5 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-5.css" rel="stylesheet" />
+
+      <div class="lesson15-container">
+        <header data-role="Header" class="lesson15-header-lesson">
+          <a href="index.html" class="lesson15-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson15-image img_logo"
+            />
+          </a>
+          <div class="lesson15-nav">
+            <nav class="lesson15-nav1">
+              <a href="index.html" class="lesson15-navlink1">Головна</a>
+              <a href="index.html" class="lesson15-navlink2">Уроки</a>
+              <a href="index.html" class="lesson15-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson15-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson15-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson15-mobile-menu">
+            <div class="lesson15-nav2">
+              <div class="lesson15-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson15-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson15-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson15-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson15-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson15-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson15-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson15-hero">
+          <div class="lesson15-container02">
+            <h1 class="lesson15-text">Розділ №1. Урок №5</h1>
+            <span class="lesson15-text001">Функції</span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson15-lessons">
+          <section class="lesson15-container03 container_lessons">
+            <div class="lesson15-section0">
+              <div class="lesson15-container04">
+                <div class="lesson15-tocmobile mobile toc">
+                  <span class="lesson15-text002">Зміст</span>
+                  <div class="lesson15-toclist">
+                    <ul class="lesson15-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson15-link">Функції</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson15-link01">
+                          Значення, що повертаються
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson15-link02">
+                          Тип повернення void
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson15-link03">
+                          Повернення значень функцією main()
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-5" class="lesson15-link04">
+                          Детальніше про значення, що повертаються
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-6" class="lesson15-link05">
+                          Повторне використання функцій
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-7" class="lesson15-link06">
+                          Вкладені функції
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson15-link07">Тест</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-9" class="lesson15-link08">Відповіді</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson15-left-content">
+                  <p class="item_sub-heading margin-butttom lesson15-text003">
+                    <span>
+                      Ви вже знаєте, що кожна програма повинна містити функцію
+                      main() (з якої вона і починає своє виконання). Тим не
+                      менш, більшість програм використовують і багато інших
+                      функцій.
+                    </span>
+                    <br />
+                  </p>
+                  <div id="toc-1" class="lesson15-container05 section_lesson">
+                    <h3 class="lesson15-text006 heading_h3">Функції</h3>
+                    <p class="lesson15-text007 text-block margin-butttom">
+                      <span class="textBold">Функція</span>
+                      <span>
+                        — це послідовність стейтментів для виконання певного
+                        завдання. Часто ваші програми переривають виконання
+                        одних функцій заради виконання інших. Ви це постійно
+                        робите в реальному житті, наприклад, ви читаєте книгу і
+                        згадали, що повинні були зробити телефонний дзвінок. Ви
+                        залишаєте закладку в своїй книзі, берете телефон і
+                        набираєте номер. Після того, як ви вже поговорили, ви
+                        повертаєтеся до тієї сторінки в книзі, на якій ви
+                        зупинилися.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Програми в C++ працюють схожим чином. Іноді, коли
+                        програма виконує код, вона може зіткнутися з викликом
+                        функції.
+                      </span>
+                      <span class="textBold">Виклик функції</span>
+                      <span>— це</span>
+                      <a href="lesson1-1.html" class="lesson15-navlink4">
+                        вираз
+                      </a>
+                      <span>
+                        , який вказує процесору перервати виконання поточної
+                        функції і приступити до виконання іншої функції.
+                        Процесор “залишає закладку” в поточній точці виконання,
+                        а потім виконує функцію, що викликається. Коли виконання
+                        функції, що викликається, — завершено, то процесор
+                        повертається до “закладки” і відновлює виконання
+                        перерваної функції.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Функція, в якій знаходиться виклик, називається
+                      </span>
+                      <span class="textBold">викликаючею функцією</span>
+                      <span>(англ. “</span>
+                      <span class="textBold">caller</span>
+                      <span>”). Наприклад:</span>
+                    </p>
+                    <code class="lesson15-text023 text-block code">
+                      <span>
+                        #include &lt;iostream&gt; // для std::cout і std::endl
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Оголошення функції doPrint(), яку ми будемо викликати
+                      </span>
+                      <br />
+                      <span>void doPrint() {</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "In doPrint()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Оголошення функції main()</span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Starting main()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>
+                        doPrint(); // перериваємо виконання main() викликом
+                        функції doPrint(). Функція main() в даному випадку є
+                        викликаючою функцією
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Ending main()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text053 text-block margin-butttom">
+                      <span>Результат виконання програми:</span>
+                      <br />
+                      <br />
+                      <span class="lesson15-text057">Starting main()</span>
+                      <br class="lesson15-text058" />
+                      <span class="lesson15-text059">In doPrint()</span>
+                      <br class="lesson15-text060" />
+                      <span class="lesson15-text061">Ending main()</span>
+                      <br />
+                      <br />
+                      <span>
+                        Ця програма починає своє виконання з першого рядка
+                        функції main(), в якому виводиться на екран
+                      </span>
+                      <span class="lesson15-text065">Starting main()</span>
+                      <span>
+                        . Другий рядок функції main() викликає функцію
+                        doPrint(). На цьому етапі виконання стейтментів у
+                        функції main() призупиняється і процесор переходить до
+                        виконання стейтментів всередині функції
+                      </span>
+                      <span class="lesson15-text067">doPrint()</span>
+                      <span>. Перший (і єдиний) рядок в</span>
+                      <span class="lesson15-text069">doPrint()</span>
+                      <span>виводить текст</span>
+                      <span class="lesson15-text071">In doPrint()</span>
+                      <span>. Коли процесор завершує виконання</span>
+                      <span class="lesson15-text073">doPrint()</span>
+                      <span>
+                        , він повертається назад в функцію main() до тієї точки,
+                        на якій зупинився. Отже, наступним стейтментом є вивід
+                        рядка
+                      </span>
+                      <span class="lesson15-text075">Ending main()</span>
+                      <span>на екран.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Зверніть увагу, для виклику функції потрібно вказати її
+                        ім’я і список параметрів в круглих дужках
+                      </span>
+                      <span class="lesson15-text080">()</span>
+                      <span>
+                        . У вищенаведеному прикладі параметри не
+                        використовуються, тому круглі дужки порожні. Ми
+                        поговоримо детально про параметри функцій на
+                        відповідному уроці.
+                      </span>
+                      <br class="textBold" />
+                      <br class="textBold" />
+                      <span class="textBold">
+                        Правило: Не забувайте вказувати круглі дужки () при
+                        виклику функцій.
+                      </span>
+                    </p>
+                  </div>
+                  <div id="toc-2" class="lesson15-container06 section_lesson">
+                    <h3 class="lesson15-text085 heading_h3">
+                      Значення, що повертаються
+                    </h3>
+                    <p class="lesson15-text086 text-block margin-butttom">
+                      <span>
+                        Коли функція main() завершує своє виконання, вона
+                        повертає цілочисельне значення назад в операційну
+                        систему, використовуючи
+                      </span>
+                      <span class="textBold">оператор return</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Функції, які ми пишемо, також можуть повертати значення.
+                        Для цього потрібно вказати
+                      </span>
+                      <span class="textBold">тип повернення значення</span>
+                      <span>
+                        . Він вказується при оголошенні функції, перед її ім’ям.
+                        Зверніть увагу, що тип повернення не вказує, яке саме
+                        значення повертатиметься. Він вказує тільки тип цього
+                        значення.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Після цього всередині функції, що викликається, ми
+                        використовуємо оператор return, щоб вказати фактичне
+                      </span>
+                      <span class="textBold">значення, що повертається</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Розглянемо просту функцію, яка повертає цілочисельне
+                        значення:
+                      </span>
+                    </p>
+                    <code class="lesson15-text103 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // int означає, що функція повертає цілочисельне
+                        значення у викликаючу функцію
+                      </span>
+                      <br />
+                      <span>int return7()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        // Ця функція повертає цілочисельне значення, тому ми
+                        повинні використовувати оператор return
+                      </span>
+                      <br />
+                      <span>
+                        return 7; // повертаємо число 7 у викликаючу функцію
+                      </span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; return7() &lt;&lt; std::endl; // на
+                        екран виведеться 7
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; return7() + 3 &lt;&lt; std::endl; //
+                        на екран виведеться 10
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        return7(); // значення 7, що повертається, -
+                        ігнорується, тому що main() з ним нічого не робить
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text139 text-block margin-butttom">
+                      <span class="lesson15-text140">
+                        Результат виконання програми:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson15-text143">7</span>
+                      <br />
+                      <span class="lesson15-text145">10</span>
+                      <br />
+                      <br />
+                      <span class="lesson15-text148">
+                        Тепер давайте розберемося детально:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Перший викли</span>
+                      <span class="lesson15-text152">
+                        к функції return7() повертає 7 у викличаючу функцію, де
+                        воно потім передається в
+                      </span>
+                      <a href="lesson1-4.html" class="lesson15-navlink5">
+                        std::cout
+                      </a>
+                      <span class="lesson15-text153">для виводу на екран.</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Другий виклик</span>
+                      <span class="lesson15-text157">
+                        функції return7() знову повертає 7 у викликаючу функцію.
+                        Вираз 7 + 3 генерує результат 10, який виводиться на
+                        екран.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Третій виклик</span>
+                      <span class="lesson15-text161">
+                        функції return7() знову повертає 7 у викликаючу функцію.
+                        Проте main() нічого з ним не робить, тому нічого і не
+                        відбувається (значення, що повертається, просто
+                        ігнорується).
+                      </span>
+                    </p>
+                    <div class="info lesson15-info">
+                      <p class="lesson15-text162 text-block heading">
+                        Примітка
+                      </p>
+                      <div class="lesson15-container07">
+                        <p class="color-primary-2 text-block">
+                          Значення, що повертаються, не виводяться на екран,
+                          якщо їх не передавати об’єкту std::cout. В останньому
+                          виклику функції return7() значення не надсилається в
+                          std::cout, тому нічого і не відбувається.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="toc-3" class="lesson15-container08 section_lesson">
+                    <h3 class="lesson15-text164 heading_h3">
+                      Тип повернення void
+                    </h3>
+                    <p class="lesson15-text165 text-block margin-butttom">
+                      <span>
+                        Функції можуть і не повертати значення. Щоб повідомити
+                        компілятору, що функція не повертає значення, потрібно
+                        використати
+                      </span>
+                      <span class="textBold">тип повернення void</span>
+                      <span>
+                        . Погляньмо ще раз на функцію doPrint() з вищенаведеного
+                        прикладу:
+                      </span>
+                    </p>
+                    <code class="lesson15-text169 text-block code">
+                      <span>void doPrint() // void - це тип повернення</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "In doPrint()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>
+                        // Ця функція не повертає значення, тому і оператор
+                        return тут не потрібен
+                      </span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text179 text-block margin-butttom">
+                      <span>
+                        Ця функція має тип повернення void, який означає, що
+                        функція не повертає значення. Оскільки значення не
+                        повертається, то і оператор return тут не потрібен.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Ось ще один приклад використання функції типу void:
+                      </span>
+                    </p>
+                    <code class="lesson15-text184 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // void означає, що функція не повертає значення
+                      </span>
+                      <br />
+                      <span>void returnNothing()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "Hi!" &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>
+                        // Ця функція не повертає значення, тому і оператор
+                        return тут не потрібен
+                      </span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        returnNothing(); // функція returnNothing()
+                        викликається, але в main() нічого не повертається
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; returnNothing(); // помилка: цей
+                        рядок не скомпілюється (вам потрібно буде його
+                        закоментувати)
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text216 text-block margin-butttom">
+                      <span>У</span>
+                      <span class="textBold">першому виклику</span>
+                      <span>
+                        функції returnNothing () виводиться Hi!, але нічого не
+                        повертається назад у викликаючу функцію. Точка виконання
+                        повертається назад в main(), де програма продовжує своє
+                        виконання.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Другий виклик</span>
+                      <span>
+                        функції returnNothing () навіть не скомпілюється.
+                        Функція returnNothing() має тип повернення void, який
+                        означає, що ця функція не повертає значення. Однак
+                        main() намагається відправити це значення (яке не
+                        повертається) в std::cout для виведення на екран.
+                        std::cout не може опрацювати цей випадок, оскільки не
+                        було надано значення для виводу. Отже, компілятор
+                        видасть помилку. Вам потрібно буде
+                      </span>
+                      <a href="lesson1-2.html" class="lesson15-navlink6">
+                        закоментувати
+                      </a>
+                      <span>цей рядок, щоб компіляція пройшла успішно.</span>
+                    </p>
+                  </div>
+                  <div id="toc-4" class="lesson15-container09 section_lesson">
+                    <h3 class="lesson15-text225 heading_h3">
+                      Повернення значень функцією main()
+                    </h3>
+                    <p class="lesson15-text226 text-block margin-butttom">
+                      <span>
+                        Тепер у вас є розуміння того, як працює функція main().
+                        Коли програма виконується, операційна система викликає
+                        функцію main() і починається її виконання. Стейтменти в
+                        main() виконуються послідовно. В кінці функція main()
+                        повертає цілочисельне значення (зазвичай
+                      </span>
+                      <span class="lesson15-text228">0</span>
+                      <span>
+                        ) назад в операційну систему. Тому main() оголошується
+                        як
+                      </span>
+                      <span class="lesson15-text230">int main()</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Чому потрібно повертати значення назад в операційну
+                        систему? Справа в тому, що значення, що повертається
+                        функцією main(),
+                      </span>
+                      <span class="textBold">є кодом стану</span>
+                      <span>
+                        , який повідомляє операційній системі про те, чи успішно
+                        було виконання програми. Зазвичай, значення
+                      </span>
+                      <span class="lesson15-text237">0</span>
+                      <span>
+                        (нуль) означає що все пройшло успішно, тоді як будь-яке
+                        інше значення означає невдачу/помилку.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Зверніть увагу, за стандартами мови C++ функція main()
+                        повинна повертати цілочисельне значення. Однак, якщо ви
+                        не вкажете return в кінці функції main(), то компілятор
+                        поверне
+                      </span>
+                      <span class="lesson15-text242">0</span>
+                      <span>
+                        автоматично, якщо ніяких помилок не буде. Проте все ж
+                        рекомендується вказувати оператор return в кінці функції
+                        main() і використовувати тип повернення int для функції
+                        main().
+                      </span>
+                    </p>
+                  </div>
+                  <div id="toc-5" class="lesson15-container10 section_lesson">
+                    <h3 class="lesson15-text244 heading_h3">
+                      Детальніше про значення, що повертаються
+                    </h3>
+                    <p class="lesson15-text245 text-block margin-butttom">
+                      <span>
+                        По-перше, якщо тип повернення функції не є void, то вона
+                        повинна повертати значення зазначеного типу
+                        (використовуючи оператор return). Єдиний виняток — це
+                        функція main(), яка повертає
+                      </span>
+                      <span class="lesson15-text247">0</span>
+                      <span>, якщо не надано інше значення.</span>
+                      <br />
+                      <br />
+                      <span>
+                        По-друге, коли процесор зустрічає в функції оператор
+                        return, він негайно виконує повернення значення назад у
+                        викликаючу функцію і точка виконання також переходить у
+                        викликаючу функцію. Будь-який код, який знаходиться за
+                        оператором return у функції — ігнорується.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Функція може повертати тільки одне значення через
+                        оператор return у викликаючу функцію. Це може бути або
+                        число (наприклад,
+                      </span>
+                      <span class="lesson15-text255">7</span>
+                      <span>
+                        ), або значення змінної, або вираз (який генерує
+                        результат), або певне значення з набору можливих
+                        значень.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Є способи обійти правило повернення одного значення, але
+                        про це трішки пізніше.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Нарешті, автор функції вирішує, що означатиме значення,
+                        яке повертає функція. Деякі функції використовують
+                        повернені значення в якості кодів стану для надання
+                        інформації щодо результату виконання функції (успішне
+                        виконання чи ні). Інші функції повертають певне значення
+                        з набору можливих значень, ще інші функції взагалі
+                        нічого не повертають.
+                      </span>
+                    </p>
+                  </div>
+                  <div id="toc-6" class="lesson15-container11 section_lesson">
+                    <h3 class="lesson15-text263 heading_h3">
+                      Повторне використання функцій
+                    </h3>
+                    <p class="lesson15-text264 text-block margin-butttom">
+                      Одну і ту ж функцію можна викликати декілька разів, навіть
+                      в різних програмах, що дуже корисно:
+                    </p>
+                    <code class="lesson15-text265 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Функція getValueFromUser() отримує значення від
+                        користувача, а потім повертає його назад у викликаючу
+                        функцію
+                      </span>
+                      <br />
+                      <span>int getValueFromUser()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "Enter an integer: ";</span>
+                      <br />
+                      <span>int x;</span>
+                      <br />
+                      <span>std::cin &gt;&gt; x;</span>
+                      <br />
+                      <span>return x;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        int a = getValueFromUser(); // перший виклик функції
+                        getValueFromUser()
+                      </span>
+                      <br />
+                      <span>
+                        int b = getValueFromUser(); // другий виклик функції
+                        getValueFromUser()
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; a &lt;&lt; " + " &lt;&lt; b &lt;&lt;
+                        " = " &lt;&lt; a + b &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text305 text-block margin-butttom">
+                      <span>Результат виконання програми:</span>
+                      <br />
+                      <br />
+                      <span class="lesson15-text309">Enter an integer: 4</span>
+                      <br class="lesson15-text310" />
+                      <span class="lesson15-text311">Enter an integer: 9</span>
+                      <br class="lesson15-text312" />
+                      <span class="lesson15-text313">4 + 9 = 13</span>
+                      <br />
+                      <br />
+                      <span>
+                        Тут виконання функції main() переривається 2 рази.
+                        Зверніть увагу, в обох випадках отримане значення від
+                        користувача зберігається в змінній
+                      </span>
+                      <span class="lesson15-text317">x</span>
+                      <span>
+                        , а потім передається назад в функцію main() за
+                        допомогою оператора return, де присвоюється змінній
+                      </span>
+                      <span class="lesson15-text319">a</span>
+                      <span>або</span>
+                      <span class="lesson15-text321">b</span>
+                      <span>!</span>
+                      <br />
+                      <br />
+                      <span>
+                        Також main() не є єдиною функцією, яка може викликати
+                        інші функції. Будь-яка функція може викликати будь-яку
+                        іншу функцію!
+                      </span>
+                      <br />
+                    </p>
+                    <code class="lesson15-text327 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>void printO()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "O" &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>void printK()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "K" &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Функція printOK() викликає як printO(), так і
+                        printK()
+                      </span>
+                      <br />
+                      <span>void printOK()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>printO();</span>
+                      <br />
+                      <span>printK();</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Оголошення функції main()</span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Starting main()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>printOK();</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Ending main()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text381 text-block margin-butttom">
+                      <span>Результат виконання програми:</span>
+                      <br />
+                      <br />
+                      <span class="lesson15-text385">Starting main()</span>
+                      <br class="lesson15-text386" />
+                      <span class="lesson15-text387">O</span>
+                      <br class="lesson15-text388" />
+                      <span class="lesson15-text389">K</span>
+                      <br class="lesson15-text390" />
+                      <span class="lesson15-text391">Ending main()</span>
+                    </p>
+                  </div>
+                  <div id="toc-7" class="lesson15-container12 section_lesson">
+                    <h3 class="lesson15-text392 heading_h3">
+                      Вкладені функції
+                    </h3>
+                    <p class="lesson15-text393 text-block margin-butttom">
+                      В мові С++ одні функції не можуть бути оголошені всередині
+                      інших функцій (тобто бути вкладеними). Наступний код
+                      викличе помилку компіляції:
+                    </p>
+                    <code class="lesson15-text394 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        int boo() // ця функція знаходиться всередині функції
+                        main(), що є заборонено
+                      </span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "boo!";</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>boo();</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text420 text-block margin-butttom">
+                      <span>Правильно ось так:</span>
+                      <br />
+                    </p>
+                    <code class="lesson15-text423 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int boo() // тепер вже не в функції main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "boo!";</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>boo();</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                  </div>
+                  <div id="toc-8" class="lesson15-container13 section_lesson">
+                    <h3 class="lesson15-text449 heading_h3">Тест</h3>
+                    <p class="lesson15-text450 text-block margin-butttom">
+                      <span class="lesson15-text451">
+                        Які з наступних програм не скомпілюються (і чому), а які
+                        скомпілюються (і який у них буде результат)?
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Програма №1:</span>
+                    </p>
+                    <code class="lesson15-text455 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return5()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 5;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return8()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 8;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; return5() + return8() &lt;&lt;
+                        std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson15-text491 textBold text-block margin-butttom"
+                    >
+                      Програма №2:
+                    </p>
+                    <code class="lesson15-text492 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return5()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 5;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return8()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 8;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; return5() + return8() &lt;&lt;
+                        std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson15-text528 text-block textBold margin-butttom"
+                    >
+                      Програма №3:
+                    </p>
+                    <code class="lesson15-text529 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return5()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 5;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return8()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 8;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return5();</span>
+                      <br />
+                      <span>return8();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson15-text567 textBold text-block margin-butttom"
+                    >
+                      Програма №4:
+                    </p>
+                    <code class="lesson15-text568 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>недійсний printO()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "O" &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; printO() &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text594 text-block margin-butttom">
+                      Програма №5:
+                    </p>
+                    <code class="lesson15-text595 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int getNumbers()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 6;</span>
+                      <br />
+                      <span>повернення 8;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; getNumbers() &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; getNumbers() &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text625 text-block margin-butttom">
+                      Програма №6:
+                    </p>
+                    <code class="lesson15-text626 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int повернення 6()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 6;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; return 6() &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson15-text652 text-block margin-butttom">
+                      Програма №7:
+                    </p>
+                    <code class="lesson15-text653 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int return6()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернення 6;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; return6 &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                  </div>
+                  <div id="toc-9" class="lesson15-container14 section_lesson">
+                    <h3 class="lesson15-text679 heading_h3">Відповіді</h3>
+                    <p class="lesson15-text680 text-block margin-butttom">
+                      <span class="textBold">Відповідь №1</span>
+                      <br />
+                      <span>
+                        Програма скомпілюється, а результатом виконання буде
+                        значення
+                      </span>
+                      <span class="lesson15-text684">13</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №2</span>
+                      <br />
+                      <span>
+                        Програма не скомпілюється. Використання вкладених
+                        функцій в С++ заборонено.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №3</span>
+                      <br />
+                      <span>
+                        Програма скомпілюється, але не буде ніякого виводу.
+                        Значення, що повертаються з функцій, не використовуються
+                        в main() і, таким чином, ігноруються.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №4</span>
+                      <br />
+                      <span>
+                        Програма не скомпілюється, тому що типом повернення
+                        функції printO() є void, а ми відправляємо значення, яке
+                        не існує, на вивід. Результат — помилка компіляції.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №5</span>
+                      <br />
+                      <span>Результат виконання програми:</span>
+                      <br />
+                      <span class="lesson15-text707">6</span>
+                      <br class="lesson15-text708" />
+                      <span class="lesson15-text709">6</span>
+                      <br />
+                      <br />
+                      <span>
+                        Обидва рази, коли викликається функція getNumbers(),
+                        повертається значення 6. Компілятор, зустрічаючи перший
+                        return, відразу ж виконує повернення цього значення, а
+                        все, що знаходиться за першим оператором return, — уже
+                        не важливо (ігнорується). Рядок
+                      </span>
+                      <span class="lesson15-text713">return 8</span>
+                      <span>; ніколи не виконається.</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №6</span>
+                      <br />
+                      <span>
+                        Програма не скомпілюється через недопустиме ім’я
+                        функції.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №7</span>
+                      <br />
+                      <span>
+                        Програма скомпілюється, але функція не буде викликана,
+                        тому що в її виклиці відсутні круглі дужки. Результат
+                        виконання залежить від кожного компілятора окремо.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-4.html">
+                      <div class="lesson15-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson15-arrowdown1"
+                        />
+                        <span class="lesson15-text725">Урок №4</span>
+                      </div>
+                    </a>
+                    <a href="lesson1-6.html">
+                      <div class="lesson15-item1 item_nav_right">
+                        <span class="lesson15-text726">Урок №6</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson15-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson15-toc toc">
+                  <span class="lesson15-text727">Зміст</span>
+                  <div class="lesson15-toclist1">
+                    <ul class="lesson15-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson15-link09">Функції</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson15-link10">
+                          Значення, що повертаються
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson15-link11">
+                          Тип повернення void
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson15-link12">
+                          Повернення значень функцією main()
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-5" class="lesson15-link13">
+                          Детальніше про значення, що повертаються
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-6" class="lesson15-link14">
+                          Повторне використання функцій
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-7" class="lesson15-link15">
+                          Вкладені функції
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson15-link16">Тест</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-9" class="lesson15-link17">Відповіді</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson15-footer footer_">
+          <div class="lesson15-container15 container_footer">
+            <div class="lesson15-container16">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson15-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson15-link19 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson15-link20 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson15-separator"></div>
+            <div class="lesson15-container17">
+              <span class="lesson15-text728">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson15-text729">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson15-link21"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

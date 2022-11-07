@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-6 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-6 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-6.css" rel="stylesheet" />
+
+      <div class="lesson16-container">
+        <header data-role="Header" class="lesson16-header-lesson">
+          <a href="index.html" class="lesson16-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson16-image img_logo"
+            />
+          </a>
+          <div class="lesson16-nav">
+            <nav class="lesson16-nav1">
+              <a href="index.html" class="lesson16-navlink1">Головна</a>
+              <a href="index.html" class="lesson16-navlink2">Уроки</a>
+              <a href="index.html" class="lesson16-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson16-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson16-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson16-mobile-menu">
+            <div class="lesson16-nav2">
+              <div class="lesson16-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson16-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson16-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson16-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson16-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson16-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson16-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson16-hero">
+          <div class="lesson16-container02">
+            <h1 class="lesson16-text">Розділ №1. Урок №6</h1>
+            <span class="lesson16-text001">Параметри і аргументи функцій</span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson16-lessons">
+          <section class="lesson16-container03 container_lessons">
+            <div class="lesson16-section0">
+              <div class="lesson16-container04">
+                <div class="lesson16-tocmobile mobile toc">
+                  <span class="lesson16-text002">Зміст</span>
+                  <div class="lesson16-toclist">
+                    <ul class="lesson16-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson16-link">
+                          Параметри і аргументи функції
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson16-link01">
+                          Як працюють параметри і аргументи функцій?
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson16-link02">
+                          Як працюють параметри і значення, що повертаються?
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson16-link03">
+                          Додаткові приклади
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson16-link04">Тест</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-9" class="lesson16-link05">Відповіді</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson16-left-content">
+                  <p class="item_sub-heading margin-butttom lesson16-text003">
+                    <span>
+                      На попередньому уроці ми розглянули функції та значення,
+                      які вони можуть повертати за допомогою
+                    </span>
+                    <a href="lesson1-5.html" class="lesson16-navlink4">
+                      оператора return
+                    </a>
+                    <span>
+                      . На цьому уроці ми дізнаємося, що таке параметри і
+                      аргументи функції.
+                    </span>
+                    <br />
+                  </p>
+                  <div id="toc-1" class="lesson16-container05 section_lesson">
+                    <h3 class="lesson16-text007 heading_h3">
+                      Параметри і аргументи функції
+                    </h3>
+                    <p class="lesson16-text008 text-block margin-butttom">
+                      <span>
+                        У багатьох випадках нам потрібно буде передавати дані в
+                        функцію, що викликається, щоб вона могла з ними якось
+                        взаємодіяти. Наприклад, якщо ми хочемо написати функцію
+                        множення двох чисел, то нам потрібно якимось чином
+                        повідомити функцію про те, що це будуть за числа. В
+                        іншому випадку, як вона дізнається, що на що множити?
+                        Тут нам на допомогу приходять параметри і аргументи.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Параметр функції</span>
+                      <span>— це</span>
+                      <span class="lesson16-text014">змінна</span>
+                      <span>
+                        , яка використовується в функції і значення якої надає
+                        викликаюча функція. Параметри вказуються при оголошенні
+                        функції в круглих дужках. Якщо їх багато, то вони
+                        перераховуються через кому, наприклад:
+                      </span>
+                    </p>
+                    <code class="lesson16-text016 text-block code">
+                      <span>// Ця функція не має параметрів</span>
+                      <br />
+                      <span>void doPrint()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "In doPrint()" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Ця функція має один параметр цілочисельного типу - a
+                      </span>
+                      <br />
+                      <span>void printValue(int a)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; a &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Ця функція має два параметри цілочисельного типу - a
+                        і b
+                      </span>
+                      <br />
+                      <span>int add(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return a + b;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson16-text050 text-block margin-butttom">
+                      <span>
+                        Параметри кожної функції дійсні тільки всередині цієї
+                        функції. Тому, якщо і printValue(), і add() мають
+                        параметр
+                      </span>
+                      <span class="lesson16-text052">a</span>
+                      <span>
+                        , то це не означає, що відбудеться конфлікт імен. Ці
+                        параметри вважаються окремими і ніяк не взаємодіють один
+                        з одним.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Аргумент функції</span>
+                      <span>
+                        — це значення, яке передається з викликаючої функції в
+                        функцію, що викликається, і яке вказується в круглих
+                        дужках при виклику:
+                      </span>
+                    </p>
+                    <p class="lesson16-text058 text-block margin-butttom">
+                      Зверніть увагу, аргументи також перераховуються через
+                      кому. Кількість аргументів має збігатися з кількістю
+                      параметрів, інакше компілятор видасть повідомлення про
+                      помилку.
+                    </p>
+                    <code class="lesson16-text059 text-block code">
+                      <span>
+                        printValue(7); // 7 – це аргумент функції printValue()
+                      </span>
+                      <br />
+                      <span>
+                        add(4, 5); // 4 і 5 – це аргументи функції add()
+                      </span>
+                    </code>
+                  </div>
+                  <div id="toc-2" class="lesson16-container06 section_lesson">
+                    <h3 class="lesson16-text063 heading_h3">
+                      Як працюють параметри і аргументи функцій?
+                    </h3>
+                    <p class="lesson16-text064 text-block margin-butttom">
+                      <span>
+                        При виклику функції, всі її параметри створюються як
+                        локальні змінні, а значення кожного з аргументів
+                        копіюється у відповідний параметр (локальну змінну). Цей
+                        процес називається
+                      </span>
+                      <span class="textBold">“передачею по значенню”,</span>
+                      <span>наприклад:</span>
+                    </p>
+                    <code class="lesson16-text068 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Ця функція має два параметри типу int: a і b.
+                      </span>
+                      <br />
+                      <span>
+                        // Значення змінних a і b визначає викликаюча функція
+                      </span>
+                      <br />
+                      <span>void printValues(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; a &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>std::cout &lt;&lt; b &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        printValues(8, 9); // тут два аргументи: 8 і 9
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson16-text100 text-block margin-butttom">
+                      <span>При виклику функції printValues() аргументи</span>
+                      <span class="lesson16-text102">8</span>
+                      <span>і</span>
+                      <span class="lesson16-text104">9</span>
+                      <span>копіюються в параметри</span>
+                      <span class="lesson16-text106">a</span>
+                      <span>і</span>
+                      <span class="lesson16-text108">b</span>
+                      <span>. Параметру</span>
+                      <span class="lesson16-text110">a</span>
+                      <span>присвоюється значення</span>
+                      <span class="lesson16-text112">8</span>
+                      <span>, а параметру</span>
+                      <span class="lesson16-text114">b</span>
+                      <span>— значення</span>
+                      <span class="lesson16-text116">9</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Результат:</span>
+                      <br />
+                      <br />
+                      <span class="lesson16-text123">8</span>
+                      <br class="lesson16-text124" />
+                      <span class="lesson16-text125">9</span>
+                    </p>
+                  </div>
+                  <div id="toc-3" class="lesson16-container07 section_lesson">
+                    <h3 class="lesson16-text126 heading_h3">
+                      Як працюють параметри і значення, що повертаються?
+                    </h3>
+                    <p class="lesson16-text127 text-block margin-butttom">
+                      Використовуючи параметри і значення, що повертаються, ми
+                      можемо створювати функції, які можуть приймати і
+                      опрацьовувати дані, а потім повертати результат назад у
+                      викликаючу функцію. Наприклад, ось проста функція, яка
+                      приймає два цілих числа і повертає їх суму:
+                    </p>
+                    <code class="lesson16-text128 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Функція add() приймає два цілих числа в якості
+                        параметрів і повертає їх суму.
+                      </span>
+                      <br />
+                      <span>// Значення a і b визначає викликаюча функція</span>
+                      <br />
+                      <span>int add(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return a + b;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Функція main() не має параметрів</span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(7, 8) &lt;&lt; std::endl; //
+                        аргументи 7 і 8 передаються в функцію add()
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson16-text158 text-block margin-butttom">
+                      <span>При виклику функції add(), параметру</span>
+                      <span class="lesson16-text160">a</span>
+                      <span>присвоюється значення</span>
+                      <span class="lesson16-text162">7</span>
+                      <span>, а параметру</span>
+                      <span class="lesson16-text164">b</span>
+                      <span>— значення</span>
+                      <span class="lesson16-text166">8</span>
+                      <span>
+                        . Після цього функція add() обчислює їх суму і повертає
+                        результат назад у функцію main(), де він вже виводиться
+                        на екран.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Результат виконання програми:</span>
+                      <br />
+                      <span class="lesson16-text172">15</span>
+                    </p>
+                  </div>
+                  <div id="toc-4" class="lesson16-container08 section_lesson">
+                    <h3 class="lesson16-text173 heading_h3">
+                      Додаткові приклади
+                    </h3>
+                    <p class="lesson16-text174 text-block margin-butttom">
+                      Розглянемо ще декілька викликів функцій:
+                    </p>
+                    <code class="lesson16-text175 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int add(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return a + b;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int multiply(int c, int d)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return c * d;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(7, 8) &lt;&lt; std::endl; //
+                        всередині функції add(): a = 7, b = 8, значить a + b =
+                        15
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; multiply(4, 5) &lt;&lt; std::endl; //
+                        всередині функції multiply(): c = 4, d = 5, значить c *
+                        d = 20
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Ми можемо передавати цілі вирази в якості аргументів
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(2 + 3, 4 * 5) &lt;&lt; std::endl;
+                        // всередині функції add(): a = 5, b = 20, значить a + b
+                        = 25
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Ми можемо передавати змінні в якості аргументів
+                      </span>
+                      <br />
+                      <span>int x = 4;</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(x, x) &lt;&lt; std::endl; // буде
+                        4 + 4
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(1, multiply(2, 3)) &lt;&lt;
+                        std::endl; // буде 1 + (2 * 3)
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(1, add(2, 3)) &lt;&lt; std::endl;
+                        // буде 1 + (2 + 3)
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <code class="lesson16-text233 text-block code">
+                      <span>int x = 4;</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; add(x, x) &lt;&lt; std::endl; // буде
+                        4 + 4
+                      </span>
+                    </code>
+                    <p class="lesson16-text237 text-block margin-butttom">
+                      <span>Результат виконання програми:</span>
+                      <br />
+                      <br />
+                      <span class="lesson16-text241">15</span>
+                      <br class="lesson16-text242" />
+                      <span class="lesson16-text243">20</span>
+                      <br class="lesson16-text244" />
+                      <span class="lesson16-text245">25</span>
+                      <br class="lesson16-text246" />
+                      <span class="lesson16-text247">8</span>
+                      <br class="lesson16-text248" />
+                      <span class="lesson16-text249">7</span>
+                      <br class="lesson16-text250" />
+                      <span class="lesson16-text251">6</span>
+                      <br />
+                      <br />
+                      <span>З першими двома викликами все зрозуміло.</span>
+                      <br />
+                      <br />
+                      <span>В третьому виклиці параметрами є</span>
+                      <a href="lesson1-1.html" class="lesson16-navlink5">
+                        вирази
+                      </a>
+                      <span>
+                        , які спочатку потрібно обчислити. 2 + 3 = 5 і результат
+                        5 присвоюється змінній a. 4 * 5 = 20 і результат 20
+                        присвоюється змінній b. Результатом виконання функції
+                        add(5, 20) є значення 25.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Наступна пара досить легка:</span>
+                    </p>
+                    <p class="lesson16-text262 text-block margin-butttom">
+                      <span>
+                        Тут уже a = x і b = x. Оскільки x = 4, то add(x, x) =
+                        add(4, 4). Результат — 8.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Тепер розглянемо складніший виклик:</span>
+                    </p>
+                    <code class="lesson16-text267 text-block code">
+                      std::cout &lt;&lt; add(1, multiply(2, 3)) &lt;&lt;
+                      std::endl; // буде 1 + (2 * 3)
+                    </code>
+                    <p class="lesson16-text268 text-block margin-butttom">
+                      <span>
+                        Але тут все аналогічно вищенаведеному прикладу. Перед
+                        тим як процесор опрацює зовнішній виклик функції add(),
+                        він повинен опрацювати внутрішній виклик функції add(2,
+                        3). add(2, 3) = 5. Після цього процесор опрацьовує
+                        функцію add(1, 5), результатом якої є значення 6. Потім
+                        6 передається в std::cout на вивід.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Коротше кажучи:</span>
+                      <br />
+                      <br />
+                      <span>add(1, add(2, 3)) =&gt; add(1, 5) =&gt; 6</span>
+                    </p>
+                  </div>
+                  <div id="toc-5" class="lesson16-container09 section_lesson">
+                    <h3 class="lesson16-text276 heading_h3">Тест</h3>
+                    <p class="lesson16-text277 text-block margin-butttom">
+                      Завдання №1: Що не так з наступним фрагментом коду?
+                    </p>
+                    <code class="lesson16-text278 text-block code">
+                      <span>void multiply(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернути a * b;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; multiply(7, 8) &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson16-text298 text-block margin-butttom">
+                      Завдання №2: Які тут є дві проблеми?
+                    </p>
+                    <code class="lesson16-text299 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int multiply(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>int product = a * b;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; multiply(5) &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson16-text323 text-block margin-butttom">
+                      Завдання №3: Який результат виконання наступної програми?
+                    </p>
+                    <code class="lesson16-text324 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int add(int a, int b, int c)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернути a + b + c;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int multiply(int a, int b)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>повернути a * b;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; multiply(add(3, 4, 5), 5) &lt;&lt;
+                        std::endl;
+                      </span>
+                      <br />
+                      <span>повернути 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson16-text358 text-block margin-butttom">
+                      <span>
+                        Завдання №4: Напишіть функцію doubleNumber(), яка
+                        приймає ціле число в якості параметра, множить його на
+                        2, а потім повертає результат назад у викликаючу
+                        функцію.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Завдання №5: Напишіть повноцінну програму, яка приймає
+                        ціле число від користувача (використовуйте std::cin),
+                        подвоює його за допомогою функції doubleNumber() з
+                        попереднього завдання, а потім виводить результат на
+                        екран.
+                      </span>
+                    </p>
+                  </div>
+                  <div id="toc-6" class="lesson16-container10 section_lesson">
+                    <h3 class="lesson16-text363 heading_h3">Відповіді</h3>
+                    <p class="lesson16-text364 text-block margin-butttom">
+                      <span>
+                        Щоб переглянути відповідь, клікніть на неї мишкою.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №1</span>
+                      <br />
+                      <span>
+                        Функція multiply() має тип повернення void, що означає,
+                        що ця функція не повертає значення. Але так як вона все
+                        рівно намагається повернути значення за допомогою
+                        оператора return, то ми отримаємо помилку компіляції.
+                        Функція повинна мати тип повернення int.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №2</span>
+                      <br />
+                      <span>
+                        Проблема №1: Функція main() передає один аргумент в
+                        функцію multiply(), але функція multiply() має два
+                        параметри.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Проблема №2:</span>
+                      <br />
+                      <span>
+                        Функція multiply() обчислює результат і присвоює його
+                        локальній змінній, яку не повертає назад в функцію
+                        main(). А оскільки типом повернення функції multiply() є
+                        int, то ми отримаємо помилку (в деяких компіляторах) або
+                        неочікувані результати (в інших компіляторах).
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №3</span>
+                      <br />
+                      <span>
+                        Функція multiply() приймає наступні параметри: a =
+                        add(3, 4, 5) і b = 5. Спочатку процесор обчислює a =
+                        add(3, 4, 5), тобто 3 + 4 + 5 = 12. Після цього вже
+                        виконує операцію множення, результатом якої стає число
+                        60.
+                      </span>
+                      <br />
+                      <span>Відповідь: 60.</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №4</span>
+                    </p>
+                    <code class="lesson16-text391 text-block code">
+                      <span>int doubleNumber(int a)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return 2 * a;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <code class="lesson16-text399 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int doubleNumber(int a)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>return 2 * a;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>int a;</span>
+                      <br />
+                      <span>std::cout&lt;&lt;"Enter a number: ";</span>
+                      <br />
+                      <span>std::cin &gt;&gt; a;</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; doubleNumber(a) &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>/*</span>
+                      <br />
+                      <span>// Наступне рішення є альтернативним</span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>int a;</span>
+                      <br />
+                      <span>std::cout&lt;&lt;"Enter a number: ";</span>
+                      <br />
+                      <span>std::cin &gt;&gt; a;</span>
+                      <br />
+                      <span>a = doubleNumber(a);</span>
+                      <br />
+                      <span>std::cout &lt;&lt; a &lt;&lt; std::endl;</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span>*/</span>
+                    </code>
+                    <p
+                      class="lesson16-text455 textBold text-block margin-butttom"
+                    >
+                      Відповідь №5
+                    </p>
+                    <p class="lesson16-text456 text-block margin-butttom">
+                      У вас можуть бути і інші рішення завдань №4 і №5 — це ок.
+                      В програмуванні є багато випадків, коли одну задачу можна
+                      вирішити декількома способами.
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-5.html">
+                      <div class="lesson16-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson16-arrowdown1"
+                        />
+                        <span class="lesson16-text457">Урок №5</span>
+                      </div>
+                    </a>
+                    <a href="lesson1-7.html">
+                      <div class="lesson16-item1 item_nav_right">
+                        <span class="lesson16-text458">Урок №7</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson16-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson16-toc toc">
+                  <span class="lesson16-text459">Зміст</span>
+                  <div class="lesson16-toclist1">
+                    <ul class="lesson16-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson16-link06">
+                          Параметри і аргументи функції
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson16-link07">
+                          Як працюють параметри і аргументи функцій?
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson16-link08">
+                          Як працюють параметри і значення, що повертаються?
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson16-link09">
+                          Додаткові приклади
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson16-link10">Тест</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-9" class="lesson16-link11">Відповіді</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson16-footer footer_">
+          <div class="lesson16-container11 container_footer">
+            <div class="lesson16-container12">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson16-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson16-link13 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson16-link14 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson16-separator"></div>
+            <div class="lesson16-container13">
+              <span class="lesson16-text460">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson16-text461">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson16-link15"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

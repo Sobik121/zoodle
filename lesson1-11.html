@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-11 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-11 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-11.css" rel="stylesheet" />
+
+      <div class="lesson111-container">
+        <header data-role="Header" class="lesson111-header-lesson">
+          <a href="index.html" class="lesson111-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson111-image img_logo"
+            />
+          </a>
+          <div class="lesson111-nav">
+            <nav class="lesson111-nav1">
+              <a href="index.html" class="lesson111-navlink1">Головна</a>
+              <a href="index.html" class="lesson111-navlink2">Уроки</a>
+              <a href="index.html" class="lesson111-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson111-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson111-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson111-mobile-menu">
+            <div class="lesson111-nav2">
+              <div class="lesson111-container1">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson111-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson111-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson111-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg
+                viewBox="0 0 950.8571428571428 1024"
+                class="lesson111-icon04"
+              >
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson111-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson111-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson111-hero">
+          <div class="lesson111-container2">
+            <h1 class="lesson111-text">Розділ №1. Урок №11</h1>
+            <span class="lesson111-text001">Базове форматування коду</span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson111-lessons">
+          <section class="lesson111-container3 container_lessons">
+            <div class="lesson111-section0">
+              <div class="lesson111-container4">
+                <div class="lesson111-tocmobile mobile toc">
+                  <span class="lesson111-text002">Зміст</span>
+                  <div class="lesson111-toclist">
+                    <ul class="lesson111-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson111-link">
+                          Основні рекомендації
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson111-left-content">
+                  <p class="item_sub-heading margin-butttom lesson111-text003">
+                    Пробіли відносяться до символів, які використовуються у
+                    форматуванні коду, також сюди входять символи табуляції та
+                    (іноді) розрив рядка. Компілятор, як правило, ігнорує
+                    пробіли, але все ж є винятки. У наступному фрагменті всі
+                    рядки коду виконують одне і те ж:
+                  </p>
+                  <code class="lesson111-text004 text-block code">
+                    <span>std::cout &lt;&lt; "Hello, world!";</span>
+                    <br />
+                    <span></span>
+                    <br />
+                    <span>
+                      std::cout&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp;&lt;&lt;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                      &nbsp; "Hello, world!";
+                    </span>
+                    <br />
+                    <span></span>
+                    <br />
+                    <span>std::cout &lt;&lt; "Hello, world!";</span>
+                    <br />
+                    <span></span>
+                    <br />
+                    <span>std::cout</span>
+                    <br />
+                    <span>&nbsp; &nbsp; &nbsp; &lt;&lt; "Hello, world!";</span>
+                  </code>
+                  <p class="item_sub-heading margin-butttom lesson111-text020">
+                    Навіть останній стейтмент з розривом рядка успішно
+                    скомпілюється. Аналогічно працює наступне:
+                  </p>
+                  <code class="lesson111-text021 text-block code">
+                    <span>int add(int x, int y) { return x + y; }</span>
+                    <br />
+                    <span></span>
+                    <br />
+                    <span>int add(int x, int y) {</span>
+                    <br />
+                    <span>return x + y; }</span>
+                    <br />
+                    <span></span>
+                    <br />
+                    <span>int add(int x, int y)</span>
+                    <br />
+                    <span>{ return x + y; }</span>
+                    <br />
+                    <span></span>
+                    <br />
+                    <span>int add(int x, int y)</span>
+                    <br />
+                    <span>{</span>
+                    <br />
+                    <span>return x + y;</span>
+                    <br />
+                    <span>}</span>
+                  </code>
+                  <p class="item_sub-heading margin-butttom lesson111-text045">
+                    <span>
+                      Винятком, де компілятор враховує пробіли, є цитований
+                      текст, наприклад, "Hello, world!".
+                    </span>
+                    <br />
+                    <br />
+                    <span class="lesson111-text049">"Hello, world!"</span>
+                    <br />
+                    <br />
+                    <span>відрізняється від</span>
+                    <br />
+                    <br />
+                    <span class="lesson111-text055">
+                      "Hello,&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;world!"
+                    </span>
+                    <br />
+                    <br />
+                    <span class="textBold">Розрив рядка</span>
+                    <span>не допускається в цитованому тексті:</span>
+                  </p>
+                  <code class="lesson111-text060 text-block code">
+                    <span>std::cout &lt;&lt; "Hello,</span>
+                    <br />
+                    <span>world!" &lt;&lt; std::endl; // не допускається!</span>
+                  </code>
+                  <p class="item_sub-heading margin-butttom lesson111-text064">
+                    <span>
+                      Ще одним винятком, де компілятор звертає увагу на пробіли,
+                      є
+                    </span>
+                    <a href="lesson1-2.html" class="lesson111-navlink4">
+                      однорядкові коментарі
+                    </a>
+                    <span>
+                      : вони займають лише один рядок. Наступне спричинить
+                      помилку компіляції:
+                    </span>
+                  </p>
+                  <code class="lesson111-text067 text-block code">
+                    <span>
+                      std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl; //
+                      це однорядковий коментар
+                    </span>
+                    <br />
+                    <span>А це вже не коментар</span>
+                  </code>
+                  <div id="toc-1" class="lesson111-container5 section_lesson">
+                    <h3 class="lesson111-text071 heading_h3">
+                      Основні рекомендації
+                    </h3>
+                    <p class="lesson111-text072 text-block margin-butttom">
+                      <span class="lesson111-text073">
+                        На відміну від інших мов програмування, мова C++ не має
+                        якихось обмежень у форматуванні коду з боку
+                        програмістів. Основне правило полягає лише в тому, щоб
+                        використовувати тільки ті способи, які максимально
+                        покращують читабельність і логіку коду.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Ось 6 основних рекомендацій:</span>
+                      <br />
+                      <br />
+                      <span class="textBold">
+                        Рекомендація №1: Замість символа табуляції (клавіша Tab)
+                        використовуйте 4 пробіли.
+                      </span>
+                      <span class="lesson111-text080">
+                        У деяких IDE за замовчуванням використовуються потрійні
+                        пробіли в якості одного Tab — це також нормально
+                        (кількість пробілів можна легко налаштувати у
+                        відповідних пунктах меню вашої IDE).
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson111-text083">
+                        Причиною використання пробілів замість символів
+                        табуляції є те, що, якщо ви відкриєте свій код в іншому
+                        редакторі, то він збереже правильні відступи, на відміну
+                        від випадку з використанням клавіші Tab.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">
+                        Рекомендація №2: Відкриття та закриття фігурних дужок
+                        функції повинно знаходитися на одному рівні на окремих
+                        рядках:
+                      </span>
+                      <br />
+                    </p>
+                    <code class="lesson111-text088 text-block code">
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson111-text094 text-block margin-butttom">
+                      Хоча є ще наступний варіант (ви також можете його
+                      використовувати):
+                    </p>
+                    <code class="lesson111-text095 text-block code">
+                      <span>int main() {</span>
+                      <br />
+                      <span>&nbsp; &nbsp; &nbsp;//...</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson111-text101 text-block margin-butttom">
+                      <span class="lesson111-text102">
+                        Перший варіант хороший тим, що в разі виникнення помилки
+                        невідповідності дужок, знайти ті самі проблемні дужки
+                        буде простіше.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">
+                        Рекомендація №3: Кожен стейтмент функції повинен бути з
+                        відповідним відступом
+                      </span>
+                      <span class="lesson111-text106">
+                        (клавіша Tab або 4 пробіли):
+                      </span>
+                    </p>
+                    <p class="lesson111-text107 text-block margin-butttom">
+                      <span class="textBold">
+                        Рекомендація №4: Рядки не повинні бути занадто довгими.
+                      </span>
+                      <span>
+                        72, 78 чи 80 символів — це оптимальний максимум рядка.
+                        Якщо він буде довший, то його слід розбити на декілька
+                        окремих підрядків:
+                      </span>
+                    </p>
+                    <code class="lesson111-text110 text-block code">
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Hello world!" &lt;&lt; std::endl; //
+                        один Tab (4 пробіли)
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Nice to meet you." &lt;&lt;
+                        std::endl; // один Tab (4 пробіли)
+                      </span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <code class="lesson111-text120 text-block code">
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "This is a really, really, really,
+                        really, really, really, really, " &lt;&lt;
+                      </span>
+                      <br />
+                      <span>
+                        "really long line" &lt;&lt; std::endl; // один
+                        додатковий відступ для рядка-продовження
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "This is another really, really,
+                        really, really, really, really, really, " &lt;&lt;
+                      </span>
+                      <br />
+                      <span>
+                        "really long line" &lt;&lt; std::endl; // відступ +
+                        вирівнювання з урахуванням головного рядка
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "This one is short" &lt;&lt;
+                        std::endl;
+                      </span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <code class="lesson111-text140 text-block code">
+                      <span>
+                        std::cout &lt;&lt; "This is a really, really, really,
+                        really, really, really, really, " &lt;&lt;
+                      </span>
+                      <br />
+                      <span>"really long line" &lt;&lt; std::endl;</span>
+                    </code>
+                    <p class="lesson111-text144 text-block margin-butttom">
+                      <span class="textBold">
+                        Рекомендація №5: Якщо довгий рядок розбитий на частини
+                        за допомогою певного оператора (наприклад,
+                      </span>
+                      <span class="lesson111-text146">&lt;&lt;</span>
+                      <span class="textBold">або</span>
+                      <span class="lesson111-text148">+</span>
+                      <span class="textBold">
+                        ), то цей оператор повинен знаходитися в кінці цього ж
+                        рядка, а не на початку наступного.
+                      </span>
+                      <span>Так читабельніше.</span>
+                      <br class="textBold" />
+                      <br class="textBold" />
+                      <span>Правильно:</span>
+                    </p>
+                    <p class="lesson111-text154 text-block margin-butttom">
+                      <span>Неправильно:</span>
+                      <br class="textBold" />
+                    </p>
+                    <p class="lesson111-text157 text-block margin-butttom">
+                      <span class="textBold">
+                        Рекомендація №6: Використовуйте пробіли для покращення
+                        читабельності вашого коду.
+                      </span>
+                      <br class="textBold" />
+                      <br />
+                      <span>Менш читабельно:</span>
+                      <br class="textBold" />
+                    </p>
+                    <code class="lesson111-text163 text-block code">
+                      <span>
+                        std::cout &lt;&lt; "This is a really, really, really,
+                        really, really, really, really, "
+                      </span>
+                      <br />
+                      <span>
+                        &lt;&lt; "really long line" &lt;&lt; std::endl;
+                      </span>
+                    </code>
+                    <code class="lesson111-text167 text-block code">
+                      <span>nCost = 57;</span>
+                      <br />
+                      <span>nPricePerItem = 24;</span>
+                      <br />
+                      <span>nValue = 5;</span>
+                      <br />
+                      <span>nNumberOfItems = 17;</span>
+                    </code>
+                    <code class="lesson111-text175 text-block code">
+                      <span>nCost&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;= 57;</span>
+                      <br />
+                      <span>nPricePerItem = 24;</span>
+                      <br />
+                      <span>nValue&nbsp; &nbsp; &nbsp; &nbsp; = 5;</span>
+                      <br />
+                      <span>nNumberOfItems = 17;</span>
+                    </code>
+                    <p class="lesson111-text183 text-block margin-butttom">
+                      Більш читабельно:
+                    </p>
+                    <p class="lesson111-text184 text-block margin-butttom">
+                      Менш читабельно:
+                    </p>
+                    <p class="lesson111-text185 text-block margin-butttom">
+                      Більше читабельно:
+                    </p>
+                    <code class="lesson111-text186 text-block code">
+                      <span>
+                        std::cout &lt;&lt; "Hello world!" &lt;&lt; std::endl; //
+                        cout і endl знаходяться в бібліотеці iostream
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "It is very nice to meet you!"
+                        &lt;&lt; std::endl; // ці коментарі погіршують
+                        читабельність коду
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Yeah!" &lt;&lt; std::endl; //
+                        особливо, коли рядки різної довжини
+                      </span>
+                    </code>
+                    <code class="lesson111-text192 text-block code">
+                      <span>
+                        std::cout &lt;&lt; "Hello world!" &lt;&lt;
+                        std::endl;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp;// cout і endl знаходяться в бібліотеці
+                        iostream
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "It is very nice to meet you!"
+                        &lt;&lt; std::endl; // ці коментарі більш читабельні
+                      </span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Yeah!" &lt;&lt; std::endl;&nbsp;
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                        &nbsp; &nbsp; &nbsp; // чи не так?
+                      </span>
+                    </code>
+                    <p class="lesson111-text198 text-block margin-butttom">
+                      Мова C++ дозволяє вибрати вам той стиль форматування
+                      вашого коду, в якому вам комфортніше працювати.
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-10.html">
+                      <div class="lesson111-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson111-arrowdown1"
+                        />
+                        <span class="lesson111-text199">Урок №10</span>
+                      </div>
+                    </a>
+                    <a href="lesson1-12.html">
+                      <div class="lesson111-item1 item_nav_right">
+                        <span class="lesson111-text200">Урок №12</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson111-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson111-toc toc">
+                  <span class="lesson111-text201">Зміст</span>
+                  <div class="lesson111-toclist1">
+                    <ul class="lesson111-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson111-link1">
+                          Основні рекомендації
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson111-footer footer_">
+          <div class="lesson111-container6 container_footer">
+            <div class="lesson111-container7">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson111-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson111-link3 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson111-link4 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson111-separator"></div>
+            <div class="lesson111-container8">
+              <span class="lesson111-text202">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson111-text203">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson111-link5"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

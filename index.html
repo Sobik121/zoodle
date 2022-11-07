@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Learn C++ Website</title>
+    <meta property="og:title" content="Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./home.css" rel="stylesheet" />
+
+      <main id="home" class="home-container">
+        <header data-role="Header" class="home-header">
+          <a href="index.html" class="home-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="img_logo"
+            />
+          </a>
+          <div class="home-nav">
+            <nav class="home-nav1">
+              <a href="index.html" class="home-navlink01">Головна</a>
+              <a href="#section_lessons" class="home-link">Уроки</a>
+              <a href="#section_about_project" class="home-link1">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="home-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="home-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="home-mobile-menu">
+            <div class="home-nav2">
+              <div class="home-container1">
+                <img
+                  alt="image"
+                  src="public/playground_assets/logo_dark-1500h.png"
+                  class="home-image1"
+                />
+                <div data-role="CloseMobileMenu" class="home-close-mobile-menu">
+                  <svg viewBox="0 0 1024 1024" class="home-icon2">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav class="nav_mobile home-nav3">
+                <a href="index.html" class="home-navlink02">Головна</a>
+                <a href="#section_lessons" class="home-link2">Уроки</a>
+                <a href="#section_about_project" class="home-link3">
+                  Про проект
+                </a>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <div class="home-hero">
+          <div class="home-container2">
+            <h1 class="home-text">
+              <span class="home-text001">Основи програмування на</span>
+              <span class="home-text002">С++</span>
+              <span></span>
+            </h1>
+            <span class="home-text004 text-block_hero">
+              Курс С++ розрахований на слухачів, які починають вивчати мову С++
+              з нуля або мають знання на початковому рівні і бажають закріпити
+              їх.
+            </span>
+            <div class="home-btn-group">
+              <a href="#section_lessons" class="home-link4 button">
+                <span class="home-text005">Розпочати</span>
+                <img
+                  alt="arrowdown431"
+                  src="public/playground_assets/arrowdown431-gz3.svg"
+                  class="home-arrowdown"
+                />
+              </a>
+            </div>
+          </div>
+          <img
+            alt="image"
+            src="public/playground_assets/image_hero-1500h.png"
+            class="home-image2"
+          />
+        </div>
+        <section id="section_lessons" class="home-lessons">
+          <section class="home-container3 container_lessons">
+            <div class="home-heading">
+              <span class="home-text006">Уроки програмування на С++</span>
+              <span class="home-text007">
+                <span>
+                  Незалежно від Вашого попереднього досвіду, ці уроки допоможуть
+                  Вам почати створювати, компілювати і відлагоджувати програми
+                  на мові С++ в різних середовищах розробки.
+                </span>
+              </span>
+            </div>
+            <img
+              alt="Line1833"
+              src="public/playground_assets/line1833-pwz-200h.png"
+              class="home-line"
+            />
+            <div class="home-section0">
+              <div class="home-heading-section">
+                <h2 class="heading_h2">Розділ №0</h2>
+                <span class="sub_heading">
+                  <span>Введення в програмування</span>
+                </span>
+              </div>
+              <div class="home-wrapper wrapper_lesson">
+                <div class="home-left-content wrapper_content">
+                  <a href="lesson0-1.html" class="home-navlink03">
+                    <div class="home-item Item">
+                      <div class="home-textblock">
+                        <span class="item_heading home-text012">Урок №1</span>
+                        <span class="item_sub-heading">
+                          <span>Введення в програмування</span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown1"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-2.html" class="home-navlink04">
+                    <div class="home-item01 Item">
+                      <div class="home-textblock01">
+                        <span class="home-text015 item_heading">Урок №2</span>
+                        <span class="item_sub-heading home-text016">
+                          <span>Введення в мови програмування С і С++</span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown101"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-3.html" class="home-navlink05">
+                    <div class="home-item02 Item">
+                      <div class="home-textblock02">
+                        <span class="home-text018 item_heading">
+                          <span>Урок №3</span>
+                        </span>
+                        <span class="item_sub-heading home-text020">
+                          <span>
+                            Введення в розробку програмного забезпечення
+                          </span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown102"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-4.html" class="home-navlink06">
+                    <div class="home-item03 Item">
+                      <div class="home-textblock03">
+                        <span class="home-text022 item_heading">
+                          <span>Урок №4</span>
+                        </span>
+                        <span class="item_sub-heading home-text024">
+                          <span>
+                            Встановлення IDE (Інтегрованого Середовища Розробки)
+                          </span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown103"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-5.html" class="home-navlink07">
+                    <div class="home-item04 Item">
+                      <div class="home-textblock04">
+                        <span class="home-text026 item_heading">
+                          <span>Урок №5</span>
+                        </span>
+                        <span class="item_sub-heading home-text028">
+                          Компіляція вашої першої програми
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown104"
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="home-right-content wrapper_content">
+                  <a href="lesson0-6.html" class="home-navlink08">
+                    <div class="home-item05 Item">
+                      <div class="home-textblock05">
+                        <span class="home-text029"><span>Урок №6</span></span>
+                        <span class="item_sub-heading home-text031">
+                          Вирішення найбільш поширених проблем початківців в ...
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown105"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-7.html" class="home-navlink09">
+                    <div class="home-item06 Item">
+                      <div class="home-textblock06">
+                        <span class="home-text032"><span>Урок №7</span></span>
+                        <span class="item_sub-heading">
+                          <span>
+                            Налаштування компілятора: Режими конфігурації
+                          </span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown106"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-8.html" class="home-navlink10">
+                    <div class="home-item07 Item">
+                      <div class="home-textblock07">
+                        <span class="home-text036"><span>Урок №8</span></span>
+                        <span class="item_sub-heading home-text038">
+                          <span>
+                            Налаштування компілятора: Розширення компілятора
+                          </span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown107"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-9.html" class="home-navlink11">
+                    <div class="home-item08 Item">
+                      <div class="home-textblock08">
+                        <span class="home-text040"><span>Урок №9</span></span>
+                        <span class="item_sub-heading home-text042">
+                          <span>
+                            Налаштування компілятора: Попередження та помилки
+                          </span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown108"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson0-10.html" class="home-navlink12">
+                    <div class="home-item09 Item">
+                      <div class="home-textblock09">
+                        <span class="home-text044"><span>Урок №10</span></span>
+                        <span class="item_sub-heading home-text046">
+                          <span>
+                            Налаштування компілятора: Вибір стандарту мови С++
+                          </span>
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown109"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <img
+              alt="Line1812"
+              src="public/playground_assets/line1812-sksb-200h.png"
+              class="home-line1"
+            />
+            <div class="home-section1">
+              <div class="home-heading-section1">
+                <h2 class="heading_h2">Розділ №1</h2>
+                <span class="home-text049"><span>Основи С++</span></span>
+              </div>
+              <div class="home-wrapper1 wrapper_lesson">
+                <div class="home-left-content1 wrapper_content">
+                  <a href="lesson1-1.html" class="home-navlink13">
+                    <div class="home-item10 Item">
+                      <div class="home-textblock10">
+                        <span class="home-text051"><span>Урок №1</span></span>
+                        <span class="item_sub-heading">Структура програм</span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown110"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-2.html" class="home-navlink14">
+                    <div class="home-item11 Item">
+                      <div class="home-textblock11">
+                        <span class="home-text054"><span>Урок №2</span></span>
+                        <span class="item_sub-heading">Коментарі</span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown111"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-3.html" class="home-navlink15">
+                    <div class="home-item12 Item">
+                      <div class="home-textblock12">
+                        <span class="home-text057"><span>Урок №3</span></span>
+                        <span class="item_sub-heading">
+                          Змінні, Ініціалізація і Присвоювання
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown112"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-4.html" class="home-navlink16">
+                    <div class="home-item13 Item">
+                      <div class="home-textblock13">
+                        <span class="home-text060"><span>Урок №4</span></span>
+                        <span class="item_sub-heading">
+                          Об’єкти cout, cin і endl
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown113"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-5.html" class="home-navlink17">
+                    <div class="home-item14 Item">
+                      <div class="home-textblock14">
+                        <span class="home-text063"><span>Урок №5</span></span>
+                        <span class="item_sub-heading">Функції</span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown114"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-6.html" class="home-navlink18">
+                    <div class="home-item15 Item">
+                      <div class="home-textblock15">
+                        <span class="home-text066"><span>Урок №6</span></span>
+                        <span class="item_sub-heading">
+                          Параметри і аргументи функцій
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown115"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-7.html" class="home-navlink19">
+                    <div class="home-item16 Item">
+                      <div class="home-textblock16">
+                        <span class="home-text069"><span>Урок №7</span></span>
+                        <span class="item_sub-heading">
+                          Чому функції корисні і як їх ефективно використовувати
+                          ...
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown116"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-8.html" class="home-navlink20">
+                    <div class="home-item17 Item">
+                      <div class="home-textblock17">
+                        <span class="home-text072"><span>Урок №8</span></span>
+                        <span class="item_sub-heading">
+                          Локальна область видимості
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown117"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-9.html" class="home-navlink21">
+                    <div class="home-item18 Item">
+                      <div class="home-textblock18">
+                        <span class="home-text075"><span>Урок №9</span></span>
+                        <span class="item_sub-heading">
+                          Ключові слова і ідентифікатори
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown118"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-10.html" class="home-navlink22">
+                    <div class="home-item19 Item">
+                      <div class="home-textblock19">
+                        <span class="home-text078"><span>Урок №10</span></span>
+                        <span class="item_sub-heading">Оператори</span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown119"
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div class="home-right-content1 wrapper_content">
+                  <a href="lesson1-11.html" class="home-navlink23">
+                    <div class="home-item20 Item">
+                      <div class="home-textblock20">
+                        <span class="home-text081"><span>Урок №11</span></span>
+                        <span class="item_sub-heading">
+                          Базове форматування коду
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown120"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-12.html" class="home-navlink24">
+                    <div class="home-item21 Item">
+                      <div class="home-textblock21">
+                        <span class="home-text084"><span>Урок №12</span></span>
+                        <span class="item_sub-heading">
+                          Прототип функції і Попереднє оголошення
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown121"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-13.html" class="home-navlink25">
+                    <div class="home-item22 Item">
+                      <div class="home-textblock22">
+                        <span class="home-text087"><span>Урок №13</span></span>
+                        <span class="item_sub-heading">
+                          Багатофайлові програми
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown122"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-14.html" class="home-navlink26">
+                    <div class="home-item23 Item">
+                      <div class="home-textblock23">
+                        <span class="home-text090"><span>Урок №14</span></span>
+                        <span class="item_sub-heading">Заголовкові файли</span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown123"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-15.html" class="home-navlink27">
+                    <div class="home-item24 Item">
+                      <div class="home-textblock24">
+                        <span class="home-text093"><span>Урок №15</span></span>
+                        <span class="item_sub-heading">
+                          Директиви препроцесора
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown124"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-16.html" class="home-navlink28">
+                    <div class="home-item25 Item">
+                      <div class="home-textblock25">
+                        <span class="home-text096"><span>Урок №16</span></span>
+                        <span class="item_sub-heading">
+                          Header guards і директива #pragma once
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown125"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-17.html" class="home-navlink29">
+                    <div class="home-item26 Item">
+                      <div class="home-textblock26">
+                        <span class="home-text099"><span>Урок №17</span></span>
+                        <span class="item_sub-heading">
+                          Конфлікт імен і простір імен std
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown126"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-18.html" class="home-navlink30">
+                    <div class="home-item27 Item">
+                      <div class="home-textblock27">
+                        <span class="home-text102"><span>Урок №18</span></span>
+                        <span class="item_sub-heading">
+                          Розробка ваших перших програм
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown127"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-19.html" class="home-navlink31">
+                    <div class="home-item28 Item">
+                      <div class="home-textblock28">
+                        <span class="home-text105"><span>Урок №19</span></span>
+                        <span class="item_sub-heading">
+                          Відлагодження програм: степпінг і точки зупину
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown128"
+                      />
+                    </div>
+                  </a>
+                  <a href="lesson1-20.html" class="home-navlink32">
+                    <div class="home-item29 Item">
+                      <div class="home-textblock29">
+                        <span class="home-text108"><span>Урок №20</span></span>
+                        <span class="item_sub-heading">
+                          Відлагодження програм: стек викликів і відстеження ...
+                        </span>
+                      </div>
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="home-arrowdown129"
+                      />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="home-container4">
+              <a href="lesson-final-test.html" class="home-navlink33">
+                <div class="item_test">
+                  <div class="home-wrapper2">
+                    <img
+                      alt="icon_test"
+                      src="public/playground_assets/icon_test.svg"
+                      class="home-icontest"
+                    />
+                    <div class="home-textblock30">
+                      <span class="home-text111">Підсумковий тест</span>
+                      <span class="home-text112">Завдання</span>
+                    </div>
+                  </div>
+                  <img
+                    alt="arrowdown12053"
+                    src="public/playground_assets/arrow_down.svg"
+                    class="home-arrowdown130"
+                  />
+                </div>
+              </a>
+            </div>
+          </section>
+        </section>
+        <section
+          id="section_about_project"
+          class="home-about-project section_about-project"
+        >
+          <img
+            alt="image"
+            src="public/playground_assets/img-1500h.png"
+            class="img_about-project"
+          />
+          <div class="home-container5">
+            <h1 class="home-text113">Про проект</h1>
+            <span class="home-text114">
+              C++ Assistant - це ресурс по програмуванню для початківців мовою
+              С++. Курс розрахований на слухачів, які починають вивчати цю мову
+              програмування з нуля або мають знання на початковому рівні і
+              бажають закріпити їх.
+            </span>
+          </div>
+        </section>
+        <div class="home-footer footer_">
+          <div class="home-container6 container_footer">
+            <div class="home-container7">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="home-image4"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a href="#section_lessons" class="home-link6 link_footer">
+                  Уроки
+                </a>
+                <a href="#section_about_project" class="home-link7 link_footer">
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="home-separator"></div>
+            <div class="home-container8">
+              <span class="home-text115">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="home-text116">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="home-link8"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-19 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-19 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-19.css" rel="stylesheet" />
+
+      <div class="lesson119-container">
+        <header data-role="Header" class="lesson119-header-lesson">
+          <a href="index.html" class="lesson119-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson119-image img_logo"
+            />
+          </a>
+          <div class="lesson119-nav">
+            <nav class="lesson119-nav1">
+              <a href="index.html" class="lesson119-navlink1">Головна</a>
+              <a href="index.html" class="lesson119-navlink2">Уроки</a>
+              <a href="index.html" class="lesson119-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson119-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson119-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson119-mobile-menu">
+            <div class="lesson119-nav2">
+              <div class="lesson119-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson119-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson119-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson119-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg
+                viewBox="0 0 950.8571428571428 1024"
+                class="lesson119-icon04"
+              >
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson119-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson119-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson119-hero">
+          <div class="lesson119-container02">
+            <h1 class="lesson119-text">Розділ №1. Урок №19</h1>
+            <span class="lesson119-text001">
+              Відлагодження програм: степпінг і точки зупину
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson119-lessons">
+          <section class="lesson119-container03 container_lessons">
+            <div class="lesson119-section0">
+              <div class="lesson119-container04">
+                <div class="lesson119-tocmobile mobile toc">
+                  <span class="lesson119-text002">Зміст</span>
+                  <div class="lesson119-toclist">
+                    <ul class="lesson119-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson119-link">Типи помилок</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson119-link01">
+                          Відлагоджувач
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson119-link02">
+                          Степпінг. Команда “Шаг с заходом”
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson119-link03">
+                          <span>Степпінг.&nbsp;</span>
+                          <span>Команда “Шаг с обходом”</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-5" class="lesson119-link04">
+                          <span>Степпінг.&nbsp;</span>
+                          <span>Команда “Шаг с выходом”</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-6" class="lesson119-link05">
+                          Команда “Выполнить до текущей позиции”
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-7" class="lesson119-link06">
+                          Команда “Продолжить”
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson119-link07">
+                          Точки зупину
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson119-left-content">
+                  <p class="item_sub-heading margin-butttom lesson119-text007">
+                    <span>
+                      Як не дивно, програмування може бути складним і помилок
+                      може бути дуже багато. Помилки, як правило, потрапляють в
+                      одну з двох категорій: синтаксичні або семантичні
+                      (смислові).
+                    </span>
+                    <br />
+                  </p>
+                  <div class="lesson119-container05">
+                    <div
+                      id="toc-1"
+                      class="lesson119-container06 section_lesson"
+                    >
+                      <h3 class="lesson119-text010 heading_h3">
+                        <span>Типи помилок</span>
+                        <br />
+                      </h3>
+                      <p class="lesson119-text013 text-block margin-butttom">
+                        <span class="textBold">Синтаксична помилка</span>
+                        <span>
+                          виникає, коли ви пишете код, який не відповідає
+                          правилам граматики мови C++. Наприклад, пропущені
+                          крапки з комою, неоголошені змінні, непарні круглі або
+                          фігурні дужки і т.д. В наступній програмі є декілька
+                          синтаксичних помилок:
+                        </span>
+                      </p>
+                      <code class="lesson119-text016 text-block code">
+                        <span>
+                          #include &lt;iostream&gt;; // директиви препроцесора
+                          не закінчуються крапкою з комою
+                        </span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>int main()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>
+                          std:cout &lt; "Hi there; &lt;&lt; x; // недійсний
+                          оператор (:), незакінчене речення (пропущено ") і
+                          неоголошена змінна
+                        </span>
+                        <br />
+                        <span>
+                          return 0 // пропущена крапка з комою в кінці
+                          стейтменту
+                        </span>
+                        <br />
+                        <span>}</span>
+                      </code>
+                      <p class="lesson119-text030 text-block margin-butttom">
+                        <span>
+                          На щастя, компілятор ловить подібні помилки і
+                          повідомляє про них у вигляді попереджень або помилок.
+                        </span>
+                        <br class="textBold" />
+                        <br class="textBold" />
+                        <span>
+                          Семантична помилка виникає, коли код є синтаксично
+                          правильним, але робить не те, що задумав програміст.
+                        </span>
+                        <br class="textBold" />
+                        <br class="textBold" />
+                        <span>
+                          Іноді це може призвести до збою в програмі, наприклад,
+                          якщо ділити на нуль:
+                        </span>
+                      </p>
+                      <code class="lesson119-text038 text-block code">
+                        <span>#include &lt;iostream&gt;</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>int main()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>int a = 10;</span>
+                        <br />
+                        <span>int b = 0;</span>
+                        <br />
+                        <span>
+                          std::cout &lt;&lt; a &lt;&lt; " / " &lt;&lt; b
+                          &lt;&lt; " = " &lt;&lt; a / b; // ділити на 0
+                          заборонено!
+                        </span>
+                        <br />
+                        <span>return 0;</span>
+                        <br />
+                        <span>}</span>
+                      </code>
+                      <code class="lesson119-text056 text-block code">
+                        <span>#include &lt;iostream&gt;</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>int main()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>
+                          std::cout &lt;&lt; "Hello, word!"; // орфографічна
+                          помилка
+                        </span>
+                        <br />
+                        <span>return 0;</span>
+                        <br />
+                        <span>}</span>
+                      </code>
+                      <p class="lesson119-text070 text-block margin-butttom">
+                        <span>
+                          Іноді це може призвести до неправильних результатів:
+                        </span>
+                        <br />
+                      </p>
+                      <p class="lesson119-text073 text-block margin-butttom">
+                        <span>Або взагалі робити не те, що потрібно:</span>
+                        <br />
+                      </p>
+                      <p class="lesson119-text076 text-block margin-butttom">
+                        <span>
+                          На жаль, компілятор не ловить подібні помилки, тому що
+                          він перевіряє тільки те, що ви написали, а не те, що
+                          ви хотіли цим зробити.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          У вищенаведених прикладах помилки досить легко
+                          виявити. Але в більшості програм (&gt;40 рядків коду),
+                          семантичні помилки побачити за допомогою простого
+                          перегляду коду не так вже й легко.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          І тут нам на допомогу приходить відлагоджувач.
+                        </span>
+                        <br />
+                      </p>
+                    </div>
+                    <div
+                      id="toc-2"
+                      class="lesson119-container07 section_lesson"
+                    >
+                      <h3 class="lesson119-text085 heading_h3">
+                        <span>Відлагоджувач</span>
+                        <br />
+                      </h3>
+                      <p class="lesson119-text088 text-block margin-butttom">
+                        <span class="textBold">Відлагоджувач</span>
+                        <span>
+                          (або “дебагер”, від англ. “debugger”) — це комп’ютерна
+                          програма, яка дозволяє програмісту контролювати
+                          виконання коду. Наприклад, програміст може
+                          використовувати відлагоджувач для виконання програми
+                          покроково, послідовно вивчаючи значення змінних в
+                          програмі.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Старі дебагери, такі як GDB, мали інтерфейс командного
+                          рядка, де програмісту доводилося вводити спеціальні
+                          команди для початку роботи. Сучасні відлагоджувачі
+                          мають графічний інтерфейс, що значно спрощує роботу з
+                          ними. Зараз майже всі сучасні IDE мають вбудовані
+                          відлагоджувачі. Тобто, ви можете використовувати одне
+                          середовище розробки як для написання коду, так і для
+                          його відлагодження (замість постійного переключання
+                          між різними програмами).
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Базовий функціонал у всіх дебагерів однаковий.
+                          Відрізняються вони, як правило, лише доступом до цього
+                          функціоналу, гарячими клавішами і додатковими
+                          можливостями.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson119-container08">
+                    <div
+                      id="toc-3"
+                      class="lesson119-container09 section_lesson"
+                    >
+                      <h3 class="lesson119-text097 heading_h3">
+                        Степпінг.&nbsp;Команда “Шаг с заходом”
+                      </h3>
+                      <p class="lesson119-text098 text-block margin-butttom">
+                        Cтеппінг (англ. “stepping”) — це можливість
+                        відлагоджувача виконувати код покроково (рядок за
+                        рядком).
+                      </p>
+                      <p class="lesson119-text099 text-block margin-butttom">
+                        <span class="textBold">Команда “Шаг с заходом”</span>
+                        <span class="lesson119-text101">
+                          (англ. “step into”) виконує наступний рядок коду. Якщо
+                          цим рядком є виклик функції, то "Шаг с заходом"
+                          відкриває функцію і виконання переноситься на початок
+                          цієї функції.
+                        </span>
+                        <br />
+                        <br />
+                        <span class="lesson119-text104">
+                          Давайте розглянемо дуже просту програму:
+                        </span>
+                      </p>
+                      <code class="lesson119-text105 text-block code">
+                        <span>#include &lt;iostream&gt;</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>void printValue(int nValue)</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>std::cout &lt;&lt; nValue;</span>
+                        <br />
+                        <span>}</span>
+                        <br />
+                        <span></span>
+                        <br />
+                        <span>int main()</span>
+                        <br />
+                        <span>{</span>
+                        <br />
+                        <span>printValue(5);</span>
+                        <br />
+                        <span>return 0;</span>
+                        <br />
+                        <span>}</span>
+                      </code>
+                      <p class="lesson119-text129 text-block margin-butttom">
+                        <span>
+                          Як ви вже знаєте, при запуску програми виконання
+                          починається з виклику головної функції main().
+                          Оскільки ми хочемо виконати відлагодження коду
+                          всередині функції main(), то почнемо з команди "Шаг с
+                          заходом".
+                        </span>
+                        <br class="textBold" />
+                        <br class="textBold" />
+                        <span>В Visual Studio перейдіть в меню</span>
+                        <span class="lesson119-text134">
+                          "Отладка" &gt; "Шаг с заходом"
+                        </span>
+                        <span>(або натисніть F11):</span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/f2788cbe-bd05-4e53-aa97-d8b350be48b1?org_if_sml=160468"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text136 text-block margin-butttom">
+                        <span>
+                          Якщо ви використовуєте іншу IDE, то знайдіть в меню
+                          команду
+                        </span>
+                        <span class="lesson119-text138">
+                          "Step Into/Шаг с заходом"
+                        </span>
+                        <span>і натисніть на неї.</span>
+                        <br />
+                        <br />
+                        <span>
+                          Коли ви це зробите, повинні відбутися дві речі.
+                          По-перше, оскільки наша програма є консольного типу,
+                          то повинно відкритися консольне вікно. Воно буде
+                          порожнім, тому що ми ще нічого не виводили. По-друге,
+                          ви повинні побачити спеціальний маркер зліва біля
+                          відкриваючої дужки функції main(). У Visual Studio цим
+                          маркером є жовта стрілочка (якщо ви використовуєте
+                          іншу IDE, то має з’явитися щось схоже):
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/d259c7f6-6240-4dc5-ba1a-90aeafb56107?org_if_sml=139158"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text143 text-block margin-butttom">
+                        <span>
+                          Стрілка-маркер вказує на наступний рядок, який буде
+                          виконуватися. В цьому випадку відлагоджувач повідомляє
+                          нам, що наступним рядком, який буде виконуватися, є
+                          відкриваюча фігурна дужка функції main(). Виберіть
+                        </span>
+                        <span class="lesson119-text145">"Шаг с заходом"</span>
+                        <span>
+                          ще раз і стрілка переміститься на наступний рядок:
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/3b19c6fb-e0a1-476c-8723-d0c8ec7a13b4?org_if_sml=133803"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text147 text-block margin-butttom">
+                        <span>
+                          Це означає, що наступним рядком, який буде
+                          виконуватися, є виклик функції printValue(). Виберіть
+                        </span>
+                        <span class="lesson119-text149">"Шаг с заходом"</span>
+                        <span>
+                          ще раз. Оскільки printValue() — це виклик функції, то
+                          ми перейдемо на початок функції printValue():
+                        </span>
+                        <br />
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/47b0a104-9bd1-4c9d-a228-7a0fd493fbda?org_if_sml=133283"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text152 text-block margin-butttom">
+                        <span>Виберіть ще раз</span>
+                        <span class="lesson119-text154">"Шаг с заходом"</span>
+                        <span>
+                          для виконання відкриваючої фігурної дужки функції
+                          printValue(). Стрілка вказуватиме на
+                        </span>
+                        <span class="lesson119-text156">
+                          std::cout &lt;&lt; nValue;
+                        </span>
+                        <span>.</span>
+                        <br />
+                        <br />
+                        <span>Тепер виберіть команду</span>
+                        <span class="lesson119-text161">"Шаг с обходом"</span>
+                        <span>
+                          (F10). Ви побачите число 5 в консольному вікні.
+                        </span>
+                        <br />
+                        <br />
+                        <span>Виберіть</span>
+                        <span class="lesson119-text166">"Шаг с заходом"</span>
+                        <span>
+                          ще раз для виконання закриваючої фігурної дужки
+                          функції printValue(). Функція printValue() завершить
+                          своє виконання і стрілка переміститься в функцію
+                          main(). Зверніть увагу, що в main() стрілка знову
+                          вказуватиме на виклик printValue():
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/37bdeb32-1e65-490e-b818-317b2eb9a59f?org_if_sml=133578"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text168 text-block margin-butttom">
+                        <span>
+                          Може здатися, ніби відлагоджувач має намір ще раз
+                          повторити цикл з функцією printValue(), але насправді
+                          він нам просто повідомляє, що тільки що повернувся з
+                          цієї функції.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Виберіть команду "Шаг с заходом" два рази. Готово, всі
+                          рядки коду виконані. Деякі відлагоджувачі автоматично
+                          зупиняють сеанс відлагодження в цій точці, але Visual
+                          Studio так не робить. Якщо ви використовуєте Visual
+                          Studio, то виберіть
+                        </span>
+                        <span class="lesson119-text173">
+                          "Отладка" &gt; "Остановить отладку"
+                        </span>
+                        <span>(або натисніть Shift+F5):</span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/2ca5df81-93a0-4d76-b93a-b2584359bd0f?org_if_sml=164230"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text175 text-block margin-butttom">
+                        <span>
+                          Таким чином, ми повністю зупинили сеанс відлагодження
+                          нашої програми.
+                        </span>
+                        <br />
+                      </p>
+                    </div>
+                  </div>
+                  <div id="toc-4" class="lesson119-container10 section_lesson">
+                    <h3 class="lesson119-text178 heading_h3">
+                      <span>Степпінг. Команда “Шаг с обходом”</span>
+                      <br />
+                    </h3>
+                    <p class="lesson119-text181 text-block margin-butttom">
+                      <span>
+                        Команда “Шаг с обходом” (англ. “step over”) дозволяє
+                        виконати наступний рядок коду. Тільки якщо цим рядком є
+                        виклик функції, то команда "Шаг с обходом" виконає весь
+                        код функції в одне натискання і поверне нам контроль
+                        після того, як функція буде виконана.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Для користувачів Code::Blocks:Команда</span>
+                      <span class="lesson119-text186">“Шаг с обходом”</span>
+                      <span>називається</span>
+                      <span class="lesson119-text188">“Next Line”.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Розглянемо приклад, використовуючи наступну програму:
+                      </span>
+                      <br />
+                    </p>
+                    <code class="lesson119-text193 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>void printValue(int nValue)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; nValue;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>printValue(5);</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson119-text217 text-block margin-butttom">
+                      <span>
+                        Натисніть "Шаг с заходом", щоб дійти до виклику функції
+                        printValue():
+                      </span>
+                      <br />
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/1787691c-1682-4329-bb60-9b1966aff327?org_if_sml=133218"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson119-text220 text-block margin-butttom">
+                      <span>
+                        Тепер, замість команди "Шаг с заходом", виберіть
+                      </span>
+                      <span class="lesson119-text222">"Шаг с обходом"</span>
+                      <span>(або натисніть F10):</span>
+                      <br />
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/0a6e1120-0ce9-467b-b18a-2c6de19aedba?org_if_sml=160421"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson119-text225 text-block margin-butttom">
+                      <span>
+                        Відлагоджувач виконає функцію (яка виведе значення 5 в
+                        консоль), а після цього поверне нам контроль на рядку
+                        return 0;. І це все за одне натискання.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Команда</span>
+                      <span class="lesson119-text230">"Шаг с обходом"</span>
+                      <span>
+                        дозволяє швидко пропустити код функцій, коли ми
+                        впевнені, що вони працюють коректно і їх не потрібно
+                        відлагоджувати.
+                      </span>
+                    </p>
+                  </div>
+                  <div id="toc-5" class="lesson119-container11 section_lesson">
+                    <h3 class="lesson119-text232 heading_h3">
+                      Степпінг. Команда “Шаг с выходом”
+                    </h3>
+                    <p class="lesson119-text233 text-block margin-butttom">
+                      <span>
+                        Команда “Шаг с выходом” (англ. “step out”) виконує весь
+                        код функції, в якій ви зараз перебуваєте, і повертає
+                        контроль тільки після того, коли ця функція завершить
+                        своє виконання. Простіше кажучи, "Шаг с выходом"
+                        дозволяє вийти з функції.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Зверніть увагу, команда "Шаг с выходом" з’явиться в меню
+                        "Отладка" тільки після початку сеансу відлагодження (що
+                        робиться шляхом використання однієї з двох
+                        вищезазначених команд).
+                      </span>
+                      <br />
+                      <br />
+                      <span>Розглянемо все той же приклад:</span>
+                      <br />
+                    </p>
+                    <code class="lesson119-text242 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>void printValue(int nValue)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; nValue;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>printValue(5);</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson119-text266 text-block margin-butttom">
+                      <span>
+                        Натискайте "Шаг с заходом" до тих пір, поки не перейдете
+                        до відкриваючої фігурної дужки функції printValue():
+                      </span>
+                      <br />
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/33b3eecb-ae80-491a-9215-e8b91e7fcffc?org_if_sml=130331"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson119-text269 text-block margin-butttom">
+                      <span>Після цього виберіть</span>
+                      <span class="lesson119-text271">
+                        "Отладка" &gt; "Шаг с выходом"
+                      </span>
+                      <span>(або натисніть Shift+F11):</span>
+                      <br />
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/589970b2-1807-4092-b05d-c97ee8a92583?org_if_sml=165718"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson119-text274 text-block margin-butttom">
+                      Ви помітите, що значення 5 відобразилося в консольному
+                      вікні, а відлагоджувач перейшов до виклику функції
+                      printValue() в функції main():
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/33ba2a7d-313c-413e-94e4-3ff67ee55f43?org_if_sml=133218"
+                      class="img_lesson no-padding-LR"
+                    />
+                  </div>
+                  <div id="toc-6" class="lesson119-container12 section_lesson">
+                    <h3 class="lesson119-text275 heading_h3">
+                      <span>Команда “Выполнить до текущей позиции”</span>
+                      <br />
+                    </h3>
+                    <p class="lesson119-text278 text-block margin-butttom">
+                      <span>
+                        У той час як степпінг корисний для вивчення кожного
+                        рядка коду окремо, у великій програмі переміщатися по
+                        коду за допомогою цих команд не дуже зручно. Але і тут
+                        сучасні відлагоджувачі пропонують ще декілька
+                        інструментів для ефективного відлагодження програм.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Команда “Выполнить до текущей позиции” дозволяє в одне
+                        натискання виконати весь код до рядка, позначеного
+                        курсором. Потім контроль повертається до нас, і ми
+                        можемо проводити відлагодження з цієї точки вже більш
+                        детально. Давайте спробуємо, використовуючи вже знайому
+                        нам програму:
+                      </span>
+                      <br />
+                    </p>
+                    <code class="lesson119-text284 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>void printValue(int nValue)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; nValue;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>printValue(5);</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson119-text308 text-block margin-butttom">
+                      <span>Помістіть курсор на рядок</span>
+                      <span class="lesson119-text310">
+                        std::cout &lt;&lt; nValue;
+                      </span>
+                      <span>
+                        всередині функції printValue(), натисніть правою кнопкою
+                        миші і виберіть "Выполнить до текущей позиции" (або
+                        Ctrl+F10):
+                      </span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/2f9aa66e-94df-47e5-a185-e024f7f1134a?org_if_sml=177892"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson119-text312 text-block margin-butttom">
+                      Ви помітите, що жовта стрілочка переміститься на вказаний
+                      нами рядок. Виконання програми зупиниться в цій точці, і
+                      програма чекатиме наших подальших команд.
+                    </p>
+                  </div>
+                  <div id="toc-7" class="lesson119-container13 section_lesson">
+                    <h3 class="lesson119-text313 heading_h3">
+                      Команда “Продолжить”
+                    </h3>
+                    <p class="lesson119-text314 text-block margin-butttom">
+                      <span>
+                        Якщо ви перебуваєте в середині сеансу відлагодження
+                        вашої програми, то ви можете повідомити відлагоджувачу
+                        продовжувати виконання коду до тих пір, поки він не
+                        дійде до кінця програми (або до наступної контрольної
+                        точки). У Visual Studio цей параметр має назву
+                        “Продолжить” (англ. “Continue”). В інших дебагерах він
+                        може мати назву
+                      </span>
+                      <span class="lesson119-text316">"Run"</span>
+                      <span>або</span>
+                      <span class="lesson119-text318">"Go".</span>
+                      <br />
+                      <br />
+                      <span>
+                        Повертаючись до вищенаведеного прикладу, ми знаходимося
+                        якраз всередині функції printValue(). Виберіть
+                      </span>
+                      <span class="lesson119-text322">
+                        "Отладка" &gt; "Продолжить"
+                      </span>
+                      <span>(або F5):</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/c544501f-26d8-48ef-bbbf-aa879b184a9e?org_if_sml=152393"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson119-text324 text-block margin-butttom">
+                      <span>
+                        Програма завершить своє виконання і вийде з сеансу
+                        відлагодження.
+                      </span>
+                      <br />
+                    </p>
+                  </div>
+                  <div class="lesson119-container14">
+                    <div
+                      id="toc-8"
+                      class="lesson119-container15 section_lesson"
+                    >
+                      <h3 class="lesson119-text327 heading_h3">
+                        <span>Точки зупину</span>
+                        <br />
+                      </h3>
+                      <p class="lesson119-text330 text-block margin-butttom">
+                        <span class="textBold">Точки зупину</span>
+                        <span>
+                          (англ. “breakpoints”) — це спеціальні маркери, на яких
+                          відлагоджувач зупиняє процес виконання програми.
+                        </span>
+                        <br class="textBold" />
+                        <br class="textBold" />
+                        <span>
+                          Щоб задати точку зупину в Visual Studio, клацніть
+                          правою кнопкою миші по вибраному рядку &gt;
+                        </span>
+                        <span class="lesson119-text336">
+                          "Точка останова" &gt; "Вставить точку останова":
+                        </span>
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/1fda2bbe-578e-4a69-a46e-3b7c5323e3b1?org_if_sml=184850"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text337 text-block margin-butttom">
+                        <span>З’явиться червоний кружечок біля рядка:</span>
+                        <br class="textBold" />
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/6e9d6d53-19d3-4014-a6b9-0803d7247eaa?org_if_sml=132564"
+                        class="img_lesson no-padding-LR"
+                      />
+                      <p class="lesson119-text340 text-block margin-butttom">
+                        <span>
+                          У програмі, наведеній вище, створіть точку зупину на
+                          рядку
+                        </span>
+                        <span class="lesson119-text342">
+                          std::cout &lt;&lt; nValue;.
+                        </span>
+                        <span>
+                          Потім виберіть "Шаг с заходом" для старту сеанса
+                          відлагодження, а потім
+                        </span>
+                        <span class="lesson119-text344">"Продолжить"</span>
+                        <span>
+                          . Ви побачите, що замість завершення виконання
+                          програми і зупинки сеансу відлагодження, дебагер
+                          зупиниться в зазначеній нами точці:
+                        </span>
+                        <br />
+                      </p>
+                      <img
+                        alt="pastedImage"
+                        src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/5ab9de6b-36e1-475a-b6b0-4830ad736210?org_if_sml=130787"
+                        class="img_lesson no-padding-LR"
+                      />
+                    </div>
+                    <p class="lesson119-text347 text-block margin-butttom">
+                      Точки зупину надзвичайно корисні, якщо ви хочете вивчити
+                      тільки певну частину коду. Просто задайте точку зупину в
+                      обраній ділянці коду, виберіть команду "Продолжить" і
+                      відлагоджувач автоматично зупиниться біля зазначеного
+                      рядка. Потім ви зможете використовувати команди степпінгу
+                      для більш детального перегляду/вивчення коду.
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-18.html">
+                      <div class="lesson119-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson119-arrowdown1"
+                        />
+                        <span class="lesson119-text348">Урок №18</span>
+                      </div>
+                    </a>
+                    <a href="lesson1-20.html">
+                      <div class="lesson119-item1 item_nav_right">
+                        <span class="lesson119-text349">Урок №20</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson119-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson119-toc toc">
+                  <span class="lesson119-text350">Зміст</span>
+                  <div class="lesson119-toclist1">
+                    <ul class="lesson119-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson119-link08">
+                          Типи помилок
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson119-link09">
+                          Відлагоджувач
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson119-link10">
+                          Степпінг. Команда “Шаг с заходом”
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson119-link11">
+                          <span>Степпінг.&nbsp;</span>
+                          <span>Команда “Шаг с обходом”</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-5" class="lesson119-link12">
+                          <span>Степпінг.&nbsp;</span>
+                          <span>Команда “Шаг с выходом”</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-6" class="lesson119-link13">
+                          Команда “Выполнить до текущей позиции”
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-7" class="lesson119-link14">
+                          Команда “Продолжить”
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson119-link15">
+                          Точки зупину
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson119-footer footer_">
+          <div class="lesson119-container16 container_footer">
+            <div class="lesson119-container17">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson119-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson119-link17 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson119-link18 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson119-separator"></div>
+            <div class="lesson119-container18">
+              <span class="lesson119-text355">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson119-text356">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson119-link19"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

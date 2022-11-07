@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-1 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-1 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-1.css" rel="stylesheet" />
+
+      <div class="lesson11-container">
+        <header data-role="Header" class="lesson11-header-lesson">
+          <a href="index.html" class="lesson11-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson11-image img_logo"
+            />
+          </a>
+          <div class="lesson11-nav">
+            <nav class="lesson11-nav1">
+              <a href="index.html" class="lesson11-navlink1">Головна</a>
+              <a href="index.html" class="lesson11-navlink2">Уроки</a>
+              <a href="index.html" class="lesson11-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson11-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson11-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson11-mobile-menu">
+            <div class="lesson11-nav2">
+              <div class="lesson11-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson11-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson11-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson11-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson11-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson11-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson11-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson11-hero">
+          <div class="lesson11-container02">
+            <h1 class="lesson11-text">Розділ №1. Урок №1</h1>
+            <span class="lesson11-text001">
+              <span>Структура програм</span>
+              <br />
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson11-lessons">
+          <section class="lesson11-container03 container_lessons">
+            <div class="lesson11-section0">
+              <div class="lesson11-container04">
+                <div class="lesson11-tocmobile mobile toc">
+                  <span class="lesson11-text004">Зміст</span>
+                  <div class="lesson11-toclist">
+                    <ul class="lesson11-ul list">
+                      <li class="list-item">
+                        <a href="#lesson-11_section-1" class="lesson11-link">
+                          Стейтменти
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-2" class="lesson11-link01">
+                          Вирази
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-3" class="lesson11-link02">
+                          Функції
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-4" class="lesson11-link03">
+                          Бібліотеки
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-5" class="lesson11-link04">
+                          Приклад простої програми в С++
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-6" class="lesson11-link05">
+                          Синтаксис і синтаксичні помилки
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-7" class="lesson11-link06">
+                          Тест
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-8" class="lesson11-link07">
+                          Відповіді
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson11-left-content">
+                  <p class="item_sub-heading margin-butttom lesson11-text005">
+                    <span class="textBold">Комп’ютерна програма</span>
+                    <span>
+                      — це послідовність інструкцій, які повідомляють
+                      комп’ютеру, що йому потрібно зробити.
+                    </span>
+                    <br />
+                  </p>
+                  <div
+                    id="lesson-11_section-1"
+                    class="lesson11-container05 section_lesson"
+                  >
+                    <h3 class="lesson11-text009 heading_h3">Стейтменти</h3>
+                    <p class="lesson11-text010 text-block margin-butttom">
+                      <span>
+                        Cтейтмент (англ. “statement”) — це найбільш поширений
+                        тип інструкцій у програмах. Це і є та сама найменша
+                        незалежна одиниця в мові програмування С++. Стейтмент в
+                        програмуванні — це те ж саме, що і “речення” в
+                        українській мові. Ми використовуємо речення для того,
+                        щоб виразити якусь думку/ідею. У C++ ми пишемо
+                        стейтменти, щоб виконати якесь завдання.
+                      </span>
+                      <span class="textBold">
+                        Всі стейтменти в C++ закінчуються крапкою з комою.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Є дуже багато різних видів стейтментів в C++.
+                        Переглянемо найбільш поширені з них
+                      </span>
+                    </p>
+                    <p class="lesson11-text016 text-block code">
+                      <span>int x;</span>
+                      <br />
+                      <span>x = 5;</span>
+                      <br />
+                      <span>std::cout &lt;&lt; x;</span>
+                    </p>
+                    <p class="lesson11-text022 text-block margin-butttom">
+                      <span class="lesson11-text023">int х</span>
+                      <span>— це</span>
+                      <span class="textBold">стейтмент оголошення</span>
+                      <span>
+                        (англ. “statement declaration”). Він повідомляє
+                        компілятору, що х є змінною. У програмуванні кожна
+                        змінна має свою комірку в пам’яті. Всі змінні в програмі
+                        перед їх фактичним використанням, повинні бути
+                        оголошені. Ми детально поговоримо про змінні на
+                        наступних уроках
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson11-text029">х = 5</span>
+                      <span>— це</span>
+                      <span class="textBold">стейтмент присвоювання</span>
+                      <span>
+                        (англ. “assignment statement”). Тут ми присвоюємо
+                        значення 5 змінній х.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson11-text035">
+                        std::cout &lt;&lt; x;
+                      </span>
+                      <span>— це</span>
+                      <span class="textBold">стейтмент виводу</span>
+                      <span>
+                        (англ. “output statement”). Ми виводимо значення змінної
+                        х на екран.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-11_section-2"
+                    class="lesson11-container06 section_lesson"
+                  >
+                    <h3 class="lesson11-text039 heading_h3">Вирази</h3>
+                    <p class="lesson11-text040 text-block margin-butttom">
+                      <span>
+                        Компілятор також здатний опрацьовувати вирази. Вираз
+                        (англ. “expression”) — це математичний об’єкт, який
+                        генерує певне значення. Наприклад, в математиці вираз
+                      </span>
+                      <span class="lesson11-text042">2 + 3</span>
+                      <span>генерує значення</span>
+                      <span class="lesson11-text044">5</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Виразами можуть бути:</span>
+                    </p>
+                    <div
+                      class="lesson11-container07 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown1"
+                      />
+                      <p class="lesson11-text049 text-block with-padding">
+                        <span>значення (наприклад,</span>
+                        <span class="lesson11-text051">2</span>
+                        <span>,</span>
+                        <span class="lesson11-text053">4</span>
+                        <span>);</span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson11-container08 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown101"
+                      />
+                      <p class="lesson11-text055 text-block with-padding">
+                        <span>змінні (наприклад,</span>
+                        <span class="lesson11-text057">х</span>
+                        <span>,</span>
+                        <span class="lesson11-text059">у</span>
+                        <span>);</span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson11-container09 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown102"
+                      />
+                      <p class="lesson11-text061 text-block with-padding">
+                        <span>оператори (наприклад,</span>
+                        <span class="lesson11-text063">+</span>
+                        <span>,</span>
+                        <span class="lesson11-text065">-</span>
+                        <span>);</span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson11-container10 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown103"
+                      />
+                      <p class="lesson11-text067 text-block with-padding">
+                        функції
+                      </p>
+                    </div>
+                    <p class="lesson11-text068 text-block margin-butttom">
+                      <span>
+                        Вони можуть бути як одним значенням (наприклад,
+                      </span>
+                      <span class="lesson11-text070">2</span>
+                      <span>чи</span>
+                      <span class="lesson11-text072">х</span>
+                      <span>), так і комбінацією значень (наприклад,</span>
+                      <span class="lesson11-text074">2 + 3</span>
+                      <span>,</span>
+                      <span class="lesson11-text076">2 + х</span>
+                      <span>,</span>
+                      <span class="lesson11-text078">х + у</span>
+                      <span>чи</span>
+                      <span class="lesson11-text080">(2 + х) * (y - 3)</span>
+                      <span>). Наприклад,</span>
+                      <span class="lesson11-text082">х = 2 + 3</span>
+                      <span>
+                        ; — це коректний стейтмент присвоювання. Вираз
+                      </span>
+                      <span class="lesson11-text084">2 + 3</span>
+                      <span>генерує результат: значення</span>
+                      <span class="lesson11-text086">5</span>
+                      <span>, яке потім присвоюється змінній</span>
+                      <span class="lesson11-text088">х</span>
+                      <span>.</span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-11_section-3"
+                    class="lesson11-container11 section_lesson"
+                  >
+                    <h3 class="lesson11-text090 heading_h3">Функції</h3>
+                    <p class="lesson11-text091 text-block margin-butttom">
+                      <span>
+                        В C++ стейтменти об’єднуються в блоки — функції.
+                      </span>
+                      <span class="textBold">Функція</span>
+                      <span>
+                        — це послідовність стейтментів. Кожна програма в C++
+                        повинна
+                      </span>
+                      <span class="textBold">
+                        містити головну функцію main()
+                      </span>
+                      <span>
+                        . Саме з першого стейтмента в main() і починається
+                        виконання програми. Функції, як правило, виконують
+                        конкретне завдання. Наприклад, функція max() може
+                        містити стейтменти, які визначають максимальне число з
+                        двох переданих їй, а функція calculateGrade() може
+                        обчислювати оцінку студента.
+                      </span>
+                    </p>
+                    <div class="info margin-butttom lesson11-info">
+                      <p class="lesson11-text097 text-block heading">Порада</p>
+                      <div class="lesson11-container12">
+                        <p class="color-primary-2 text-block padding-buttom">
+                          Завжди розміщуйте функцію main() в .cpp-файлі з тим же
+                          іменем, що має проект. Наприклад, якщо ви пишете
+                          програму Chess, то помістіть вашу функцію main() в
+                          chess.cpp.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-11_section-4"
+                    class="lesson11-container13 section_lesson"
+                  >
+                    <h3 class="lesson11-text099 heading_h3">Бібліотеки</h3>
+                    <p class="lesson11-text100 text-block margin-butttom">
+                      <span class="textBold">Бібліотека</span>
+                      <span>
+                        — це набір скомпільованого коду (наприклад, функцій),
+                        який був “упакований” для повторного використання в
+                        інших програмах. За допомогою бібліотек можна розширити
+                        функціонал програм. Наприклад, якщо ви пишете гру, то
+                        вам доведеться підключити бібліотеку звуку або графіки
+                        (якщо ви самостійно не хочете їх писати з нуля).
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Мова C++ не така вже й велика, як ви могли б подумати.
+                        Проте, вона поставляється в комплекті зі
+                      </span>
+                      <span class="textBold">Стандартною бібліотекою С++</span>
+                      <span>
+                        , яка надає додатковий функціонал. Однією з найбільш
+                        часто використовуваних частин Стандартної бібліотеки C++
+                        є
+                      </span>
+                      <span class="textBold">бібліотека iostream</span>
+                      <span>
+                        , яка дозволяє виводити інформацію на екран і
+                        опрацьовувати дані, які вводить користувач.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-11_section-5"
+                    class="lesson11-container14 section_lesson"
+                  >
+                    <h3 class="lesson11-text110 heading_h3">
+                      <span class="lesson11-text111">
+                        Приклад простої програми в С++
+                      </span>
+                      <br />
+                    </h3>
+                    <p class="lesson11-text113 text-block margin-butttom">
+                      Тепер, коли у вас є загальне уявлення про те, що таке
+                      стейтменти, функції та бібліотеки, давайте розглянемо ще
+                      раз програму “Hello, world!”:
+                    </p>
+                    <code class="text-block code lesson11-code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "Hello, world!";</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                    </code>
+                    <p
+                      class="lesson11-text128 margin-top text-block margin-butttom"
+                    >
+                      <span class="textBold">Рядок №1:</span>
+                      <span class="lesson11-text130">
+                        Спеціальний тип інструкції, який називається директивою
+                        препроцесора. Директиви препроцесора повідомляють
+                        компілятору, що йому потрібно виконати певне завдання. В
+                        цьому випадку ми повідомляємо компілятору, що хотіли б
+                        підключити вміст заголовкового файлу iostream до нашої
+                        програми. Заголовковий файл iostream дозволяє нам
+                        отримати доступ до функціоналу бібліотеки iostream для
+                        можливості виведення інформації на екран.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Рядок №2</span>
+                      <span class="lesson11-text134">
+                        : Порожній простір, який ігнорується компілятором.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Рядок №3:</span>
+                      <span class="lesson11-text138">
+                        Оголошення головної функції main().
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Рядок №4 і №7:</span>
+                      <span class="lesson11-text142">
+                        Вказуємо компілятору область функції main(). Все, що
+                        знаходиться між відкриваючою фігурною дужкою в рядку №4
+                        і закриваючою фігурною дужкою в рядку №7, — вважається
+                        частиною функції main().
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Рядок №5:</span>
+                      <span class="lesson11-text146">
+                        Наш перший стейтмент (який закінчується крапкою з комою)
+                        — стейтмент виводу. std::cout — це спеціальний об’єкт за
+                        допомогою якого ми можемо виводити дані на екран.
+                        &lt;&lt; — це оператор виводу. Все, що ми відправляємо в
+                        std::cout, — виводиться на екран. Тут ми виводимо текст
+                        "Hello, world!".
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Рядок №6:</span>
+                      <span class="lesson11-text150 textBold">
+                        Оператор повернення return.
+                      </span>
+                      <span class="lesson11-text151">
+                        Коли програма завершує своє виконання, функція main()
+                        передає значення, яка вказує на результат виконання
+                        програми (успішно чи ні), назад в операційну систему.
+                        Якщо оператор return повертає значення 0, то це означає,
+                        що все добре! Будь-які ненульові числа використовуються
+                        для того, щоб вказати, що щось пішло не так.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-11_section-6"
+                    class="lesson11-container15 section_lesson"
+                  >
+                    <h3 class="lesson11-text152 heading_h3">
+                      <span>Синтаксис і синтаксичні помилки</span>
+                      <br />
+                    </h3>
+                    <p class="lesson11-text155 text-block margin-butttom">
+                      <span class="lesson11-text156">
+                        Як ви, мабуть, знаєте, в українській мові всі речення
+                        слідують правилам граматики. Наприклад, кожне речення
+                        повинно закінчуватися крапкою. Правила, які регулюють
+                        побудову речень, називаються
+                      </span>
+                      <span class="textBold">синтаксисом</span>
+                      <span class="lesson11-text158">
+                        . Якщо ви не поставили крапку і записали два речення
+                        підряд, то це є порушенням синтаксису української мови.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson11-text161">
+                        C++ також має свій синтаксис: правила написання
+                        коду/програм. При компіляції вашої програми, компілятор
+                        перевіряє код вашої програми на відповідність правилам
+                        синтаксису мови C++. Якщо ви порушили правила, то
+                        компілятор лаятиметься і видасть вам помилку.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson11-text164">
+                        Наприклад, давайте подивимось, що відбудеться, якщо ми
+                        не вкажемо крапку з комою в кінці стейтменту:
+                      </span>
+                    </p>
+                    <code class="text-block code lesson11-code1">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>std::cout &lt;&lt; "Hello world!"</span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                    </code>
+                    <p
+                      class="lesson11-text179 margin-top text-block margin-butttom"
+                    >
+                      <span class="textBold">Результат:</span>
+                      <br class="textBold" />
+                      <br />
+                      <span class="lesson11-text183">
+                        E0065: требуется точка с запятой ";"
+                      </span>
+                      <br class="lesson11-text184" />
+                      <span class="lesson11-text185">
+                        C2143: синтаксическая ошибка: отсутствие ";" перед "}"
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Допущена синтаксична помилка в рядку №6: забули
+                        поставити крапку з комою перед оператором return. У
+                        цьому випадку помилка насправді в кінці рядка №5. У
+                        більшості випадків компілятор правильно визначає рядок з
+                        помилкою, але є ситуації, коли помилка не помітна аж до
+                        початку наступного рядка.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Синтаксичні помилки нерідко відбуваються при написанні
+                        програм. На щастя, більшість з них можна легко знайти і
+                        виправити. Але слід пам’ятати, що програма може бути
+                        повністю скомпільована і виконана тільки при відсутності
+                        помилок.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-11_section-7"
+                    class="lesson11-container16 section_lesson"
+                  >
+                    <h3 class="lesson11-text192 heading_h3">Тест</h3>
+                    <p class="lesson11-text193 text-block margin-butttom">
+                      Тепер давайте перевіримо, наскільки добре ви засвоїли
+                      матеріал уроку. Дайте відповідь на наступні питання:
+                    </p>
+                    <div
+                      class="lesson11-container17 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown104"
+                      />
+                      <p class="lesson11-text194 text-block with-padding">
+                        <span></span>
+                        <span>У чому різниця між стейтментом і виразом?</span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson11-container18 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown105"
+                      />
+                      <p class="lesson11-text197 text-block with-padding">
+                        У чому різниця між функцією і бібліотекою?
+                      </p>
+                    </div>
+                    <div
+                      class="lesson11-container19 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown106"
+                      />
+                      <p class="lesson11-text198 text-block with-padding">
+                        <span></span>
+                        <span>Чим повинні закінчуватися стейтменти в С++?</span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson11-container20 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson11-arrowdown107"
+                      />
+                      <p class="lesson11-text201 text-block with-padding">
+                        Що таке синтаксична помилка?
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-11_section-8"
+                    class="lesson11-container21 section_lesson"
+                  >
+                    <h3 class="lesson11-text202 heading_h3">Відповіді</h3>
+                    <p class="lesson11-text203 text-block margin-butttom">
+                      <span class="lesson11-text204">
+                        Щоб переглянути відповідь, клікніть на неї мишкою.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №1</span>
+                      <br class="textBold" />
+                      <span class="lesson11-text209">
+                        Стейтмент — це “повне речення”, яке повідомляє
+                        компілятору виконати певне завдання. Вираз же генерує
+                        результат і використовується всередині стейтментів.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №2</span>
+                      <br class="textBold" />
+                      <span class="lesson11-text214">
+                        Функція — це послідовність стейтментів. Бібліотека — це
+                        послідовність функцій, які можуть повторно
+                        використовуватися в інших програмах.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №3</span>
+                      <br class="textBold" />
+                      <span class="lesson11-text219">Крапкою з комою (</span>
+                      <span class="lesson11-text220">;</span>
+                      <span class="lesson11-text221">).</span>
+                      <br />
+                      <br />
+                      <span class="textBold">Відповідь №4</span>
+                      <br class="textBold" />
+                      <span class="lesson11-text226">
+                        Синтаксична помилка — це помилка, яка вказує на
+                        порушення правил граматики мови С++.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson0-10.html">
+                      <div class="lesson11-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson11-arrowdown108"
+                        />
+                        <span class="lesson11-text227">
+                          Розділ №0. Урок №10
+                        </span>
+                      </div>
+                    </a>
+                    <a href="lesson1-2.html">
+                      <div class="lesson11-item1 item_nav_right">
+                        <span class="lesson11-text228">Урок №2</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson11-arrowdown109"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson11-toc toc">
+                  <span class="lesson11-text229">Зміст</span>
+                  <div class="lesson11-toclist1">
+                    <ul class="lesson11-ul1 list">
+                      <li class="list-item">
+                        <a href="#lesson-11_section-1" class="lesson11-link08">
+                          Стейтменти
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-2" class="lesson11-link09">
+                          Вирази
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-3" class="lesson11-link10">
+                          Функції
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-4" class="lesson11-link11">
+                          Бібліотеки
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-5" class="lesson11-link12">
+                          Приклад простої програми в С++
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-6" class="lesson11-link13">
+                          Синтаксис і синтаксичні помилки
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-7" class="lesson11-link14">
+                          Тест
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-11_section-8" class="lesson11-link15">
+                          Відповіді
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson11-footer footer_">
+          <div class="lesson11-container22 container_footer">
+            <div class="lesson11-container23">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson11-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson11-link17 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson11-link18 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson11-separator"></div>
+            <div class="lesson11-container24">
+              <span class="lesson11-text230">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson11-text231">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson11-link19"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

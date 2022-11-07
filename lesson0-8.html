@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson0-8 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson0-8 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson0-8.css" rel="stylesheet" />
+
+      <div class="lesson08-container">
+        <header data-role="Header" class="lesson08-header-lesson">
+          <a href="index.html" class="lesson08-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson08-image img_logo"
+            />
+          </a>
+          <div class="lesson08-nav">
+            <nav class="lesson08-nav1">
+              <a href="index.html" class="lesson08-navlink1">Головна</a>
+              <a href="index.html" class="lesson08-navlink2">Уроки</a>
+              <a href="index.html" class="lesson08-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson08-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson08-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson08-mobile-menu">
+            <div class="lesson08-nav2">
+              <div class="lesson08-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson08-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson08-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson08-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson08-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson08-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson08-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson08-hero">
+          <div class="lesson08-container02">
+            <h1 class="lesson08-text">
+              <span>Розділ №0. Урок №8</span>
+              <span></span>
+            </h1>
+            <span class="lesson08-text03">
+              Налаштування компілятора: Розширення компілятора
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson08-lessons">
+          <section class="lesson08-container03 container_lessons">
+            <div class="lesson08-section0">
+              <div class="lesson08-container04">
+                <div class="lesson08-tocmobile mobile toc">
+                  <span class="lesson08-text04">Зміст</span>
+                  <div class="lesson08-toclist">
+                    <ul class="lesson08-ul list">
+                      <li class="list-item">
+                        <a href="#lesson-8_section-1">Розширення компілятора</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-8_section-2" class="lesson08-link01">
+                          <span class="lesson08-text05">
+                            Вимкнення розширень компілятора.&nbsp;Користувачам
+                            Visual Studio
+                          </span>
+                          <br class="lesson08-text06" />
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-8_section-3" class="lesson08-link02">
+                          <span>Вимкнення розширень компілятора.&nbsp;</span>
+                          <span>Користувачам Code::Blocks</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-8_section-4">
+                          <span>Вимкнення розширень компілятора.&nbsp;</span>
+                          <span>Користувачам GCC/G++</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson08-left-content">
+                  <p class="item_sub-heading margin-butttom lesson08-text11">
+                    <span>
+                      На цьому уроці ми розглянемо, що таке розширення
+                      компілятора, чи є вони корисними і як їх вимкнути.
+                    </span>
+                    <br />
+                  </p>
+                  <div
+                    id="lesson-8_section-1"
+                    class="lesson08-container05 section_lesson"
+                  >
+                    <h3 class="lesson08-text14 heading_h3">
+                      Розширення компілятора
+                    </h3>
+                    <p class="lesson08-text15 text-block margin-butttom">
+                      <span>
+                        Стандарт C++ визначає правила щодо того, як програми
+                        повинні себе поводити в конкретних ситуаціях. І в
+                        більшості випадків компілятори також дотримуються цих
+                        правил. Однак багато компіляторів впроваджують власні
+                        зміни в мову програмування, часто для підвищення
+                        сумісності з іншими версіями мови (наприклад, C99). Ці
+                        поведінкові зміни, які є різними в різних компіляторах,
+                        називаються розширеннями компілятора.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Використовуючи розширення компілятора ви отримуєте
+                        можливість написання програм, які є несумісними зі
+                        стандартом C++. Програми, які використовують
+                        нестандартні розширення, зазвичай, не компілюватимуться
+                        в інших компіляторах (які не підтримують ці ж
+                        розширення), або працюватимуть некоректно.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Дуже часто розширення компілятора є включеними за
+                        замовчуванням. Особливо це стосується початківців, коли
+                        вони можуть вважати поведінку, специфічну для певного
+                        компілятора, як частину офіційного стандарту C++ (коли
+                        насправді це не так).
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Оскільки розширення компілятора рідко коли потрібні і
+                        можуть зробити ваші програми невідповідними стандарту
+                        C++, то я раджу вимикати розширення компілятора.
+                      </span>
+                    </p>
+                    <div class="info margin-butttom lesson08-info">
+                      <p class="lesson08-text26 text-block heading">Порада</p>
+                      <div class="lesson08-container06">
+                        <p class="color-primary-2 text-block padding-buttom">
+                          Вимикайте розширення компілятора, щоб бути певними, що
+                          ваші програми залишаються сумісними зі стандартом C++
+                          і працюватимуть у будь-якій системі.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="info lesson08-info1">
+                      <p class="lesson08-text28 text-block heading">Примітка</p>
+                      <div class="lesson08-container07">
+                        <p class="color-primary-2 text-block padding-buttom">
+                          Ці налаштування застосовуються до кожного проекту
+                          окремо. Вам потрібно буде це все повторювати для
+                          кожного новоствореного вами проекту, або створити
+                          шаблон проекту з цими налаштуваннями і тоді вже по
+                          ньому створювати нові проекти.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-8_section-2"
+                    class="lesson08-container08 section_lesson"
+                  >
+                    <h3 class="lesson08-text30 heading_h3">
+                      Вимкнення розширень компілятора.&nbsp;Користувачам Visual
+                      Studio
+                    </h3>
+                    <p class="lesson08-text31 text-block margin-butttom">
+                      <span>
+                        Щоб вимкнути розширення компілятора в Visual Studio,
+                        клацніть правою кнопкою миші по назві вашого проекту в
+                      </span>
+                      <span class="lesson08-text33">
+                        "Обозреватель решений" &gt; "Свойства"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/83f530fb-fbd5-4c01-a069-56d923b42bdc?org_if_sml=1406355"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson08-text35 text-block margin-butttom">
+                      У діалоговому вікні проекту переконайтесь, що в полі
+                      "Конфигурация" вибрано пункт "Все конфигурации". Потім
+                      перейдіть на вкладку "C/C++" &gt; "Язык" та встановіть
+                      значення "Да (/Za)" для пункту "Отключить расширения
+                      языка", після цього натисніть "OK":
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/2f988f18-8127-499e-b71d-4d58b3300bd7?org_if_sml=1114285"
+                      class="img_lesson no-padding-LR"
+                    />
+                  </div>
+                  <div
+                    id="lesson-8_section-3"
+                    class="lesson08-container09 section_lesson"
+                  >
+                    <h3 class="lesson08-text36 heading_h3">
+                      Вимкнення розширень компілятора.&nbsp;Користувачам
+                      Code::Blocks
+                    </h3>
+                    <p class="lesson08-text37 text-block margin-butttom">
+                      <span>
+                        Вимкнути розширення компілятора можна через меню
+                      </span>
+                      <span class="lesson08-text39">
+                        "Settings" -&gt; "Compiler"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/ab14a1ba-dbfe-41fd-bf7c-564660d8edc7?org_if_sml=1116758"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson08-text41 text-block margin-butttom">
+                      <span>Далі на вкладці</span>
+                      <span class="lesson08-text43">"Compiler Flags"</span>
+                      <span>шукайте пункт</span>
+                      <span class="lesson08-text45">
+                        "Treat as errors the warnings demanded by strict ISO C
+                        and ISO C++ [-pedantic-errors]"
+                      </span>
+                      <span>і поставте галочку, після чого натискайте</span>
+                      <span class="lesson08-text47">"OK"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/e6168b4c-0579-4cdd-9d21-f7dca87e0d4c?org_if_sml=170774"
+                      class="img_lesson no-padding-LR"
+                    />
+                  </div>
+                  <div
+                    id="lesson-8_section-4"
+                    class="lesson08-container10 section_lesson"
+                  >
+                    <h3 class="lesson08-text49 heading_h3">
+                      Вимкнення розширень компілятора.&nbsp;Користувачам GCC/G++
+                    </h3>
+                    <p class="lesson08-text50 text-block margin-butttom">
+                      <span>
+                        Ви можете вимкнути розширення компілятора, додавши флаг
+                      </span>
+                      <span class="lesson08-text52">-pedantic-errors</span>
+                      <span>до командного рядка компіляції.</span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson0-7.html">
+                      <div class="lesson08-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson08-arrowdown1"
+                        />
+                        <span class="lesson08-text54">Урок №7</span>
+                      </div>
+                    </a>
+                    <a href="lesson0-9.html">
+                      <div class="lesson08-item1 item_nav_right">
+                        <span class="lesson08-text55">Урок №9</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson08-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson08-toc toc">
+                  <span class="lesson08-text56">Зміст</span>
+                  <div class="lesson08-toclist1">
+                    <ul class="lesson08-ul1 list">
+                      <li class="list-item">
+                        <a href="#lesson-8_section-1">Розширення компілятора</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-8_section-2" class="lesson08-link05">
+                          <span class="lesson08-text57">
+                            Вимкнення розширень компілятора.&nbsp;Користувачам
+                            Visual Studio
+                          </span>
+                          <br class="lesson08-text58" />
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-8_section-3" class="lesson08-link06">
+                          <span>Вимкнення розширень компілятора.&nbsp;</span>
+                          <span>Користувачам Code::Blocks</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-8_section-4">
+                          <span>Вимкнення розширень компілятора.&nbsp;</span>
+                          <span>Користувачам GCC/G++</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson08-footer footer_">
+          <div class="lesson08-container11 container_footer">
+            <div class="lesson08-container12">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson08-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson08-link09 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson08-link10 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson08-separator"></div>
+            <div class="lesson08-container13">
+              <span class="lesson08-text63">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson08-text64">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson08-link11"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

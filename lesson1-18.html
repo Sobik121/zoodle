@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-18 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-18 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-18.css" rel="stylesheet" />
+
+      <div class="lesson118-container">
+        <header data-role="Header" class="lesson118-header-lesson">
+          <a href="index.html" class="lesson118-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson118-image img_logo"
+            />
+          </a>
+          <div class="lesson118-nav">
+            <nav class="lesson118-nav1">
+              <a href="index.html" class="lesson118-navlink1">Головна</a>
+              <a href="index.html" class="lesson118-navlink2">Уроки</a>
+              <a href="index.html" class="lesson118-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson118-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson118-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson118-mobile-menu">
+            <div class="lesson118-nav2">
+              <div class="lesson118-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson118-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson118-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson118-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg
+                viewBox="0 0 950.8571428571428 1024"
+                class="lesson118-icon04"
+              >
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson118-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson118-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson118-hero">
+          <div class="lesson118-container02">
+            <h1 class="lesson118-text">Розділ №1. Урок №18</h1>
+            <span class="lesson118-text001">Розробка ваших перших програм</span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson118-lessons">
+          <section class="lesson118-container03 container_lessons">
+            <div class="lesson118-section0">
+              <div class="lesson118-container04">
+                <div class="lesson118-tocmobile mobile toc">
+                  <span class="lesson118-text002">Зміст</span>
+                  <div class="lesson118-toclist">
+                    <ul class="lesson118-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson118-link">
+                          Конфлікт імен в C++
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson118-link01">
+                          Простір імен
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson118-link02">
+                          Оператор дозволу області видимості ::
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson118-left-content">
+                  <p class="item_sub-heading margin-butttom lesson118-text003">
+                    <span>
+                      При написанні програм, у вас, як правило, є якась
+                      проблема, яку потрібно вирішити. Початківці дуже часто
+                      спотикаються на етапі конвертації ідеї вирішення проблеми
+                      в реальний код. Найголовніше, що вам потрібно запам’ятати
+                      — розробка програми виконується безпосередньо перед етапом
+                      написання її коду.
+                    </span>
+                    <br />
+                    <br />
+                    <span>
+                      Багато в чому, програмування — це як архітектура. Що
+                      станеться, якщо ви спробуєте побудувати будинок без
+                      дотримання архітектурного плану? Будинок може ви і зможете
+                      побудувати, але який він буде: криві стіни, протікаючий
+                      дах і т.п. Аналогічно, якщо ви почнете програмувати
+                      що-небудь серйозне перед тим, як складете план, то дуже
+                      скоро побачите, що ваш код має дуже багато проблем, на
+                      вирішення яких ви витратите набагато більше часу, зусиль
+                      та нервів, ніж на початкове складання хорошого плану.
+                    </span>
+                  </p>
+                  <div class="lesson118-container05">
+                    <div
+                      id="toc-1"
+                      class="lesson118-container06 section_lesson"
+                    >
+                      <h3 class="lesson118-text008 heading_h3">
+                        Крок №1: Визначте проблему
+                      </h3>
+                      <p class="lesson118-text009 text-block margin-butttom">
+                        <span>
+                          Перше, що вам потрібно зробити — це визначити
+                          проблему, яку вирішить ваша програма. В ідеалі, ви
+                          повинні сформулювати це одним або двома реченнями,
+                          наприклад:
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Я хочу написати програму-довідник для зручного
+                          зберігання і редагування всіх телефонних номерів та
+                          дзвінків.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Я хочу написати програму для генерації випадкових
+                          чисел, за допомогою якої можна буде визначати
+                          переможців різних конкурсів.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Я хочу написати програму, яка відслідковуватиме і
+                          аналізуватиме акції на фондовому ринку для генерації
+                          виграшних прогнозів.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Хоча цей крок здається очевидним, але він також дуже
+                          важливий. Найгірше, що ви можете зробити — це написати
+                          програму, яка виконує не те, що вам потрібно!
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      id="toc-2"
+                      class="lesson118-container07 section_lesson"
+                    >
+                      <h3 class="lesson118-text023 heading_h3">
+                        Крок №2: Визначте інструментарій, цілі і план бекапу
+                      </h3>
+                      <p class="lesson118-text024 text-block margin-butttom">
+                        <span>
+                          Для досвідчених програмістів на цьому етапі буде ще
+                          чимало додаткових пунктів:
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Яка ваша цільова аудиторія і які в неї потреби?
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          На якій архітектурі/ОС ваша програма працюватиме?
+                        </span>
+                        <br />
+                        <br />
+                        <span>Який інструментарій ви використовуватимете?</span>
+                        <br />
+                        <br />
+                        <span>
+                          Чи виконуватимете ви розробку програми самотужки чи в
+                          складі команди?
+                        </span>
+                        <br />
+                        <br />
+                        <span>Аналіз вимог.</span>
+                        <br />
+                        <br />
+                        <span>
+                          Визначення стратегій тестування/зворотного
+                          зв’язку/релізу.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Створення плану бекапа у випадку форс-мажору.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Початківці, як правило, великою кількістю питань не
+                          задаються: “Пишу програму для власного використання,
+                          сам, на своїй операційній системі, за допомогою своєї
+                          IDE, користуватися цією програмою буду тільки я”. Все
+                          просто.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Якщо ж ви будете працювати над чимось серйознішим, то
+                          варто подумати над планом бекапу вашої
+                          програми/проекту. Це означає не просто скопіювати код
+                          в іншу папку на ноутбуці (хоча це вже краще, ніж
+                          нічого). Якщо ваша ОС “зламається”, то ви втратите всі
+                          дані. Хороша стратегія резервного копіювання включає в
+                          себе створення копії вашого коду поза вашою
+                          операційною системою, наприклад:
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Відправити самому собі E-mail з кодом (прикріпити як
+                          архів).
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Скопіювати в Dropbox чи в будь-який інший хмарний
+                          сервіс.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Перенести на зовнішній пристрій (наприклад, на
+                          портативний жорсткий диск).
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Скопіювати на інший комп’ютер в локальній мережі.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Скористатися системами контролю версій (наприклад,
+                          GitHub, GitLab чи Bitbucket).
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="lesson118-container08">
+                    <div
+                      id="toc-3"
+                      class="lesson118-container09 section_lesson"
+                    >
+                      <h3 class="lesson118-text068 heading_h3">
+                        Крок №3: Розбийте проблему на частини
+                      </h3>
+                      <p class="lesson118-text069 text-block margin-butttom">
+                        <span>
+                          У реальному житті нам часто доводиться виконувати дуже
+                          складні завдання. Зрозуміти, як їх вирішити, також
+                          буває дуже важко. У таких випадках можна
+                          використовувати метод поділу на частини (або метод
+                          “від великого до малого”). Тобто, замість того, щоб
+                          вирішувати одну велику складну задачу, ми розбиваємо
+                          її на кілька підзадач, кожну з яких простіше вирішити.
+                          Якщо ці підзадачі все ще надто складні, то і їх
+                          потрібно додатково розбити. І так до тих пір, поки ви
+                          не дійдете до точки, де кожне окремо взяте завдання
+                          можна легко виконати.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Розглянемо це на прикладі. Припустимо, що нам потрібно
+                          написати доповідь про картоплю. Наша ієрархія завдань
+                          в даний час виглядає наступним чином:
+                        </span>
+                        <br />
+                        <br />
+                        <span>Написати доповідь про картоплю</span>
+                        <br />
+                        <br />
+                        <span>
+                          Це досить-таки велика задача, тому давайте розіб’ємо
+                          її на підзадачі:
+                        </span>
+                        <br />
+                        <br />
+                        <span>Написати доповідь про картоплю</span>
+                        <br />
+                        <span>Пошук інформації про картоплю</span>
+                        <br />
+                        <span>Створення плану</span>
+                        <br />
+                        <span>
+                          Заповнення кожного пункту плану детальною інформацією
+                        </span>
+                        <br />
+                        <span>Висновки</span>
+                        <br />
+                        <br />
+                        <span>
+                          Це вже простіше, оскільки тепер ми маємо список
+                          підзадач, на яких можемо зосередитися в
+                          індивідуальному порядку. Проте, в даному випадку,
+                          “Пошук інформації про картоплю” звучить трохи
+                          розпливчасто, потрібно додатково розбити цей пункт:
+                        </span>
+                        <br />
+                        <br />
+                        <span>Написати доповідь про картоплю</span>
+                        <br />
+                        <span>Пошук інформації про картоплю</span>
+                        <br />
+                        <span>
+                          Сходити в бібліотеку за книжками про картоплю
+                        </span>
+                        <br />
+                        <span>Пошукати інформацію в Інтернеті</span>
+                        <br />
+                        <span>
+                          Зробити замітки на відповідні розділи з довідкового
+                          матеріалу
+                        </span>
+                        <br />
+                        <span>Створення плану</span>
+                        <br />
+                        <span>Інформація про вирощування</span>
+                        <br />
+                        <span>Інформацію про обробку</span>
+                        <br />
+                        <span>Інформація про добрива</span>
+                        <br />
+                        <span>
+                          Заповнення кожного пункту плану детальною інформацією
+                        </span>
+                        <br />
+                        <span>Висновки</span>
+                        <br />
+                        <br />
+                        <span>
+                          Виконуючи кожен підпункт цього завдання, ми вирішимо
+                          одну велику задачу.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Є ще один спосіб створення ієрархії — метод “від
+                          малого до великого”. Розглянемо на прикладі.
+                        </span>
+                        <br />
+                        <br />
+                        <span>
+                          Більшість з нас змушені ходити на роботу (або в
+                          школу/університет) в будні дні. Припустимо, що нам
+                          потрібно вирішити проблему “від ліжка до роботи”. Якби
+                          вас запитали, що ви робите перед тим, як дістатися на
+                          роботу, ви відповіли б приблизно наступне:
+                        </span>
+                        <br />
+                        <br />
+                        <span>Вибрати одяг</span>
+                        <br />
+                        <span>Вдягнутися</span>
+                        <br />
+                        <span>Поснідати</span>
+                        <br />
+                        <span>Поїхати на роботу</span>
+                        <br />
+                        <span>Почистити зуби</span>
+                        <br />
+                        <span>Встати з ліжка</span>
+                        <br />
+                        <span>Приготувати сніданок</span>
+                        <br />
+                        <span>Прийняти душ</span>
+                        <br />
+                        <br />
+                        <span>
+                          Використовуючи метод “від малого до великого”, ми
+                          можемо згрупувати завдання і створити ієрархію:
+                        </span>
+                        <br />
+                        <br />
+                        <span>Від ліжка до роботи</span>
+                        <br />
+                        <span>Спальня</span>
+                        <br />
+                        <span>Встати з ліжка</span>
+                        <br />
+                        <span>Вибрати одяг</span>
+                        <br />
+                        <span>Вдягнутися</span>
+                        <br />
+                        <span>Ванна</span>
+                        <br />
+                        <span>Прийняти душ</span>
+                        <br />
+                        <span>Почистити зуби</span>
+                        <br />
+                        <span>Сніданок</span>
+                        <br />
+                        <span>Зробити сніданок</span>
+                        <br />
+                        <span>Поснідати</span>
+                        <br />
+                        <span>Транспорт</span>
+                        <br />
+                        <span>Поїхати на роботу</span>
+                        <br />
+                        <br />
+                        <span>
+                          Використання подібних ієрархій надзвичайно корисне в
+                          програмуванні для визначення структури всієї програми.
+                          Завдання верхнього рівня (наприклад: “Написати
+                          доповідь про картоплю” або “Від ліжку до роботи”) стає
+                          функцією main() (оскільки це основна проблема, яку
+                          потрібно вирішити). Підзадачі стають функціями в
+                          програмі.
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div id="toc-4" class="lesson118-container10 section_lesson">
+                    <h3 class="lesson118-text176 heading_h3">
+                      Крок №4: Визначте послідовність подій
+                    </h3>
+                    <p class="lesson118-text177 text-block margin-butttom">
+                      <span>
+                        Тепер, коли ваша програма має структуру, прийшов час
+                        відповісти на питання: “А як же пов’язати всі ці пункти
+                        разом?”. Перший крок полягає у визначенні послідовності
+                        подій. Наприклад, коли ви прокидаєтеся вранці, в якій
+                        послідовності ви виконуєте вищенаведені справи? Швидше
+                        за все, в наступній:
+                      </span>
+                      <br />
+                      <br />
+                      <span>Встати з ліжка</span>
+                      <br />
+                      <span>Вибрати одяг</span>
+                      <br />
+                      <span>Прийняти душ</span>
+                      <br />
+                      <span>Вдягнутися</span>
+                      <br />
+                      <span>Приготувати сніданок</span>
+                      <br />
+                      <span>Поснідати</span>
+                      <br />
+                      <span>Почистити зуби</span>
+                      <br />
+                      <span>Поїхати на роботу</span>
+                      <br />
+                      <br />
+                      <span>
+                        Якби ми створювали калькулятор, послідовність подій
+                        виглядала б наступним чином:
+                      </span>
+                      <br />
+                      <br />
+                      <span>Отримати перше значення від користувача</span>
+                      <br />
+                      <span>Отримати математичну операцію від користувача</span>
+                      <br />
+                      <span>Отримати друге значення від користувача</span>
+                      <br />
+                      <span>Обчислити результат</span>
+                      <br />
+                      <span>Вивести результат на екран</span>
+                      <br />
+                      <br />
+                      <span>Цей список визначає вміст функції main():</span>
+                      <br />
+                    </p>
+                    <code class="lesson118-text214 text-block code">
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>getOutOfBed();</span>
+                      <br />
+                      <span>pickOutClothes();</span>
+                      <br />
+                      <span>takeAShower();</span>
+                      <br />
+                      <span>getDressed();</span>
+                      <br />
+                      <span>prepareBreakfast();</span>
+                      <br />
+                      <span>eatBreakfast();</span>
+                      <br />
+                      <span>brushTeeth();</span>
+                      <br />
+                      <span>driveToWork();</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <code class="lesson118-text236 text-block code">
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>// Отримати перше значення від користувача</span>
+                      <br />
+                      <span>getUserInput();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Отримати математичну операцію від користувача
+                      </span>
+                      <br />
+                      <span>getMathematicalOperation();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Отримати друге значення від користувача</span>
+                      <br />
+                      <span>getUserInput();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Обчислити результат</span>
+                      <br />
+                      <span>calculateResult();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Вивести результат на екран</span>
+                      <br />
+                      <span>printResult();</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson118-text270 text-block margin-butttom">
+                      Або, у випадку з калькулятором:
+                    </p>
+                  </div>
+                  <div id="toc-5" class="lesson118-container11 section_lesson">
+                    <h3 class="lesson118-text271 heading_h3">
+                      Крок №5: Визначте дані вводу та дані виводу на кожному
+                      етапі
+                    </h3>
+                    <p class="lesson118-text272 text-block margin-butttom">
+                      <span>
+                        Після визначення ієрархії завдань і послідовності подій,
+                        нам потрібно визначити, якими будуть дані вводу та дані
+                        виводу на кожному етапі.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Наприклад, перша функція з вищенаведеного прикладу —
+                        getUserInput() — досить-таки проста. Ми збираємося
+                        отримати число від користувача і повернути його назад у
+                        викликаючу функцію. Таким чином, прототип функції
+                        виглядатиме наступним чином:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson118-text279">int getUserInput();</span>
+                      <br />
+                      <br />
+                      <span>
+                        У випадку з калькулятором, для функції calculateResult()
+                        потрібно 3 даних вводу: 2 числа і 1 математичний
+                        оператор. При виклику calculateResult() у нас вже
+                        повинні бути 3 фрагмента даних, які ми
+                        використовуватимемо в якості параметрів функції. Функція
+                        calculateResult() обчислює значення результату, але не
+                        виводить його. Отже, нам потрібно повернути цей
+                        результат як значення, що повертається, щоб інші функції
+                        також мали можливість його використати.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Враховуючи все вищесказане, прототип функції стає
+                        наступним:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson118-text288">
+                        int calculateResult(int input1, int op, int input2);
+                      </span>
+                      <br />
+                    </p>
+                  </div>
+                  <div id="toc-6" class="lesson118-container12 section_lesson">
+                    <h3 class="lesson118-text290 heading_h3">
+                      Крок №6: Подбайте про деталі
+                    </h3>
+                    <p class="lesson118-text291 text-block margin-butttom">
+                      <span>
+                        На цьому етапі нам потрібно реалізувати кожен підпункт з
+                        нашої ієрархії завдань. Якщо ви розбили завдання на
+                        досить дрібні частини, то виконати кожну з цих частин
+                        буде нескладно. Наприклад:
+                      </span>
+                      <br />
+                    </p>
+                    <code class="lesson118-text294 text-block code">
+                      <span>int getMathematicalOperation()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Please enter which operator you want
+                        (1 = +, 2 = -, 3 = *, 4 = /): ";
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int op;</span>
+                      <br />
+                      <span>std::cin &gt;&gt; op;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // А що, якщо користувач введе некоректний символ?
+                      </span>
+                      <br />
+                      <span>// Поки що ми це проігноруємо</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>return op;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                  </div>
+                  <div id="toc-7" class="lesson118-container13 section_lesson">
+                    <h3 class="lesson118-text318 heading_h3">
+                      Крок №7: З’єднайте дані вводу з даними виводу в програмі
+                    </h3>
+                    <p class="lesson118-text319 text-block margin-butttom">
+                      І, нарешті, останній крок — з’єднання даних вводу з даними
+                      виводу. Наприклад, ви можете відправити вихідні дані
+                      функції calculateResult() у вхідні дані функції
+                      printResult(), щоб друга функція могла вивести результат.
+                      Найчастіше в таких випадках використовуються проміжні
+                      змінні для тимчасового зберігання результату і його
+                      переміщення між функціями, наприклад:
+                    </p>
+                    <code class="lesson118-text320 text-block code">
+                      <span>
+                        // Змінна result є проміжною змінною, яка
+                        використовується для передачі
+                      </span>
+                      <br />
+                      <span>
+                        // вихідного значення функції calculateResult()
+                      </span>
+                      <br />
+                      <span>// у вхідні дані функції printResult()</span>
+                      <br />
+                      <span>
+                        int result = calculateResult(input1, op, input2);
+                      </span>
+                      <br />
+                      <span>printResult(result);</span>
+                    </code>
+                    <p class="lesson118-text330 text-block margin-butttom">
+                      <span>
+                        Погодьтеся, що варіант, наведений вище, читабельніший
+                        без використання тимчасових змінних (див. нижче):
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson118-text334">
+                        printResult(calculateResult(input1, op, input2));
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Розглянемо готову версію програми-калькулятора, її
+                        структуру і переміщення даних:
+                      </span>
+                    </p>
+                    <code class="lesson118-text338 text-block code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int getUserInput()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Please enter an integer: ";
+                      </span>
+                      <br />
+                      <span>int value;</span>
+                      <br />
+                      <span>std::cin &gt;&gt; value;</span>
+                      <br />
+                      <span>return value;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int getMathematicalOperation()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Please enter which operator you want
+                        (1 = +, 2 = -, 3 = *, 4 = /): ";
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int op;</span>
+                      <br />
+                      <span>std::cin &gt;&gt; op;</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // А що, якщо користувач введе некоректний символ?
+                      </span>
+                      <br />
+                      <span>// Поки що ми це проігноруємо</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>return op;</span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int calculateResult(int x, int op, int y)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        // Зверніть увагу, оператор == використовується для
+                        порівняння двох значень
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        if (op == 1) // якщо користувач вибрав операцію
+                        додавання (№1)
+                      </span>
+                      <br />
+                      <span>return x + y; // то виконуємо цей рядок</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        if (op == 2) // якщо користувач вибрав операцію
+                        віднімання (№2)
+                      </span>
+                      <br />
+                      <span>return x - y; // то виконуємо цей рядок</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        if (op == 3) // якщо користувач вибрав операцію множення
+                        (№3)
+                      </span>
+                      <br />
+                      <span>return x * y; // то виконуємо цей рядок</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        if (op == 4) // якщо користувач вибрав операцію ділення
+                        (№4)
+                      </span>
+                      <br />
+                      <span>return x / y; // то виконуємо цей рядок</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        return -1; // варіант, якщо користувач ввів некоректний
+                        символ
+                      </span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>void printResult(int result)</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Your result is: " &lt;&lt; result
+                        &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>}</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>// Отримуємо перше значення від користувача</span>
+                      <br />
+                      <span>int input1 = getUserInput();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Отримуємо математичну операцію від користувача
+                      </span>
+                      <br />
+                      <span>int op = getMathematicalOperation();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Отримауємо друге значення від користувача</span>
+                      <br />
+                      <span>int input2 = getUserInput();</span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>
+                        // Обчислюємо результат і зберігаємо його в тимчасовій
+                        змінній
+                      </span>
+                      <br />
+                      <span>
+                        int result = calculateResult(input1, op, input2 );
+                      </span>
+                      <br />
+                      <span></span>
+                      <br />
+                      <span>// Виводимо результат на екран</span>
+                      <br />
+                      <span>printResult(result);</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p class="lesson118-text466 text-block margin-butttom">
+                      Тут є кілька концепцій, які ми ще не розглядали: умовне
+                      розгалуження з операторами if і використання оператора
+                      рівності == для порівняння двох елементів. Не турбуйтеся,
+                      якщо ви це не розумієте — ми все це детально розглянемо на
+                      наступних уроках.
+                    </p>
+                  </div>
+                  <div id="toc-8" class="lesson118-container14 section_lesson">
+                    <h3 class="lesson118-text467 heading_h3">Поради</h3>
+                    <p class="lesson118-text468 text-block margin-butttom">
+                      <span class="textBold">
+                        Нехай ваші перші програми будуть простими.
+                      </span>
+                      <span class="lesson118-text470">
+                        Дуже часто початківці ставлять занадто високі планки для
+                        своїх перших більш-менш серйозних програм. Наприклад, “Я
+                        хочу написати гру з графікою, звуком, монстрами,
+                        підземеллями і містом, в якому можна буде продавати
+                        знайдені речі”. Якщо ви спробуєте написати що-небудь
+                        подібне на початку вашого шляху в програмуванні, то дуже
+                        скоро у вас зникне будь-яке бажання програмувати.
+                        Замість цього, нехай ваші перші цілі/завдання/програми
+                        будуть простими. Наприклад, “Я хочу написати програму,
+                        яка показувала б 2D-поле на екрані”.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">
+                        Додавайте новий функціонал поступово.
+                      </span>
+                      <span class="lesson118-text474">
+                        Як тільки ви написали простеньку програму, яка працює
+                        (навіть без збоїв), то тільки тоді можна буде додавати
+                        новий функціонал. Наприклад, коли ви можете показувати
+                        2D-поле на екрані, то тоді додайте персонажа, який зможе
+                        ходити по цьому полю. Після того, як ви вже зможете
+                        ходити, додайте стіни, які перешкоджатимуть вашому руху.
+                        Після того, як у вас будуть стіни, побудуйте з них
+                        місто. Після того, як у вас буде місто, додайте
+                        персонажів-продавців. При такому підході на вас не
+                        навалюється все відразу і ви знаєте з чого починати, що
+                        робити далі і в якій послідовності.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">
+                        Фокусуйтеся тільки на одному завданні в певний проміжок
+                        часу.
+                      </span>
+                      <span class="lesson118-text478">
+                        Не намагайтеся зробити все і відразу, не розпилюйтеся на
+                        кілька завдань одночасно. Зосередьтесь на чомусь одному.
+                        Краще мати одне виконане завдання і п’ять невиконаних,
+                        ніж шість частково виконаних завдань. Якщо ви розсіюєте
+                        свою увагу в декількох напрямках, то і помилок буде
+                        відповідно.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">
+                        Тестуйте кожну нову частину коду.
+                      </span>
+                      <span class="lesson118-text482">
+                        Початківці часто пишуть програми “за один підхід”.
+                        Потім, при компіляції проекту, отримують сотні помилок.
+                        Тому, при написанні певної частини коду, відразу
+                        компілюйте і тестуйте її. Якщо ваш код не працюватиме,
+                        то ви знатимете, де знаходиться проблема, і виправити її
+                        буде набагато легше. Як тільки ви переконалися, що ваш
+                        код робочий — переходьте до написання наступної частини,
+                        а потім repeat. Тестування може зайняти більше часу, але
+                        в кінцевому підсумку ваш код працюватиме так, як вам
+                        потрібно.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson118-text485">
+                        Більшість новачків пропустять деякі з цих кроків і
+                        порад, тому що це не настільки захоплююче, як, власне,
+                        сам процес програмування. Хороша новина полягає в тому,
+                        що як тільки ви освоїте всі ці концепції — вони стануть
+                        для вас звичними в процесі розробки ваших програмних
+                        продуктів.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-17.html">
+                      <div class="lesson118-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson118-arrowdown1"
+                        />
+                        <span class="lesson118-text486">Урок №17</span>
+                      </div>
+                    </a>
+                    <a href="lesson1-19.html">
+                      <div class="lesson118-item1 item_nav_right">
+                        <span class="lesson118-text487">Урок №19</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson118-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson118-toc toc">
+                  <span class="lesson118-text488">Зміст</span>
+                  <div class="lesson118-toclist1">
+                    <ul class="lesson118-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson118-link03">
+                          Крок №1: Визначте проблему
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson118-link04">
+                          Крок №2: Визначте інструментарій, цілі і план бекапу
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-3" class="lesson118-link05">
+                          Крок №3: Розбийте проблему на частини
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-4" class="lesson118-link06">
+                          Крок №4: Визначте послідовність подій
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-5" class="lesson118-link07">
+                          Крок №5: Визначте дані вводу та дані виводу на кожному
+                          етапі
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-6" class="lesson118-link08">
+                          Крок №6: Подбайте про деталі
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-7" class="lesson118-link09">
+                          Крок №7: З’єднайте дані вводу з даними виводу в
+                          програмі
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-8" class="lesson118-link10">Поради</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson118-footer footer_">
+          <div class="lesson118-container15 container_footer">
+            <div class="lesson118-container16">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson118-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson118-link12 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson118-link13 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson118-separator"></div>
+            <div class="lesson118-container17">
+              <span class="lesson118-text489">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson118-text490">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson118-link14"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

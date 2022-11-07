@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson0-3 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson0-3 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson0-3.css" rel="stylesheet" />
+
+      <div class="lesson03-container">
+        <header data-role="Header" class="lesson03-header-lesson">
+          <a href="index.html" class="lesson03-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson03-image img_logo"
+            />
+          </a>
+          <div class="lesson03-nav">
+            <nav class="lesson03-nav1">
+              <a href="index.html" class="lesson03-navlink1">Головна</a>
+              <a href="index.html" class="lesson03-navlink2">Уроки</a>
+              <a href="index.html" class="lesson03-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson03-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson03-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson03-mobile-menu">
+            <div class="lesson03-nav2">
+              <div class="lesson03-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson03-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson03-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson03-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson03-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson03-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson03-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson03-hero">
+          <div class="lesson03-container02">
+            <h1 class="lesson03-text">
+              <span>Розділ №0. Урок №3</span>
+              <span></span>
+            </h1>
+            <span class="lesson03-text003">
+              Введення в розробку програмного забезпечення
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson03-lessons">
+          <section class="lesson03-container03 container_lessons">
+            <div class="lesson03-section0">
+              <div class="lesson03-container04">
+                <div class="lesson03-tocmobile mobile toc">
+                  <span class="lesson03-text004">Зміст</span>
+                  <div class="lesson03-toclist">
+                    <ul class="lesson03-ul list">
+                      <li class="list-item">
+                        <a href="#lesson-3_section-1">
+                          Крок №1: Визначте проблему, яку потрібно вирішити
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-2" class="lesson03-link01">
+                          Крок №2: Визначте, як ви вирішуватимете проблему
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-3" class="lesson03-link02">
+                          Крок №3: Напишіть програму
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-4" class="lesson03-link03">
+                          Крок №4: Виконайте компіляцію програми
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-5" class="lesson03-link04">
+                          Крок №5: Виконайте лінкінг програми (з’єднайте
+                          об’єктні файли)
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-6" class="lesson03-link05">
+                          Крок №6: Виконайте тестування та відлагодження
+                          програми
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson03-left-content">
+                  <p class="item_sub-heading margin-butttom lesson03-text005">
+                    <span>
+                      Перед написанням і виконанням нашої першої програми, ми
+                      повинні зрозуміти, з чого взагалі складається розробка
+                      програмного забезпечення на
+                    </span>
+                    <a href="lesson0-2.html" class="lesson03-navlink4">
+                      мові програмування C++
+                    </a>
+                    <span>.</span>
+                    <br />
+                    <br />
+                    <span>
+                      Проілюструємо процес розробки програмного забезпечення
+                      (скор. “ПЗ”):
+                    </span>
+                    <br />
+                  </p>
+                  <img
+                    alt="pastedImage"
+                    src="public/playground_assets/pastedimage-dpct-1400w.png"
+                    class="img_lesson width-auto"
+                  />
+                  <div
+                    id="lesson-3_section-1"
+                    class="lesson03-container05 section_lesson"
+                  >
+                    <h3 class="lesson03-text012 heading_h3">
+                      Крок №1: Визначте проблему, яку потрібно вирішити
+                    </h3>
+                    <p class="lesson03-text013 text-block margin-butttom">
+                      <span>Цей крок називається «</span>
+                      <span class="textBold">Що?</span>
+                      <span>
+                        ». Тут ви повинні зрозуміти, що ж саме ви хочете, щоб
+                        ваша програма виконувала. Цей крок може бути як
+                        найпростішим, так і найскладнішим. Все, що вам потрібно
+                        — це чітко сформулювати головну ідею вашої програми.
+                        Тільки після цього ви зможете перейти до наступного
+                        кроку.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Ось декілька прикладів виконання кроку №1:</span>
+                      <br />
+                    </p>
+                    <div
+                      class="lesson03-container06 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown1"
+                      />
+                      <p class="lesson03-text021 text-block with-padding">
+                        “Я хочу написати програму, яка буде вираховувати середнє
+                        арифметичне переданих їй чисел.”
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container07 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown101"
+                      />
+                      <p class="lesson03-text022 text-block with-padding">
+                        “Я хочу написати програму, в якій буде 2D-лабіринт, по
+                        якому користувач зможе пересуватися.”
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container08 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown102"
+                      />
+                      <p class="lesson03-text023 text-block with-padding">
+                        “Я хочу написати програму, яка аналізуватиме ціни акцій
+                        на біржах і прогнозуватиме скачки цін на акції вгору чи
+                        вниз.”
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-3_section-2"
+                    class="lesson03-container09 section_lesson"
+                  >
+                    <h3 class="lesson03-text024 heading_h3">
+                      Крок №2: Визначте, як ви вирішуватимете проблему
+                    </h3>
+                    <p class="lesson03-text025 text-block margin-butttom">
+                      <span class="lesson03-text026">
+                        Тут ми відповідаємо на запитання «
+                      </span>
+                      <span class="textBold">Як?</span>
+                      <span class="lesson03-text028">
+                        ». Як саме ми вирішуватимемо проблему з кроку №1? Цим
+                        кроком досить часто нехтують при розробці програмного
+                        забезпечення. Справа в тому, що способів вирішення
+                        проблеми може бути багато, тільки от деякі з цих
+                        способів можуть бути хорошими, деякі погані, а деякі
+                        просто жахливі. Ви повинні навчитися розрізняти якість
+                        пропонованих рішень. Дуже часто можна спостерігати
+                        ситуацію, коли у програміста виникає ідея і він відразу
+                        ж сідає за стіл програмувати. Як ви вже могли б
+                        здогадатися, такий сценарій далеко не завжди призводить
+                        до хороших рішень і хорошого коду.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Як правило,</span>
+                      <span class="textBold">
+                        більшість хороших рішень мають наступні характеристики:
+                      </span>
+                      <br />
+                    </p>
+                    <div
+                      class="lesson03-container10 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown103"
+                      />
+                      <p class="lesson03-text034 text-block with-padding">
+                        простота;
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container11 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown104"
+                      />
+                      <p class="lesson03-text035 text-block with-padding">
+                        наявність документації (з інструкціями і коментарями);
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container12 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown105"
+                      />
+                      <p class="lesson03-text036 text-block with-padding">
+                        модульність: будь-яка частина програми може бути
+                        повторно використана або змінена пізніше без впливу на
+                        інші частини коду;
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container13 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown106"
+                      />
+                      <p class="lesson03-text037 text-block with-padding">
+                        надійність: наявність системи обробки помилок і
+                        екстрених випадків.;
+                      </p>
+                    </div>
+                    <p class="lesson03-text038 text-block margin-butttom">
+                      <span>
+                        Коли ви відразу ж починаєте програмувати після
+                        виникнення геніальної ідеї, ви сідаєте за стіл і
+                        думаєте, що зробите це, ось це і ще ось це. Таким чином
+                        ви приймаєте рішення, які дозволять вам швидше виконати
+                        поставлене завдання. Однак це може призвести до того, що
+                        ви отримаєте програму, яку пізніше буде важко
+                        модифікувати, підтримувати або взагалі отримаєте десятки
+                        (якщо не сотні) помилок на етапі компіляції.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Згідно з</span>
+                      <a
+                        href="https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF_%D0%9F%D0%B0%D1%80%D0%B5%D1%82%D0%BE"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="lesson03-link06"
+                      >
+                        законом Парето
+                      </a>
+                      <span>
+                        , програміст витрачає близько 20% часу на написання
+                        програми і близько 80% часу на її відлагодження
+                        (виправлення помилок) або підтримку (додання нових
+                        функціональних можливостей). Тому цілком логічно, що
+                        краще витратити додатковий час на обдумування кращого
+                        способу вирішення проблеми перед фактичним написанням
+                        коду, ніж потім витрачати решту 80% часу на пошук та
+                        виправлення помилок.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-3_section-3"
+                    class="lesson03-container14 section_lesson"
+                  >
+                    <h3 class="lesson03-text044 heading_h3">
+                      Крок №3: Напишіть програму
+                    </h3>
+                    <p class="lesson03-text045 text-block margin-butttom">
+                      <span>
+                        Для того, щоб написати програму, вам необхідно мати
+                        знання вибраної вами мови програмування та середовище
+                        розробки.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Програму можна написати, використовуючи будь-який
+                        редактор, навіть той же Блокнот в Windows або текстовий
+                        редактор Vi в Unix. Проте я настійно рекомендую
+                        використовувати середовище розробки.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Редактор типового програміста, як правило, має наступні
+                        особливості, які полегшують процес програмування:
+                      </span>
+                    </p>
+                    <div
+                      class="lesson03-container15 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown107"
+                      />
+                      <p class="lesson03-text053 text-block with-padding">
+                        Нумерація рядків. Ця функція надзвичайно корисна при
+                        відлагодженні програми, коли компілятор повідомляє нас
+                        про наявність помилок. Типова помилка компіляції
+                        складається з “помилка” і “№ рядка“, де ця помилка
+                        сталася, наприклад: “помилка перевизначення змінної x,
+                        рядок 80“. Без нумерації рядків шукати той самий 80-й
+                        рядок коду було б трохи важко, чи не так?
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container16 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown108"
+                      />
+                      <p class="lesson03-text054 text-block with-padding">
+                        Підсвічування синтаксису. Підсвічування синтаксису
+                        змінює колір різних частин програми і коду, що покращує
+                        сприйняття як цілої програми, так і окремих її частин.
+                      </p>
+                    </div>
+                    <div
+                      class="lesson03-container17 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown109"
+                      />
+                      <p class="lesson03-text055 text-block with-padding">
+                        <span>
+                          Спеціальний шрифт. В звичайних шрифтах дуже часто
+                          виникає плутанина через певні символи, коли
+                          незрозуміло, що саме знаходиться перед вами.
+                          Наприклад, цифра
+                        </span>
+                        <span class="lesson03-text057">0</span>
+                        <span>чи буква</span>
+                        <span class="lesson03-text059">O</span>
+                        <span>, цифра</span>
+                        <span class="lesson03-text061">1</span>
+                        <span>чи буква</span>
+                        <span class="lesson03-text063">l</span>
+                        <span>(нижній регістр</span>
+                        <span class="lesson03-text065">L</span>
+                        <span>), чи, можливо, буква</span>
+                        <span class="lesson03-text067">I</span>
+                        <span>(верхній регістр</span>
+                        <span class="lesson03-text069">i</span>
+                        <span>
+                          ). Ось саме в таких випадках і потрібен спеціальний
+                          шрифт, в якому можна чітко відрізнити дані символи,
+                          запобігаючи випадкове використання одного символу
+                          замість іншого.
+                        </span>
+                      </p>
+                    </div>
+                    <p class="lesson03-text071 text-block margin-butttom">
+                      <span>
+                        Файли з вашими програмами на мові C++ слід називати
+                      </span>
+                      <span class="textBold">name.cpp</span>
+                      <span>
+                        , де name замінюється назвою вашої програми, а
+                        розширення .cpp повідомляє компілятору (і вам також), що
+                        це вихідний файл коду, який містить інструкції на мові
+                        програмування C++. Слід звернути увагу, що деякі
+                        програмісти використовують розширення .cc замість .cpp,
+                        але я рекомендую використовувати саме .cpp.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Також варто відзначити, що програми в C++ можуть
+                        складатися з декількох .cpp-файлів. Хоча більшість
+                        програм, які ви створюватимете на цих уроках, не будуть
+                        надто великими, у вашій подальшій практиці ви матимете
+                        змогу навчитися писати програми, які складатимуться з
+                        десятків, якщо не з сотень окремих .cpp-файлів .
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-3_section-4"
+                    class="lesson03-container18 section_lesson"
+                  >
+                    <h3 class="lesson03-text078 heading_h3">
+                      Крок №4: Виконайте компіляцію програми
+                    </h3>
+                    <p class="lesson03-text079 text-block margin-butttom">
+                      <span>
+                        Для того, щоб виконати компіляцію програми, нам потрібен
+                        компілятор.
+                      </span>
+                      <span class="textBold">
+                        Робота компілятора складається з двох частин:
+                      </span>
+                      <br />
+                    </p>
+                    <div
+                      class="lesson03-container19 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown110"
+                      />
+                      <p class="lesson03-text083 text-block with-padding">
+                        Перевірка програми на відповідність правилам мови C++
+                        (перевірка синтаксису). Якщо вона буде невдалою, то
+                        компілятор повідомить вас про помилки, які потрібно буде
+                        виправити.
+                      </p>
+                    </div>
+                    <div class="lesson03-container20 container_with-textblock">
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson03-arrowdown111"
+                      />
+                      <p class="lesson03-text084 text-block with-padding">
+                        <span>
+                          Конвертація кожного вихідного файлу з кодом в
+                        </span>
+                        <span class="textBold">об’єктний файл</span>
+                        <span>
+                          (або “об’єктний модуль”) на машинній мові. Об’єктні
+                          файли, як правило, називаються
+                        </span>
+                        <span class="textBold">name.o</span>
+                        <span>або</span>
+                        <span class="textBold">name.obj</span>
+                        <span>
+                          , де name повинне бути таке ж, як і назва вашого
+                          вихідного .cpp-файлу. Якщо ваша програма складається з
+                          трьох .cpp-файлів, то компілятор згенерує 3 об’єктних
+                          файли.
+                        </span>
+                      </p>
+                    </div>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/bd79d642-42e7-4bec-b381-8807e98d2460?org_if_sml=15529"
+                      class="img_lesson"
+                    />
+                    <p class="text-block margin-butttom">
+                      <span>
+                        Варто зазначити, що такі операційні системи як Linux і
+                        macOS мають вже вбудований компілятор C++, який
+                        називається g++. Для компіляції файлів з командного
+                        рядка за допомогою
+                      </span>
+                      <span class="lesson03-text094">g++</span>
+                      <span>вам необхідно написати наступне:</span>
+                      <br />
+                      <span class="lesson03-text097">
+                        g++ -c file1.cpp file2.cpp file3.cpp
+                      </span>
+                      <br class="lesson03-text098" />
+                      <span>Таким чином ми створили</span>
+                      <span class="lesson03-text100">file1.o</span>
+                      <span>,</span>
+                      <span class="lesson03-text102">file2.o</span>
+                      <span>и</span>
+                      <span class="lesson03-text104">file3.o</span>
+                      <span>
+                        . -c означає “тільки скомпілювати”, тобто створити .o
+                        (об’єктні) файли. Також є і інші компілятори для Linux,
+                        Windows та інших операційних систем.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-3_section-5"
+                    class="lesson03-container21 section_lesson"
+                  >
+                    <h3 class="lesson03-text106 heading_h3">
+                      Крок №5: Виконайте лінкінг програми (з’єднайте об’єктні
+                      файли)
+                    </h3>
+                    <p class="lesson03-text107 text-block margin-butttom">
+                      <span class="textBold">Лінкінг</span>
+                      <span>
+                        — це процес зв’язування всіх об’єктних файлів, що
+                        генеруються компілятором, в єдину виконувану програму,
+                        яку ви потім зможете запустити (виконати). Це можна
+                        зробити за допомогою програми, яка називається лінкер
+                        (або “
+                      </span>
+                      <span class="textBold">компоновщик</span>
+                      <span>”).</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/d3c0db06-9696-4634-9c0d-e744d9dcb2c7?org_if_sml=113909"
+                      class="img_lesson"
+                    />
+                    <p class="text-block with-padding">
+                      <span>
+                        Крім об’єктних файлів, лінкер також підключає файли зі
+                        Стандартної бібліотеки С++ (або будь-якої іншої
+                        бібліотеки, яку ви використовуєте). Сам по собі мова С++
+                        є досить невеликою та простою. Проте до неї
+                        підключається велика бібліотека додаткових функцій, які
+                        можуть використовувати ваші програми, і ці функції
+                        знаходяться в Стандартній бібліотеці C++. Наприклад,
+                        якщо ви хочете вивести що-небудь на екран, то у вас в
+                        коді повинна бути спеціальна команда, яка повідомить
+                        компілятору, що ви плануєте використати функцію
+                        виведення інформації на екран зі Стандартної бібліотеки
+                        C++.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Після того, як лінкер закінчить з’єднувати всі об’єктні
+                        файли (за умови, що не буде помилок), ви отримаєте
+                        виконуваний файл. Знову ж таки, щоб зв’язати .o-файли,
+                        які ми створили вище в Linux або в macOS, ми можемо
+                        скористатися g++:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson03-text119">
+                        g++ -o prog file1.o file2.o file3.o
+                      </span>
+                      <br />
+                      <br />
+                      <span>Команда</span>
+                      <span class="lesson03-text123">-o</span>
+                      <span>повідомляє</span>
+                      <span class="lesson03-text125">g++</span>
+                      <span>
+                        , що ми хочемо отримати виконуваний файл з іменем prog з
+                        наступних файлів:
+                      </span>
+                      <span class="lesson03-text127">file1.o</span>
+                      <span>,</span>
+                      <span class="lesson03-text129">file2.o</span>
+                      <span>і</span>
+                      <span class="lesson03-text131">file3.o</span>
+                      <span>
+                        . При бажанні, компіляцію і лінкінг можна об’єднати в
+                        один крок:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson03-text135">
+                        g++ -o prog file1.cpp file2.cpp file3.cpp
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Результатом виконання стане виконуваний файл з іменем
+                        prog.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-3_section-6"
+                    class="lesson03-container22 section_lesson"
+                  >
+                    <h3 class="lesson03-text139 heading_h3">
+                      Крок №6: Виконайте тестування та відлагодження програми
+                    </h3>
+                    <p class="lesson03-text140 text-block margin-butttom">
+                      <span>
+                        Ось саме тут і починаються веселощі! Ви вже можете
+                        запустити виконуваний файл і подивитися, чи все працює
+                        так як треба. Якщо ні, то настав час для відлагодження
+                        вашої програми (більш докладно про це ми поговоримо на
+                        наступних уроках).
+                      </span>
+                      <br class="lesson03-text142" />
+                      <br class="lesson03-text143" />
+                      <span>
+                        Зверніть увагу, що для виконання кроків №3-№6 вам
+                        знадобиться спеціальне програмне забезпечення. Хоча ви
+                        можете використовувати окремі програми на кожному з цих
+                        кроків, середовище розробки (скор. “
+                      </span>
+                      <span class="textBold">IDE</span>
+                      <span>
+                        ” від англ. “Integrated Development Environment”)
+                        об’єднує всі ці програми в собі. Зазвичай з IDE ви
+                        отримуєте редактор коду з нумерацією рядків і
+                        підсвічуванням синтаксису, а також компілятор та лінкер.
+                        А коли вам потрібно буде виконати відлагодження
+                        програми, то ви зможете використати вбудований
+                        відлагоджувач. Крім того, IDE має ще ряд інших корисних
+                        можливостей: доповнення коду, система контролю версій
+                        тощо.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson0-2.html">
+                      <div class="lesson03-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson03-arrowdown112"
+                        />
+                        <span class="lesson03-text147">Урок №2</span>
+                      </div>
+                    </a>
+                    <a href="lesson0-4.html">
+                      <div class="lesson03-item1 item_nav_right">
+                        <span class="lesson03-text148">Урок №4</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson03-arrowdown113"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson03-toc toc">
+                  <span class="lesson03-text149">Зміст</span>
+                  <div class="lesson03-toclist1">
+                    <ul class="lesson03-ul1 list">
+                      <li class="list-item">
+                        <a href="#lesson-3_section-1">
+                          Крок №1: Визначте проблему, яку потрібно вирішити
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-2" class="lesson03-link08">
+                          Крок №2: Визначте, як ви вирішуватимете проблему
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-3" class="lesson03-link09">
+                          Крок №3: Напишіть програму
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-4" class="lesson03-link10">
+                          Крок №4: Виконайте компіляцію програми
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-5" class="lesson03-link11">
+                          Крок №5: Виконайте лінкінг програми (з’єднайте
+                          об’єктні файли)
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-3_section-6" class="lesson03-link12">
+                          Крок №6: Виконайте тестування та відлагодження
+                          програми
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson03-footer footer_">
+          <div class="lesson03-container23 container_footer">
+            <div class="lesson03-container24">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson03-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson03-link14 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson03-link15 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson03-separator"></div>
+            <div class="lesson03-container25">
+              <span class="lesson03-text150">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson03-text151">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson03-link16"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

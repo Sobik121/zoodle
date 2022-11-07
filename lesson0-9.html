@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson0-9 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson0-9 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson0-9.css" rel="stylesheet" />
+
+      <div class="lesson09-container">
+        <header data-role="Header" class="lesson09-header-lesson">
+          <a href="index.html" class="lesson09-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson09-image img_logo"
+            />
+          </a>
+          <div class="lesson09-nav">
+            <nav class="lesson09-nav1">
+              <a href="index.html" class="lesson09-navlink1">Головна</a>
+              <a href="index.html" class="lesson09-navlink2">Уроки</a>
+              <a href="index.html" class="lesson09-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson09-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson09-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson09-mobile-menu">
+            <div class="lesson09-nav2">
+              <div class="lesson09-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson09-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson09-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson09-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson09-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson09-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson09-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson09-hero">
+          <div class="lesson09-container02">
+            <h1 class="lesson09-text">Розділ №0. Урок №9</h1>
+            <span class="lesson09-text001">
+              <span>Налаштування компілятора: Попередження та помилки</span>
+              <br />
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson09-lessons">
+          <section class="lesson09-container03 container_lessons">
+            <div class="lesson09-section0">
+              <div class="lesson09-container04">
+                <div class="lesson09-tocmobile mobile toc">
+                  <span class="lesson09-text004">Зміст</span>
+                  <div class="lesson09-toclist">
+                    <ul class="lesson09-ul list">
+                      <li class="list-item">
+                        <a href="#lesson-9_section-1">Попередження в С++</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-2" class="lesson09-link01">
+                          <span class="lesson09-text005">
+                            Зміна рівня попереджень.&nbsp;Користувачам Visual
+                            Studio
+                          </span>
+                          <br class="lesson09-text006" />
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-3" class="lesson09-link02">
+                          <span>Зміна рівня попереджень.&nbsp;</span>
+                          <span>Користувачам Code::Blocks</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-4">
+                          <span>Зміна рівня попереджень.&nbsp;</span>
+                          <span>Користувачам GCC/G++</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-5">
+                          <span>Обробка попереджень як помилок..&nbsp;</span>
+                          <span>Користувачам Visual Studio</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-6">
+                          <span>Обробка попереджень як помилок.&nbsp;</span>
+                          <span>Користувачам Code::Blocks</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-7">
+                          <span>Обробка попереджень як помилок..&nbsp;</span>
+                          <span>Користувачам GCC/G++</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson09-left-content">
+                  <p class="item_sub-heading margin-butttom lesson09-text017">
+                    <span>
+                      Сьогодні ми поговоримо про те, як підвищити рівень
+                      попереджень в компіляторах і змусити компілятор сприймати
+                      всі попередження так, наче це помилки.
+                    </span>
+                    <br />
+                  </p>
+                  <div
+                    id="lesson-9_section-1"
+                    class="lesson09-container05 section_lesson"
+                  >
+                    <h3 class="lesson09-text020 heading_h3">
+                      Попередження в С++
+                    </h3>
+                    <p class="lesson09-text021 text-block margin-butttom">
+                      <span>
+                        На етапі компіляції компілятор перевіряє, чи відповідає
+                        ваш код правилам мови програмування C++. Якщо ви
+                        порушили синтаксис С++, то компілятор видасть вам
+                        помилку, надавши як номер рядка, який містить помилку,
+                        так і зміст самої помилки. Фактично, помилка може
+                        перебувати як в рядку, про який вам повідомив
+                        компілятор, так і в рядку перед ним. Після того, як ви
+                        визначили і виправили рядки коду з помилками, ви можете
+                        спробувати скомпілювати вашу програму ще раз.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Також трапляються ситуації, коли компілятор бачить код з
+                        помилками, але не до кінця в цьому впевнений
+                        (пам’ятайте, що
+                      </span>
+                      <a href="lesson0-2.html" class="lesson09-navlink4">
+                        суть філософії С++
+                      </a>
+                      <span>
+                        полягає у виразі «Довіряй програмісту!»). У таких
+                        випадках компілятор може видати вам попередження.
+                        Попередження не зупиняють процес компіляції, але
+                        повідомляють програмісту, що щось пішло не так.
+                      </span>
+                    </p>
+                    <div class="info margin-butttom lesson09-info">
+                      <p class="lesson09-text027 text-block heading">Порада</p>
+                      <div class="lesson09-container06">
+                        <p class="color-primary-2 text-block">
+                          Не дозволяйте попередженням накопичуватися. Вирішуйте
+                          їх по мірі надходження (наче це помилки).
+                        </p>
+                      </div>
+                    </div>
+                    <p class="lesson09-text029 text-block margin-butttom">
+                      <span>
+                        У більшості випадків попередження можуть бути усунені
+                        шляхом виправлення помилки, на яку вказує попередження,
+                        або шляхом переписування рядків коду, які генерують
+                        попередження, таким чином, щоб ці попередження більше не
+                        генерувалися.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Дуже рідко може знадобитися варіант явно вказати
+                        компілятору, щоб він не генерував конкретне попередження
+                        для поточного рядка коду. C++ не підтримує такий спосіб
+                        вирішення попереджень, але деякі компілятори (включаючи
+                        Visual Studio і GCC) надають можливість (через директиви
+                      </span>
+                      <span class="lesson09-text034">#pragma</span>
+                      <span>) тимчасового вимкнення попереджень.</span>
+                      <br />
+                      <br />
+                      <span>
+                        За замовчуванням більшість компіляторів генерують лише
+                        попередження про найбільш очевидні проблеми. Однак ви
+                        можете попросити ваш компілятор бути більш доскіпливим у
+                        генерації попереджень, повідомляючи про всі речі, які
+                        він вважає дивними.
+                      </span>
+                    </p>
+                    <div class="info lesson09-info1">
+                      <p class="lesson09-text039 text-block heading">
+                        Примітка
+                      </p>
+                      <div class="lesson09-container07">
+                        <p class="color-primary-2 text-block">
+                          Змініть рівень попереджень компілятора на вищий,
+                          особливо під час навчання. Це допоможе вам у
+                          визначенні та вирішенні можливих проблем.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-9_section-2"
+                    class="lesson09-container08 section_lesson"
+                  >
+                    <h3 class="lesson09-text041 heading_h3">
+                      Зміна рівня попереджень.&nbsp;Користувачам Visual Studio
+                    </h3>
+                    <p class="lesson09-text042 text-block margin-butttom">
+                      <span>
+                        Щоб підвищити рівень попереджень в Visual Studio,
+                        клацніть правою кнопкою миші по назві вашого проекту в
+                      </span>
+                      <span class="lesson09-text044">
+                        "Обозреватель решений" &gt; "Свойства"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/83f530fb-fbd5-4c01-a069-56d923b42bdc?org_if_sml=1406355"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text046 text-block margin-butttom">
+                      <span>
+                        В діалоговому вікні вашого проекту переконайтесь, що в
+                        пункті
+                      </span>
+                      <span class="lesson09-text048">"Конфигурация"</span>
+                      <span>вибрано значення</span>
+                      <span class="lesson09-text050">"Все конфигурации"</span>
+                      <span>. Після цього перейдіть на вкладку</span>
+                      <span class="lesson09-text052">"C/C++" &gt; "Общие"</span>
+                      <span>і в пункті</span>
+                      <span class="lesson09-text054">
+                        "Уровень предупреждений"
+                      </span>
+                      <span>виберіть значення</span>
+                      <span class="lesson09-text056">"Уровень4 (/W4)"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/fc146738-2432-4088-adea-27b5f3348bd4?org_if_sml=1137374"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text058 text-block margin-butttom">
+                      <span>Після цього натисніть на</span>
+                      <span class="lesson09-text060">"Применить"</span>
+                      <span>і</span>
+                      <span class="lesson09-text062">"ОК"</span>
+                      <span>.</span>
+                    </p>
+                    <div class="info lesson09-info2">
+                      <p class="lesson09-text064 text-block heading">
+                        Примітка
+                      </p>
+                      <div class="lesson09-container09">
+                        <p class="color-primary-2 text-block">
+                          Не вибирайте пункт "Включить все предупреждения
+                          (/Wall)", інакше ви будете “поховані” в попередженнях,
+                          які генеруються Стандартною бібліотекою C++.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-9_section-3"
+                    class="lesson09-container10 section_lesson"
+                  >
+                    <h3 class="lesson09-text066 heading_h3">
+                      Зміна рівня попереджень.&nbsp;Користувачам Code::Blocks
+                    </h3>
+                    <p class="lesson09-text067 text-block margin-butttom">
+                      <span>Перейдіть в меню</span>
+                      <span class="lesson09-text069">
+                        "Settings" -&gt; "Compiler"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/ab14a1ba-dbfe-41fd-bf7c-564660d8edc7?org_if_sml=1116758"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text071 text-block margin-butttom">
+                      <span>І на вкладці</span>
+                      <span class="lesson09-text073">
+                        "Compiler settings" &gt; "Compiler flags"
+                      </span>
+                      <span>поставте галочки біля наступних пунктів:</span>
+                      <br />
+                      <br />
+                      <span></span>
+                      <span class="lesson09-text078">
+                        Enable all common compiler warnings (overrides many
+                        other settings) [-Wall]
+                      </span>
+                      <br class="lesson09-text079" />
+                      <br class="lesson09-text080" />
+                      <span class="lesson09-text081">
+                        Enable Effective-C++ warnings (thanks Scott Meyers)
+                        [-Weffc++]
+                      </span>
+                      <br class="lesson09-text082" />
+                      <br class="lesson09-text083" />
+                      <span class="lesson09-text084">
+                        Enable extra compiler warnings [-Wextra]
+                      </span>
+                      <br />
+                    </p>
+                    <p
+                      class="lesson09-text086 text-block margin-butttom textBold"
+                    >
+                      Приклад:
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/a81bc85a-0e02-40b1-acd5-06e7b6fec7df?org_if_sml=172360"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text087 text-block margin-butttom">
+                      <span>Натисність</span>
+                      <span class="lesson09-text089">"ОК"</span>
+                      <span>і після цього перейдіть на вкладку</span>
+                      <span class="lesson09-text091">
+                        "Other compiler options"
+                      </span>
+                      <span>і додайте в область редагування текст</span>
+                      <span class="lesson09-text093">
+                        -Wsign-conversion –Werror:
+                      </span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/95c41516-ec82-4f8a-b541-d30045baa045?org_if_sml=142237"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text094 text-block margin-butttom">
+                      <span>І натисність</span>
+                      <span class="lesson09-text096">"Ок".</span>
+                    </p>
+                    <div class="info lesson09-info3">
+                      <p class="lesson09-text097 text-block heading">
+                        Примітка
+                      </p>
+                      <div class="lesson09-container11">
+                        <p class="color-primary-2 text-block">
+                          <span>Про параметр</span>
+                          <span class="lesson09-text100">-Werror</span>
+                          <span>ми поговоримо трішки пізніше.</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-9_section-4"
+                    class="lesson09-container12 section_lesson"
+                  >
+                    <h3 class="lesson09-text102 heading_h3">
+                      Зміна рівня попереджень.&nbsp;Користувачам GCC/G++
+                    </h3>
+                    <p class="lesson09-text103 text-block margin-butttom">
+                      <span>Додайте наступні флаги в ваш командний рядок:</span>
+                      <br />
+                      <br />
+                      <span class="lesson09-text107">
+                        -Wall -Weffc++ -Wextra -Wsign-conversion
+                      </span>
+                      <br />
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-9_section-5"
+                    class="lesson09-container13 section_lesson"
+                  >
+                    <h3 class="lesson09-text109 heading_h3">
+                      Обробка попереджень як помилок. Користувачам Visual Studio
+                    </h3>
+                    <p class="lesson09-text110 text-block margin-butttom">
+                      <span class="lesson09-text111">
+                        Ви також можете вказати вашому компілятору сприймати всі
+                        попередження, як помилки (в такому випадку компілятор
+                        зупинятиме процес компіляції, якщо знайде будь-які
+                        попередження). Це хороший варіант змусити себе
+                        виправляти всі попередження, особливо, якщо вам не
+                        вистачає самодисципліни (як і більшості із нас).
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Щоб обробляти всі попередження як помилки, натисніть
+                        правою кнопкою миші по назві вашого проекту в
+                      </span>
+                      <span class="lesson09-text115">
+                        "Обозреватель решений" &gt; "Свойства"
+                      </span>
+                      <span>:</span>
+                      <br />
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/83f530fb-fbd5-4c01-a069-56d923b42bdc?org_if_sml=1406355"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text118 text-block margin-butttom">
+                      <span>
+                        В діалоговому вікні вашого проекту переконайтеся, що в
+                        полі
+                      </span>
+                      <span class="lesson09-text120">"Конфигурация"</span>
+                      <span>вибрано значення</span>
+                      <span class="lesson09-text122">"Все конфигурации"</span>
+                      <span>. Після цього перейдіть на вкладку</span>
+                      <span class="lesson09-text124">"C/C++" &gt; "Общие"</span>
+                      <span>і в пункті</span>
+                      <span class="lesson09-text126">
+                        "Обрабатывать предупреждения как ошибки"
+                      </span>
+                      <span>виберіть значення</span>
+                      <span class="lesson09-text128">"Да(/WX)"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/93bf9b7f-9085-4fd3-b9d8-ed1b18e0e946?org_if_sml=1153070"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text130 text-block margin-butttom">
+                      <span>Після цього натисніть на</span>
+                      <span class="lesson09-text132">"Применить"</span>
+                      <span>і</span>
+                      <span class="lesson09-text134">"ОК"</span>
+                      <span>.</span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-9_section-6"
+                    class="lesson09-container14 section_lesson"
+                  >
+                    <h3 class="lesson09-text136 heading_h3">
+                      Обробка попереджень як помилок.&nbsp;Користувачам
+                      Code::Blocks
+                    </h3>
+                    <p class="lesson09-text137 text-block margin-butttom">
+                      <span>Перейдіть в меню</span>
+                      <span class="lesson09-text139">
+                        "Settings" -&gt; "Compiler"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/ab14a1ba-dbfe-41fd-bf7c-564660d8edc7?org_if_sml=1116758"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text141 text-block margin-butttom">
+                      <span>Після цього</span>
+                      <span class="lesson09-text143">
+                        "Compiler settings" &gt; "Other compiler options"
+                      </span>
+                      <span>і додайте</span>
+                      <span class="lesson09-text145">-Werror</span>
+                      <span>в область редагування:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/2a992841-2269-465c-aafc-bdd216a45db8?org_if_sml=142237"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson09-text147 text-block margin-butttom">
+                      <span>Після цього натисніть</span>
+                      <span class="lesson09-text149">"ОК"</span>
+                      <span>.</span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-9_section-7"
+                    class="lesson09-container15 section_lesson"
+                  >
+                    <h3 class="lesson09-text151 heading_h3">
+                      Обробка попереджень як помилок.&nbsp;Користувачам GCC/G++
+                    </h3>
+                    <p class="lesson09-text152 text-block margin-butttom">
+                      <span>Додайте наступний флаг в ваш командний рядок:</span>
+                      <br />
+                      <br />
+                      <span class="lesson09-text156">-Werror</span>
+                      <br />
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson0-8.html">
+                      <div class="lesson09-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson09-arrowdown1"
+                        />
+                        <span class="lesson09-text158">Урок №8</span>
+                      </div>
+                    </a>
+                    <a href="lesson0-10.html">
+                      <div class="lesson09-item1 item_nav_right">
+                        <span class="lesson09-text159">Урок №10</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson09-arrowdown11"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson09-toc toc">
+                  <span class="lesson09-text160">Зміст</span>
+                  <div class="lesson09-toclist1">
+                    <ul class="lesson09-ul1 list">
+                      <li class="list-item">
+                        <a href="#lesson-9_section-1">Попередження в С++</a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-2" class="lesson09-link08">
+                          <span class="lesson09-text161">
+                            Зміна рівня попереджень.&nbsp;Користувачам Visual
+                            Studio
+                          </span>
+                          <br class="lesson09-text162" />
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-3" class="lesson09-link09">
+                          <span>Зміна рівня попереджень.&nbsp;</span>
+                          <span>Користувачам Code::Blocks</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-4">
+                          <span>Зміна рівня попереджень.&nbsp;</span>
+                          <span>Користувачам GCC/G++</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-5">
+                          <span>Обробка попереджень як помилок..&nbsp;</span>
+                          <span>Користувачам Visual Studio</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-6">
+                          <span>Обробка попереджень як помилок.&nbsp;</span>
+                          <span>Користувачам Code::Blocks</span>
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-9_section-7">
+                          <span>Обробка попереджень як помилок..&nbsp;</span>
+                          <span>Користувачам GCC/G++</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson09-footer footer_">
+          <div class="lesson09-container16 container_footer">
+            <div class="lesson09-container17">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson09-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson09-link15 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson09-link16 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson09-separator"></div>
+            <div class="lesson09-container18">
+              <span class="lesson09-text173">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson09-text174">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson09-link17"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

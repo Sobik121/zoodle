@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson0-5 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson0-5 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson0-5.css" rel="stylesheet" />
+
+      <div class="lesson05-container">
+        <header data-role="Header" class="lesson05-header-lesson">
+          <a href="index.html" class="lesson05-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson05-image img_logo"
+            />
+          </a>
+          <div class="lesson05-nav">
+            <nav class="lesson05-nav1">
+              <a href="index.html" class="lesson05-navlink1">Головна</a>
+              <a href="index.html" class="lesson05-navlink2">Уроки</a>
+              <a href="index.html" class="lesson05-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson05-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson05-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson05-mobile-menu">
+            <div class="lesson05-nav2">
+              <div class="lesson05-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson05-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson05-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson05-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson05-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson05-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson05-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson05-hero">
+          <div class="lesson05-container02">
+            <h1 class="lesson05-text">
+              <span>Розділ №0. Урок №5</span>
+              <span></span>
+            </h1>
+            <span class="lesson05-text003">
+              Компіляція вашої першої програми
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson05-lessons">
+          <section class="lesson05-container03 container_lessons">
+            <div class="lesson05-section0">
+              <div class="lesson05-container04">
+                <div class="lesson05-tocmobile mobile toc">
+                  <span class="lesson05-text004">Зміст</span>
+                  <div class="lesson05-toclist">
+                    <ul class="lesson05-ul list">
+                      <li class="list-item">
+                        <a href="#lesson-5_section-1">
+                          <span>Теорія</span>
+                          <br />
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-2" class="lesson05-link01">
+                          Користувачам Visual Studio
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-3" class="lesson05-link02">
+                          Користувачам Code::Blocks
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-4" class="lesson05-link03">
+                          Користувачам командного рядка
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-5" class="lesson05-link04">
+                          Користувачам веб-компіляторів
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-6" class="lesson05-link05">
+                          Користувачам інших IDE
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-7" class="lesson05-link06">
+                          Якщо компіляція пройшла невдало
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-8" class="lesson05-link07">
+                          Висновки
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson05-left-content">
+                  <p class="item_sub-heading margin-butttom lesson05-text007">
+                    Перед написанням нашої першої програми ми повинні ще дещо
+                    дізнатися.
+                  </p>
+                  <div
+                    id="lesson-5_section-1"
+                    class="lesson05-container05 section_lesson"
+                  >
+                    <h3 class="lesson05-text008 heading_h3">Теорія</h3>
+                    <p class="lesson05-text009 text-block margin-butttom">
+                      <span>
+                        По-перше, незважаючи на те, що код наших програм
+                        знаходиться в .cpp-файлах, ці файли додаються в проект.
+                      </span>
+                      <span class="textBold">Проект</span>
+                      <span>
+                        містить всі необхідні файли вашої програми, а також
+                        зберігає вказані вами налаштування вашої IDE. Кожен раз,
+                        при відкритті вашого проекту, він запускається з того
+                        моменту, на якому ви зупинилися минулого разу. При
+                        компіляції програми, проект повідомляє компілятору і
+                        лінкеру, які файли необхідно скомпілювати, а які
+                        зв’язати. Варто відзначити, що файли проекту однієї IDE
+                        не працюватимуть в іншій IDE. Вам доведеться створювати
+                        новий проект (в іншій IDE).
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        По-друге, є різні типи проектів. При створенні нового
+                        проекту, вам потрібно буде вибрати його тип. Всі
+                        проекти, які ми створюватимемо на даних уроках, будуть
+                      </span>
+                      <span class="textBold">консольного типу</span>
+                      <span>
+                        . Це означає, що вони запускаються в консолі (аналог
+                        командного рядка). За замовчуванням, консольні додатки
+                        не мають графічного інтерфейсу користувача (скор. “
+                      </span>
+                      <span class="textBold">GUI</span>
+                      <span>
+                        ” від англ. “Graphical User Interface”) і компілюються в
+                        автономні виконувані файли. Це ідеальний варіант для
+                        вивчення C++, оскільки він зводить всю складність до
+                        мінімуму.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        По-третє, при створенні нового проекту більшість
+                        середовищ розробки автоматично додадуть ваш проект в
+                        робочий простір.
+                      </span>
+                      <span class="textBold">Робочий простір</span>
+                      <span>
+                        — це своєрідний контейнер, який може містити один або
+                        декілька пов’язаних проектів. Незважаючи на те, що ви
+                        можете додавати декілька проектів в один робочий
+                        простір, все ж рекомендується створювати окремий робочий
+                        простір для кожної програми. Це набагато простіше для
+                        початківців.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Традиційно, нашою першою програмою на мові С++ буде всім
+                        відома програма «Hello, world!». Ми не будемо порушувати
+                        традиції 🙂
+                      </span>
+                      <br />
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-5_section-2"
+                    class="lesson05-container06 section_lesson"
+                  >
+                    <h3 class="lesson05-text029 heading_h3">
+                      Користувачам Visual Studio
+                    </h3>
+                    <p class="lesson05-text030 text-block margin-butttom">
+                      <span>
+                        Для створення нового проекту в Visual Studio, вам
+                        необхідно спочатку запустити Visual Studio, а потім
+                        вибрати "Файл" &gt; "Создать" &gt; "Проект":
+                      </span>
+                      <span></span>
+                      <br />
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/b0efbd70-ffec-45b7-8563-43a95e0a3f3e?org_if_sml=1216787"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson05-text034 text-block margin-butttom">
+                      <span>
+                        Далі з’явиться діалогове вікно, де вам потрібно буде
+                        вибрати
+                      </span>
+                      <span class="lesson05-text036">
+                        "Консольное приложение Windows"
+                      </span>
+                      <span>на вкладці</span>
+                      <span class="lesson05-text038">"Visual C++"</span>
+                      <span>і натиснути</span>
+                      <span class="lesson05-text040">"ОК"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/9d962359-2b67-4557-90d1-396eac351d63?org_if_sml=1200622"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson05-text042 text-block margin-butttom">
+                      <span>
+                        Також ви можете вказати ім’я проекту (будь-яке) і його
+                        місцезнаходження (рекомендую нічого не змінювати) в
+                        відповідних полях.
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        В текстовому редакторі ви побачите, що в вашому робочому
+                        просторі вже є написаний текст з кодом. Видаліть все, що
+                        там написано і напишіть наступний код:
+                      </span>
+                    </p>
+                    <code class="text-block code lesson05-code">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson05-text060 margin-top text-block margin-butttom"
+                    >
+                      Ось, що у вас повинно бути:
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/68a6238f-a825-40b3-9b8b-a6c23e25234c?org_if_sml=1127913"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <div class="info lesson05-info">
+                      <p class="lesson05-text061 text-block heading">Важливо</p>
+                      <div class="lesson05-container07">
+                        <p class="color-primary-2 text-block padding-buttom">
+                          <span>Рядок</span>
+                          <span class="lesson05-text064">#include "pch.h"</span>
+                          <span>
+                            потрібен тільки для користувачів Visual Studio 2017.
+                            Якщо у вас Visual Studio 2019 або програма видає вам
+                            помилку, що цей файл не знайдений і т.д., і при
+                            цьому у вас все відмінно працює без цього рядка, то
+                            не потрібно взагалі писати цей рядок.
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <p
+                      class="lesson05-text066 margin-top text-block margin-butttom"
+                    >
+                      Щоб запустити програму в Visual Studio, натисніть Ctrl+F5.
+                      У вас повинно вийти наступне:
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/f88d4930-f2ce-4b40-b919-df4e806ba078?org_if_sml=156291"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p
+                      class="lesson05-text067 margin-top text-block margin-butttom"
+                    >
+                      <span>
+                        Це означає, що компіляція виконалася успішно і результат
+                        виконання вашої програми:
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson05-text071">Hello, world!</span>
+                      <br />
+                      <br />
+                      <span>Щоб видалити рядок</span>
+                      <span class="lesson05-text075">
+                        "...завершает работу с кодом 0..."
+                      </span>
+                      <span>, вам необхідно перейти в</span>
+                      <span class="lesson05-text077">
+                        "Отладка" &gt; "Параметры"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/0e5fc7cd-d38c-476f-bf52-68aaa2f8296b?org_if_sml=1246952"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p
+                      class="lesson05-text079 margin-top text-block margin-butttom"
+                    >
+                      <span>Потім</span>
+                      <span class="lesson05-text081">
+                        "Отладка" &gt; "Общие"
+                      </span>
+                      <span>і поставити галочку біля</span>
+                      <span class="lesson05-text083">
+                        "Автоматически закрыть консоль при остановке отладки"
+                      </span>
+                      <span>і натиснути</span>
+                      <span class="lesson05-text085">"ОК"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/33be5ad1-e99e-43ff-b18d-5db4af35e5f2?org_if_sml=1276960"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p
+                      class="lesson05-text087 margin-top text-block margin-butttom"
+                    >
+                      Тепер ваше консольне вікно виглядатиме наступним чином:
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/2e0caab6-5d7f-44b7-aad3-29bcb6d590f7?org_if_sml=124439"
+                      class="img_lesson"
+                    />
+                    <p
+                      class="lesson05-text088 margin-top text-block margin-butttom"
+                    >
+                      Вітаю вас! Ви навчилися компілювати програми в Visual
+                      Studio!
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-5_section-3"
+                    class="lesson05-container08 section_lesson"
+                  >
+                    <h3 class="lesson05-text089 heading_h3">
+                      Користувачам Code::Blocks
+                    </h3>
+                    <p class="lesson05-text090 text-block margin-butttom">
+                      <span>
+                        Щоб створити новий проект, запустіть Code::Blocks і
+                        виберіть
+                      </span>
+                      <span class="lesson05-text092">
+                        "File" &gt; "New" &gt; "Project"
+                      </span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/d8c9abb5-93dc-40ce-acfe-b58dfbe634e0?org_if_sml=1196675"
+                      class="img_lesson"
+                    />
+                    <p class="lesson05-text094 text-block margin-butttom">
+                      <span>
+                        Після цього у вас повинно з’явитися діалогове вікно, де
+                        вам потрібно вибрати
+                      </span>
+                      <span class="lesson05-text096">
+                        "Console application"
+                      </span>
+                      <span>і натиснути</span>
+                      <span class="lesson05-text098">"Go"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/ffe17087-265b-4a13-8b73-fb70dacfb249?org_if_sml=1181556"
+                      class="img_lesson"
+                    />
+                    <p class="lesson05-text100 text-block margin-butttom">
+                      <span>Тепер виберіть мову</span>
+                      <span class="lesson05-text102">"C++"</span>
+                      <span>і натисніть</span>
+                      <span class="lesson05-text104">"Next"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/a74630fa-64a2-404a-bf1b-37b1d2f8de3d?org_if_sml=169524"
+                      class="img_lesson"
+                    />
+                    <p class="lesson05-text106 text-block margin-butttom">
+                      <span>
+                        Після цього необхідно вказати ім’я проекту і його
+                        місцезнаходження (можете створити окрему папку Projects)
+                        і натиснути
+                      </span>
+                      <span class="lesson05-text108">"Next"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/6de10d0b-8339-464a-b061-dd3d2e0e9ad9?org_if_sml=1105456"
+                      class="img_lesson"
+                    />
+                    <p class="lesson05-text110 text-block margin-butttom">
+                      <span>
+                        В наступному діалоговому вікні потрібно буде натиснути
+                      </span>
+                      <span class="lesson05-text112">"Finish"</span>
+                      <span>.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Після виконання вищезазначених маніпуляцій, ви повинні
+                        побачити пустий робочий простір. Вам потрібно буде
+                        відкрити папку Sources в лівій частині екрану і двічі
+                        клікнути по main.cpp:
+                      </span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/21c49be6-b9b9-47f9-a9dd-a8b5e8523dba?org_if_sml=1163196"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson05-text117 text-block margin-butttom">
+                      <span>Ви побачите, що програма</span>
+                      <span class="lesson05-text119">«Hello, world!»</span>
+                      <span>вже написана!</span>
+                      <br />
+                      <br />
+                      <span>
+                        Для того, щоб скомпілювати проект в Code::Blocks,
+                        натисніть Ctrl+F9, або перейдіть в меню
+                      </span>
+                      <span class="lesson05-text124">"Build"</span>
+                      <span>і виберіть</span>
+                      <span class="lesson05-text126">"Build"</span>
+                      <span>
+                        . Якщо все пройде успішно, то ви побачите наступне у
+                        вкладці
+                      </span>
+                      <span class="lesson05-text128">"Build log"</span>
+                      <span>:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/e94a3813-f25d-4362-9264-95c9787519cb?org_if_sml=1119115"
+                      class="img_lesson no-padding-LR"
+                    />
+                    <p class="lesson05-text130 text-block margin-butttom">
+                      <span>Це означає, що компіляція пройшла успішно!</span>
+                      <br />
+                      <br />
+                      <span>
+                        Щоб запустити скомпільовану програму, натисніть
+                        Ctrl+F10, або перейдіть в меню
+                      </span>
+                      <span class="lesson05-text135">"Build"</span>
+                      <span>і виберіть</span>
+                      <span class="lesson05-text137">"Run"</span>
+                      <span>. Ви побачите наступне вікно:</span>
+                    </p>
+                    <img
+                      alt="pastedImage"
+                      src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/aa954024-5396-4c26-8e1f-12fa23e0eff1/b890c5e8-8e61-4c43-84f8-d8ea84247a65?org_if_sml=136565"
+                      class="img_lesson"
+                    />
+                    <p class="lesson05-text139 text-block margin-butttom">
+                      Це є результатом виконання вашої програми.
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-5_section-4"
+                    class="lesson05-container09 section_lesson"
+                  >
+                    <h3 class="lesson05-text140 heading_h3">
+                      <span>Користувачам командного рядка</span>
+                      <br />
+                    </h3>
+                    <p class="lesson05-text143 text-block margin-butttom">
+                      <span>
+                        Вставте наступний код в текстовий файл з іменем
+                        HelloWorld.cpp
+                      </span>
+                      <br />
+                    </p>
+                    <code class="text-block code lesson05-code1">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson05-text158 margin-top text-block margin-butttom"
+                    >
+                      <span>В командному рядку напишіть:</span>
+                      <br />
+                      <br />
+                      <span class="lesson05-text162">
+                        g++ -o HelloWorld HelloWorld.cpp
+                      </span>
+                      <span></span>
+                      <br />
+                      <br />
+                      <span>
+                        Ця команда виконає компіляцію і лінкінг файлу
+                        HelloWorld.cpp.
+                      </span>
+                      <br />
+                      <br />
+                      <span>Щоб запустити програму, напишіть:</span>
+                      <br />
+                      <br />
+                      <span class="lesson05-text172">HelloWorld</span>
+                      <span>або</span>
+                      <span class="lesson05-text174">./HelloWorld</span>
+                      <span></span>
+                      <br />
+                      <br />
+                      <span>
+                        І ви побачите результат виконання вашої програми.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-5_section-5"
+                    class="lesson05-container10 section_lesson"
+                  >
+                    <h3 class="lesson05-text179 heading_h3">
+                      <span>Користувачам веб-компіляторів</span>
+                      <br />
+                    </h3>
+                    <p class="lesson05-text182 text-block margin-butttom">
+                      <span>Вставте наступний код в ваш робочий простір:</span>
+                      <br />
+                    </p>
+                    <code class="text-block code lesson05-code2">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson05-text197 margin-top text-block margin-butttom"
+                    >
+                      <span>Після цього натисніть</span>
+                      <span class="lesson05-text199">"Run"</span>
+                      <span>
+                        . Ви повинні побачити результат виконання вашої програми
+                        в вікні виконання.
+                      </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-5_section-6"
+                    class="lesson05-container11 section_lesson"
+                  >
+                    <h3 class="lesson05-text201 heading_h3">
+                      <span>Користувачам інших IDE</span>
+                      <br />
+                    </h3>
+                    <p class="lesson05-text204 text-block margin-butttom">
+                      <span>Вам необхідно:</span>
+                      <br />
+                      <br />
+                      <span>Крок №1: Створити консольний проект.</span>
+                      <br />
+                      <br />
+                      <span>
+                        Крок №2: Додати .cpp-файл в проект (якщо це необхідно).
+                      </span>
+                      <br />
+                      <br />
+                      <span>
+                        Крок №3: Скопіювати і вставити наступний код в
+                        .cpp-файл:
+                      </span>
+                      <br />
+                    </p>
+                    <code class="text-block code lesson05-code3">
+                      <span>#include &lt;iostream&gt;</span>
+                      <br />
+                      <br />
+                      <span>int main()</span>
+                      <br />
+                      <span>{</span>
+                      <br />
+                      <span>
+                        std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+                      </span>
+                      <br />
+                      <span>return 0;</span>
+                      <br />
+                      <span>}</span>
+                    </code>
+                    <p
+                      class="lesson05-text228 margin-top text-block margin-butttom"
+                    >
+                      <span>Крок №4: Скомпілювати проект.</span>
+                      <br />
+                      <br />
+                      <span>Крок №5: Запустити проект.</span>
+                    </p>
+                  </div>
+                  <div
+                    id="lesson-5_section-7"
+                    class="lesson05-container12 section_lesson"
+                  >
+                    <h3 class="lesson05-text233 heading_h3">
+                      Якщо компіляція пройшла невдало
+                    </h3>
+                    <p class="lesson05-text234 text-block margin-butttom">
+                      <span>
+                        Дихайте, без паніки. Скоріш за все, це якась дрібниця.
+                        Алгоритм наступний:
+                      </span>
+                      <br />
+                    </p>
+                    <div
+                      class="lesson05-container13 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson05-arrowdown1"
+                      />
+                      <p class="lesson05-text237 text-block with-padding">
+                        По-перше, переконайтеся, що ви написали/скопіювали код
+                        правильно, без помилок. Текст помилки від компілятора
+                        може дати вам ключ для розуміння і вирішення вашої
+                        проблеми.
+                      </p>
+                    </div>
+                    <div
+                      class="lesson05-container14 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson05-arrowdown11"
+                      />
+                      <p class="lesson05-text238 text-block with-padding">
+                        По-друге, дивіться Урок №6 — там є вирішення найбільш
+                        поширених проблем початківців в С++.
+                      </p>
+                    </div>
+                    <div
+                      class="lesson05-container15 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson05-arrowdown12"
+                      />
+                      <p class="lesson05-text239 text-block with-padding">
+                        Якщо нічого з вищевказаного не допомогло — просто
+                        “загугліть” проблему. З ймовірністю в 90% хтось вже
+                        стикався з подібною проблемою і знайшов її рішення.
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    id="lesson-5_section-8"
+                    class="lesson05-container16 section_lesson"
+                  >
+                    <h3 class="lesson05-text240 heading_h3">Висновки</h3>
+                    <p class="lesson05-text241 text-block margin-butttom">
+                      Вітаю! Ви написали, скомпілювали і запустили свою першу
+                      програму в C++! Не турбуйтеся, якщо ви не розумієте, що
+                      означає весь вищенаведений код. Ми все детально розглянемо
+                      на наступних уроках.
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson0-4.html">
+                      <div class="lesson05-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson05-arrowdown13"
+                        />
+                        <span class="lesson05-text242">Урок №4</span>
+                      </div>
+                    </a>
+                    <a href="lesson0-6.html">
+                      <div class="lesson05-item1 item_nav_right">
+                        <span class="lesson05-text243">Урок №6</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson05-arrowdown14"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson05-toc toc">
+                  <span class="lesson05-text244">Зміст</span>
+                  <div class="lesson05-toclist1">
+                    <ul class="lesson05-ul1 list">
+                      <li class="list-item">
+                        <a href="#lesson-5_section-1">
+                          <span>Теорія</span>
+                          <br />
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-2" class="lesson05-link09">
+                          Користувачам Visual Studio
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-3" class="lesson05-link10">
+                          Користувачам Code::Blocks
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-4" class="lesson05-link11">
+                          Користувачам командного рядка
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-5" class="lesson05-link12">
+                          Користувачам веб-компіляторів
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-6" class="lesson05-link13">
+                          Користувачам інших IDE
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-7" class="lesson05-link14">
+                          Якщо компіляція пройшла невдало
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#lesson-5_section-8" class="lesson05-link15">
+                          Висновки
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson05-footer footer_">
+          <div class="lesson05-container17 container_footer">
+            <div class="lesson05-container18">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson05-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson05-link17 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson05-link18 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson05-separator"></div>
+            <div class="lesson05-container19">
+              <span class="lesson05-text247">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson05-text248">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson05-link19"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>

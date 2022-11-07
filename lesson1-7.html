@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lesson1-7 - Learn C++ Website</title>
+    <meta property="og:title" content="Lesson1-7 - Learn C++ Website" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <!--This is the head section-->
+    <!-- <style> ... </style> -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div>
+      <link href="./lesson1-7.css" rel="stylesheet" />
+
+      <div class="lesson17-container">
+        <header data-role="Header" class="lesson17-header-lesson">
+          <a href="index.html" class="lesson17-navlink">
+            <img
+              alt="logo"
+              src="public/playground_assets/logo_dark-1500h.png"
+              class="lesson17-image img_logo"
+            />
+          </a>
+          <div class="lesson17-nav">
+            <nav class="lesson17-nav1">
+              <a href="index.html" class="lesson17-navlink1">Головна</a>
+              <a href="index.html" class="lesson17-navlink2">Уроки</a>
+              <a href="index.html" class="lesson17-navlink3">Про проект</a>
+            </nav>
+          </div>
+          <div data-role="BurgerMenu" class="lesson17-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="lesson17-icon">
+              <path
+                d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+              ></path>
+            </svg>
+          </div>
+          <div data-role="MobileMenu" class="lesson17-mobile-menu">
+            <div class="lesson17-nav2">
+              <div class="lesson17-container01">
+                <img
+                  alt="image"
+                  src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
+                  class="lesson17-image1"
+                />
+                <div
+                  data-role="CloseMobileMenu"
+                  class="lesson17-close-mobile-menu"
+                >
+                  <svg viewBox="0 0 1024 1024" class="lesson17-icon02">
+                    <path
+                      d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name18"
+              >
+                <span class="navigation-links-text"><span>About</span></span>
+                <span class="navigation-links-text1">
+                  <span>Features</span>
+                </span>
+                <span class="navigation-links-text2"><span>Pricing</span></span>
+                <span class="navigation-links-text3"><span>Team</span></span>
+                <span class="navigation-links-text4"><span>Blog</span></span>
+              </nav>
+            </div>
+            <div>
+              <svg viewBox="0 0 950.8571428571428 1024" class="lesson17-icon04">
+                <path
+                  d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 877.7142857142857 1024"
+                class="lesson17-icon06"
+              >
+                <path
+                  d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"
+                ></path></svg
+              ><svg
+                viewBox="0 0 602.2582857142856 1024"
+                class="lesson17-icon08"
+              >
+                <path
+                  d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </header>
+        <div class="lesson17-hero">
+          <div class="lesson17-container02">
+            <h1 class="lesson17-text">Розділ №1. Урок №7</h1>
+            <span class="lesson17-text01">
+              Чому функції корисні і як їх ефективно використовувати в
+              програмуванні?
+            </span>
+          </div>
+        </div>
+        <section id="section_lessons" class="lesson17-lessons">
+          <section class="lesson17-container03 container_lessons">
+            <div class="lesson17-section0">
+              <div class="lesson17-container04">
+                <div class="lesson17-tocmobile mobile toc">
+                  <span class="lesson17-text02">Зміст</span>
+                  <div class="lesson17-toclist">
+                    <ul class="lesson17-ul list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson17-link">
+                          Навіщо потрібно використовувати функції?
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson17-link1">
+                          Ефективне використання функцій
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lesson17-left-content">
+                  <p class="item_sub-heading margin-butttom lesson17-text03">
+                    <span>Тепер, коли ми вже знаємо, що таке</span>
+                    <a href="lesson1-5.html" class="lesson17-navlink4">
+                      функції
+                    </a>
+                    <span>
+                      і навіщо вони потрібні, давайте більш детально розглянемо
+                      те, чому вони так корисні.
+                    </span>
+                    <br />
+                  </p>
+                  <div id="toc-1" class="lesson17-container05 section_lesson">
+                    <h3 class="lesson17-text07 heading_h3">
+                      Навіщо потрібно використовувати функції?
+                    </h3>
+                    <p class="lesson17-text08 text-block margin-butttom">
+                      <span>
+                        У багатьох випадках нам потрібно буде передавати дані в
+                        функцію, що викликається, щоб вона могла з ними якось
+                        взаємодіяти. Наприклад, якщо ми хочемо написати функцію
+                        множення двох чисел, то нам потрібно якимось чином
+                        повідомити функцію про те, що це будуть за числа. В
+                        іншому випадку, як вона дізнається, що на що множити?
+                        Тут нам на допомогу приходять параметри і аргументи.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="textBold">Параметр функції</span>
+                      <span>— це</span>
+                      <span class="lesson17-text14">змінна</span>
+                      <span>
+                        , яка використовується в функції і значення якої надає
+                        викликаюча функція. Параметри вказуються при оголошенні
+                        функції в круглих дужках. Якщо їх багато, то вони
+                        перераховуються через кому, наприклад:
+                      </span>
+                    </p>
+                    <div
+                      class="lesson17-container06 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown1"
+                      />
+                      <p class="lesson17-text16 text-block with-padding">
+                        <span class="textBold">Структура</span>
+                        <span class="lesson17-text18">
+                          . Як тільки програми збільшуються в
+                          розмірі/складності, зберігати весь код всередині
+                          функції main() стає важко. Функція — це як
+                          міні-програма, яку ми можемо записати окремо від
+                          головної програми, не заморочуючись при цьому на
+                          рахунок інших частин коду. Це дозволяє розбивати
+                          складні завдання на більш дрібні і прості, що
+                          кардинально знижує загальну складність програми.
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container07 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown101"
+                      />
+                      <p class="lesson17-text19 text-block with-padding">
+                        <span class="textBold">Повторне використання</span>
+                        <span class="lesson17-text21">
+                          . Після оголошення функції, її можна викликати багато
+                          разів. Це дозволяє уникнути дублювання коду і зводить
+                          до мінімуму ймовірність виникнення помилок при
+                          копіюванні/вставці коду. Функції також можуть
+                          використовуватися і в інших програмах, зменшуючи обсяг
+                          коду, який потрібно писати з нуля кожен раз.
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container08 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown102"
+                      />
+                      <p class="lesson17-text22 text-block with-padding">
+                        <span class="textBold">Тестування</span>
+                        <span class="lesson17-text24">
+                          . Оскільки функції зменшують зайвий код, то і
+                          тестувати його стає набагато простіше. А оскільки
+                          функція є самостійною одиницею, то нам досить
+                          протестувати її один раз, щоб переконатися в її
+                          працездатності, а потім ми можемо її повторно
+                          використовувати багато разів без необхідності
+                          проводити тестування ще раз (до тих пір, поки не
+                          внесемо зміни в цю функцію).
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container09 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown103"
+                      />
+                      <p class="lesson17-text25 text-block with-padding">
+                        <span class="textBold">Модернізація</span>
+                        <span class="lesson17-text27">
+                          . Коли потрібно внести зміни в програму або розширити
+                          її функціонал, то функції є відмінним варіантом. З їх
+                          допомогою можна внести зміни в одному місці, щоб вони
+                          запрацювали всюди.
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container10 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown104"
+                      />
+                      <p class="lesson17-text28 text-block with-padding">
+                        <span class="textBold">Абстракція</span>
+                        <span class="lesson17-text30">
+                          . Для того, щоб використовувати функцію, нам потрібно
+                          знати її ім’я, місцезнаходження, вхідні та вихідні
+                          дані. Нам не потрібно знати, як вона працює. Це дуже
+                          корисно для написання коду, зрозумілого іншим
+                          (наприклад, Стандартна бібліотека С++ і все, що в ній
+                          знаходиться, створене саме за цим принципом).
+                        </span>
+                      </p>
+                    </div>
+                    <p class="lesson17-text31 text-block margin-butttom">
+                      <span>Кожен раз, при виклику</span>
+                      <a href="lesson1-4.html" class="lesson17-navlink5">
+                        std::cin
+                      </a>
+                      <span>або</span>
+                      <a href="lesson1-4.html" class="lesson17-navlink6">
+                        std::cout
+                      </a>
+                      <span>
+                        для вводу або виводу даних, ми використовуємо функцію зі
+                        Стандартної бібліотеки C++, яка відповідає всім
+                        вищезазначеним концепціям.
+                      </span>
+                    </p>
+                  </div>
+                  <div id="toc-2" class="lesson17-container11 section_lesson">
+                    <h3 class="lesson17-text35 heading_h3">
+                      Ефективне використання функцій
+                    </h3>
+                    <p class="lesson17-text36 text-block margin-butttom">
+                      Однією з найбільш поширених проблем, з якою стикаються
+                      початківці, є розуміння того, де, коли і як ефективно
+                      використовувати функції. Ось кілька основних рекомендацій
+                      при написанні функцій:
+                    </p>
+                    <div
+                      class="lesson17-container12 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown105"
+                      />
+                      <p class="lesson17-text37 text-block with-padding">
+                        <span class="textBold">Рекомендація №1</span>
+                        <span>
+                          : Код, який з’являється більше одного разу в програмі,
+                          краще переписати у вигляді функції. Наприклад, якщо ми
+                          отримуємо дані від користувача кілька разів одним і
+                          тим же способом, то це чудова нагода для написання
+                          окремої функції.
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container13 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown106"
+                      />
+                      <p class="lesson17-text40 text-block with-padding">
+                        <span class="textBold">Рекомендація №2</span>
+                        <span>
+                          : Код, який використовується для сортування будь-чого,
+                          краще записати у вигляді окремої функції. Наприклад,
+                          якщо у нас є список речей, які потрібно впорядкувати —
+                          пишемо функцію сортування, куди передаємо несортований
+                          список і звідки отримуємо уже відсортований.
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container14 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown107"
+                      />
+                      <p class="lesson17-text43 text-block with-padding">
+                        <span class="textBold">Рекомендація №3</span>
+                        <span>
+                          : Функція повинна виконувати одне (і тільки одне)
+                          завдання.
+                        </span>
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container15 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown108"
+                      />
+                      <p class="lesson17-text46 text-block with-padding">
+                        <span class="textBold">Рекомендація №4</span>
+                        <span>
+                          : Коли функція стає дуже великою, складною чи
+                          незрозумілою — її варто розбити на декілька
+                          підфункцій. Це називається рефакторингом коду.
+                        </span>
+                      </p>
+                    </div>
+                    <p class="lesson17-text49 text-block margin-butttom">
+                      При вивченні C++ вам потрібно буде написати багато
+                      програм, які включатимуть наступні три підзавдання:
+                    </p>
+                    <div
+                      class="lesson17-container16 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown109"
+                      />
+                      <p class="lesson17-text50 text-block with-padding">
+                        Отримання даних від користувача.
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container17 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown110"
+                      />
+                      <p class="lesson17-text51 text-block with-padding">
+                        Опрацювання даних.
+                      </p>
+                    </div>
+                    <div
+                      class="lesson17-container18 container_with-textblock padding-buttom"
+                    >
+                      <img
+                        alt="arrow down"
+                        src="public/playground_assets/arrow_down.svg"
+                        class="lesson17-arrowdown111"
+                      />
+                      <p class="lesson17-text52 text-block with-padding">
+                        Вивід результату на екран.
+                      </p>
+                    </div>
+                    <p class="lesson17-text53 text-block margin-butttom">
+                      <span class="lesson17-text54">
+                        Для простих програм (менше 30 рядків коду) частково або
+                        всі з цих трьох підзавдань можна записати у функції
+                        main(). Для більш складних програм (або просто для
+                        практики) кожне з цих трьох підзавдань є хорошим
+                        варіантом для написання окремої функції.
+                      </span>
+                      <br />
+                      <br />
+                      <span class="lesson17-text57">
+                        Початківці дуже часто комбінують в одній функції відразу
+                        і опрацювання даних від користувача, і виведення
+                        результату. Проте це порушує
+                      </span>
+                      <span class="textBold">правило “одного завдання”.</span>
+                      <span class="lesson17-text59">
+                        Функція, яка опрацьовує значення, повинна повертати його
+                        назад у викликаючу функцію, а далі вже нехай ця функція
+                        сама вирішує, що їй з цим значенням робити.
+                      </span>
+                    </p>
+                  </div>
+                  <div class="nav_lesson">
+                    <a href="lesson1-6.html">
+                      <div class="lesson17-item item_nav_right">
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow-back.svg"
+                          class="lesson17-arrowdown112"
+                        />
+                        <span class="lesson17-text60">
+                          <span class="lesson17-text61">Урок №6</span>
+                          <br />
+                        </span>
+                      </div>
+                    </a>
+                    <a href="lesson1-8.html">
+                      <div class="lesson17-item1 item_nav_right">
+                        <span class="lesson17-text63">Урок №8</span>
+                        <img
+                          alt="arrow down"
+                          src="public/playground_assets/arrow_down.svg"
+                          class="lesson17-arrowdown113"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="lesson17-toc toc">
+                  <span class="lesson17-text64">Зміст</span>
+                  <div class="lesson17-toclist1">
+                    <ul class="lesson17-ul1 list">
+                      <li class="list-item">
+                        <a href="#toc-1" class="lesson17-link2">
+                          Навіщо потрібно використовувати функції?
+                        </a>
+                      </li>
+                      <li class="list-item">
+                        <a href="#toc-2" class="lesson17-link3">
+                          Ефективне використання функцій
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div class="lesson17-footer footer_">
+          <div class="lesson17-container19 container_footer">
+            <div class="lesson17-container20">
+              <img
+                alt="logo"
+                src="public/playground_assets/logo_white-1500h.png"
+                class="lesson17-image2 img_logo"
+              />
+              <nav class="footer_nav">
+                <a href="#home" class="link_footer">Головна</a>
+                <a
+                  href="#section_about_project"
+                  class="lesson17-link5 link_footer"
+                >
+                  Уроки
+                </a>
+                <a
+                  href="#section_about_project"
+                  class="lesson17-link6 link_footer"
+                >
+                  Про проект
+                </a>
+              </nav>
+            </div>
+            <div class="lesson17-separator"></div>
+            <div class="lesson17-container21">
+              <span class="lesson17-text65">
+                © 2022 C++ Assistant.&nbsp;Всі права захищені.
+              </span>
+              <span class="lesson17-text66">
+                <span>Інформація використана з сайту</span>
+                <a
+                  href="https://acode.com.ua/uroki-po-cpp/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="lesson17-link7"
+                >
+                  Acode
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/@teleporthq/teleport-custom-scripts"></script>
+  </body>
+</html>
