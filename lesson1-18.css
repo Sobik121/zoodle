@@ -1,88 +1,3 @@
-.navigation-links-nav {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.navigation-links-text1 {
-  margin-left: var(--dl-space-space-twounits);
-}
-.navigation-links-text2 {
-  margin-left: var(--dl-space-space-twounits);
-}
-.navigation-links-text3 {
-  margin-left: var(--dl-space-space-twounits);
-}
-.navigation-links-text4 {
-  margin-left: var(--dl-space-space-twounits);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width: 767px) {
-  .navigation-links-nav {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .navigation-links-text {
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text1 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text2 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text3 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text4 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-}
-
 .lesson118-container {
   width: 100%;
   display: flex;
@@ -90,7 +5,7 @@
   align-items: center;
   flex-direction: column;
 }
-.lesson118-header-lesson {
+.lesson118-header-other {
   width: 100%;
   display: flex;
   max-width: var(--dl-size-size-maxwidth);
@@ -104,10 +19,6 @@
 }
 .lesson118-navlink {
   display: contents;
-}
-.lesson118-image {
-  height: 2rem;
-  text-decoration: none;
 }
 .lesson118-nav {
   flex: 0 0 auto;
@@ -132,7 +43,7 @@
 .lesson118-navlink1:hover {
   color: var(--dl-color-default-primary_1);
 }
-.lesson118-navlink2 {
+.lesson118-link {
   color: var(--dl-color-default-primary_3);
   cursor: pointer;
   font-style: normal;
@@ -141,10 +52,10 @@
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
 }
-.lesson118-navlink2:hover {
+.lesson118-link:hover {
   color: var(--dl-color-default-primary_1);
 }
-.lesson118-navlink3 {
+.lesson118-link01 {
   color: var(--dl-color-default-primary_3);
   cursor: pointer;
   font-style: normal;
@@ -153,7 +64,7 @@
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
 }
-.lesson118-navlink3:hover {
+.lesson118-link01:hover {
   color: var(--dl-color-default-primary_1);
 }
 .lesson118-burger-menu {
@@ -197,23 +108,44 @@
   align-items: center;
   justify-content: center;
 }
-.lesson118-icon02 {
+.lesson118-icon2 {
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
 }
-.lesson118-icon04 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-  margin-right: var(--dl-space-space-twounits);
+.lesson118-navlink2 {
+  color: var(--dl-color-default-primary_3);
+  cursor: pointer;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  text-decoration: none;
 }
-.lesson118-icon06 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-  margin-right: var(--dl-space-space-twounits);
+.lesson118-navlink2:hover {
+  color: var(--dl-color-default-primary_1);
 }
-.lesson118-icon08 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
+.lesson118-link02 {
+  color: var(--dl-color-default-primary_3);
+  cursor: pointer;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-left: var(--dl-space-space-threeunits);
+  text-decoration: none;
+}
+.lesson118-link02:hover {
+  color: var(--dl-color-default-primary_1);
+}
+.lesson118-link03 {
+  color: var(--dl-color-default-primary_3);
+  cursor: pointer;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-left: var(--dl-space-space-threeunits);
+  text-decoration: none;
+}
+.lesson118-link03:hover {
+  color: var(--dl-color-default-primary_1);
 }
 .lesson118-hero {
   width: 100%;
@@ -322,13 +254,13 @@
 .lesson118-ul {
   padding-left: 0px;
 }
-.lesson118-link {
+.lesson118-link04 {
   text-decoration: none;
 }
-.lesson118-link01 {
+.lesson118-link05 {
   text-decoration: none;
 }
-.lesson118-link02 {
+.lesson118-link06 {
   text-decoration: none;
 }
 .lesson118-left-content {
@@ -575,18 +507,6 @@
 .lesson118-ul1 {
   padding-left: 0px;
 }
-.lesson118-link03 {
-  text-decoration: none;
-}
-.lesson118-link04 {
-  text-decoration: none;
-}
-.lesson118-link05 {
-  text-decoration: none;
-}
-.lesson118-link06 {
-  text-decoration: none;
-}
 .lesson118-link07 {
   text-decoration: none;
 }
@@ -599,7 +519,19 @@
 .lesson118-link10 {
   text-decoration: none;
 }
-.lesson118-footer {
+.lesson118-link11 {
+  text-decoration: none;
+}
+.lesson118-link12 {
+  text-decoration: none;
+}
+.lesson118-link13 {
+  text-decoration: none;
+}
+.lesson118-link14 {
+  text-decoration: none;
+}
+.lesson118-footer-other {
   flex: 0 0 auto;
   width: 100%;
   height: auto;
@@ -623,15 +555,16 @@
   justify-content: space-between;
 }
 .lesson118-image2 {
+  cursor: pointer;
   height: 2rem;
   margin-bottom: var(--dl-space-space-twounits);
 }
-.lesson118-link12 {
+.lesson118-link16 {
   color: var(--dl-color-gray-white);
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
 }
-.lesson118-link13 {
+.lesson118-link17 {
   color: var(--dl-color-gray-white);
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
@@ -668,14 +601,24 @@
 .lesson118-text490 {
   color: var(--dl-color-gray-white);
 }
-.lesson118-link14 {
+.lesson118-link18 {
   color: var(--dl-color-default-primary_1);
 }
 @media(max-width: 1600px) {
-  .lesson118-header-lesson {
+  .lesson118-header-other {
     align-self: center;
   }
   .lesson118-navlink1 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson118-link {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson118-link01 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
@@ -685,7 +628,12 @@
     font-style: normal;
     font-weight: 500;
   }
-  .lesson118-navlink3 {
+  .lesson118-link02 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson118-link03 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
@@ -723,12 +671,27 @@
     font-style: normal;
     font-weight: 500;
   }
+  .lesson118-link {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson118-link01 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
   .lesson118-navlink2 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
   }
-  .lesson118-navlink3 {
+  .lesson118-link02 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson118-link03 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
@@ -763,13 +726,13 @@
     font-style: normal;
     font-weight: 600;
   }
-  .lesson118-link {
+  .lesson118-link04 {
     text-decoration: none;
   }
-  .lesson118-link01 {
+  .lesson118-link05 {
     text-decoration: none;
   }
-  .lesson118-link02 {
+  .lesson118-link06 {
     text-decoration: none;
   }
   .lesson118-left-content {
@@ -834,18 +797,6 @@
     font-style: normal;
     font-weight: 600;
   }
-  .lesson118-link03 {
-    text-decoration: none;
-  }
-  .lesson118-link04 {
-    text-decoration: none;
-  }
-  .lesson118-link05 {
-    text-decoration: none;
-  }
-  .lesson118-link06 {
-    text-decoration: none;
-  }
   .lesson118-link07 {
     text-decoration: none;
   }
@@ -858,14 +809,26 @@
   .lesson118-link10 {
     text-decoration: none;
   }
+  .lesson118-link11 {
+    text-decoration: none;
+  }
   .lesson118-link12 {
+    text-decoration: none;
+  }
+  .lesson118-link13 {
+    text-decoration: none;
+  }
+  .lesson118-link14 {
+    text-decoration: none;
+  }
+  .lesson118-link16 {
     color: var(--dl-color-gray-white);
     font-style: normal;
     font-weight: 400;
     margin-left: var(--dl-space-space-twounits);
     text-decoration: none;
   }
-  .lesson118-link13 {
+  .lesson118-link17 {
     color: var(--dl-color-gray-white);
     font-style: normal;
     font-weight: 400;
@@ -883,7 +846,7 @@
   .lesson118-text490 {
     color: var(--dl-color-gray-white);
   }
-  .lesson118-link14 {
+  .lesson118-link18 {
     color: var(--dl-color-default-primary_1);
   }
 }
@@ -920,9 +883,11 @@
   }
 }
 @media(max-width: 767px) {
-  .lesson118-header-lesson {
+  .lesson118-header-other {
+    padding-top: var(--dl-space-space-oneandhalfunits);
     padding-left: var(--dl-space-space-twounits);
     padding-right: var(--dl-space-space-twounits);
+    padding-bottom: var(--dl-space-space-oneandhalfunits);
   }
   .lesson118-nav {
     display: none;
@@ -934,17 +899,17 @@
   .lesson118-navlink1 {
     margin-bottom: var(--dl-space-space-unit);
   }
-  .lesson118-navlink2 {
+  .lesson118-link {
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
-  .lesson118-navlink3 {
+  .lesson118-link01 {
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
   .lesson118-burger-menu {
-    width: 40px;
-    height: 40px;
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -952,6 +917,20 @@
   .lesson118-icon {
     width: 24px;
     height: 24px;
+  }
+  .lesson118-nav3 {
+    gap: var(--dl-space-space-oneandhalfunits);
+  }
+  .lesson118-navlink2 {
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .lesson118-link02 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .lesson118-link03 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
   }
   .lesson118-hero {
     padding-left: var(--dl-space-space-oneandhalfunits);
@@ -999,15 +978,34 @@
   }
 }
 @media(max-width: 479px) {
-  .lesson118-header-lesson {
+  .lesson118-header-other {
     padding: var(--dl-space-space-unit);
+  }
+  .lesson118-burger-menu {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
   }
   .lesson118-icon {
     width: 24px;
     height: 24px;
   }
   .lesson118-mobile-menu {
+    top: 0px;
     padding: 16px;
+  }
+  .lesson118-container01 {
+    margin-top: 4px;
+  }
+  .lesson118-close-mobile-menu {
+    width: 40px;
+    height: 40px;
+  }
+  .lesson118-icon2 {
+    width: 24px;
+    height: 24px;
+  }
+  .lesson118-nav3 {
+    gap: var(--dl-space-space-unit);
   }
   .lesson118-hero {
     padding-top: var(--dl-space-space-twounits);

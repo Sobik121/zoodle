@@ -1,88 +1,3 @@
-.navigation-links-nav {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.navigation-links-text1 {
-  margin-left: var(--dl-space-space-twounits);
-}
-.navigation-links-text2 {
-  margin-left: var(--dl-space-space-twounits);
-}
-.navigation-links-text3 {
-  margin-left: var(--dl-space-space-twounits);
-}
-.navigation-links-text4 {
-  margin-left: var(--dl-space-space-twounits);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width: 767px) {
-  .navigation-links-nav {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  .navigation-links-text {
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text1 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text2 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text3 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-  .navigation-links-text4 {
-    margin-left: 0;
-    margin-bottom: var(--dl-space-space-unit);
-  }
-}
-
 .lesson01-container {
   width: 100%;
   display: flex;
@@ -90,7 +5,7 @@
   align-items: center;
   flex-direction: column;
 }
-.lesson01-header-lesson {
+.lesson01-header-other {
   width: 100%;
   display: flex;
   max-width: var(--dl-size-size-maxwidth);
@@ -104,10 +19,6 @@
 }
 .lesson01-navlink {
   display: contents;
-}
-.lesson01-image {
-  height: 2rem;
-  text-decoration: none;
 }
 .lesson01-nav {
   flex: 0 0 auto;
@@ -132,7 +43,7 @@
 .lesson01-navlink1:hover {
   color: var(--dl-color-default-primary_1);
 }
-.lesson01-navlink2 {
+.lesson01-link {
   color: var(--dl-color-default-primary_3);
   cursor: pointer;
   font-style: normal;
@@ -141,10 +52,10 @@
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
 }
-.lesson01-navlink2:hover {
+.lesson01-link:hover {
   color: var(--dl-color-default-primary_1);
 }
-.lesson01-navlink3 {
+.lesson01-link01 {
   color: var(--dl-color-default-primary_3);
   cursor: pointer;
   font-style: normal;
@@ -153,7 +64,7 @@
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
 }
-.lesson01-navlink3:hover {
+.lesson01-link01:hover {
   color: var(--dl-color-default-primary_1);
 }
 .lesson01-burger-menu {
@@ -197,23 +108,44 @@
   align-items: center;
   justify-content: center;
 }
-.lesson01-icon02 {
+.lesson01-icon2 {
   width: var(--dl-size-size-xsmall);
   height: var(--dl-size-size-xsmall);
 }
-.lesson01-icon04 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-  margin-right: var(--dl-space-space-twounits);
+.lesson01-navlink2 {
+  color: var(--dl-color-default-primary_3);
+  cursor: pointer;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  text-decoration: none;
 }
-.lesson01-icon06 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
-  margin-right: var(--dl-space-space-twounits);
+.lesson01-navlink2:hover {
+  color: var(--dl-color-default-primary_1);
 }
-.lesson01-icon08 {
-  width: var(--dl-size-size-xsmall);
-  height: var(--dl-size-size-xsmall);
+.lesson01-link02 {
+  color: var(--dl-color-default-primary_3);
+  cursor: pointer;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-left: var(--dl-space-space-threeunits);
+  text-decoration: none;
+}
+.lesson01-link02:hover {
+  color: var(--dl-color-default-primary_1);
+}
+.lesson01-link03 {
+  color: var(--dl-color-default-primary_3);
+  cursor: pointer;
+  font-style: normal;
+  transition: 0.3s;
+  font-weight: 500;
+  margin-left: var(--dl-space-space-threeunits);
+  text-decoration: none;
+}
+.lesson01-link03:hover {
+  color: var(--dl-color-default-primary_1);
 }
 .lesson01-hero {
   width: 100%;
@@ -321,13 +253,13 @@
 .lesson01-ul {
   padding-left: 0px;
 }
-.lesson01-link01 {
+.lesson01-link05 {
   text-decoration: none;
 }
-.lesson01-link02 {
+.lesson01-link06 {
   text-decoration: none;
 }
-.lesson01-link03 {
+.lesson01-link07 {
   text-decoration: none;
 }
 .lesson01-left-content {
@@ -347,7 +279,7 @@
 .lesson01-text07 {
   margin-bottom: 20px;
 }
-.lesson01-navlink4 {
+.lesson01-navlink3 {
   color: var(--dl-color-default-primary_1);
 }
 .lesson01-text09 {
@@ -565,16 +497,16 @@
 .lesson01-ul1 {
   padding-left: 0px;
 }
-.lesson01-link05 {
+.lesson01-link09 {
   text-decoration: none;
 }
-.lesson01-link06 {
+.lesson01-link10 {
   text-decoration: none;
 }
-.lesson01-link07 {
+.lesson01-link11 {
   text-decoration: none;
 }
-.lesson01-footer {
+.lesson01-footer-other {
   flex: 0 0 auto;
   width: 100%;
   height: auto;
@@ -598,15 +530,16 @@
   justify-content: space-between;
 }
 .lesson01-image2 {
+  cursor: pointer;
   height: 2rem;
   margin-bottom: var(--dl-space-space-twounits);
 }
-.lesson01-link09 {
+.lesson01-link13 {
   color: var(--dl-color-gray-white);
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
 }
-.lesson01-link10 {
+.lesson01-link14 {
   color: var(--dl-color-gray-white);
   margin-left: var(--dl-space-space-threeunits);
   text-decoration: none;
@@ -643,14 +576,24 @@
 .lesson01-text86 {
   color: var(--dl-color-gray-white);
 }
-.lesson01-link11 {
+.lesson01-link15 {
   color: var(--dl-color-default-primary_1);
 }
 @media(max-width: 1600px) {
-  .lesson01-header-lesson {
+  .lesson01-header-other {
     align-self: center;
   }
   .lesson01-navlink1 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson01-link {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson01-link01 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
@@ -660,7 +603,12 @@
     font-style: normal;
     font-weight: 500;
   }
-  .lesson01-navlink3 {
+  .lesson01-link02 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson01-link03 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
@@ -698,12 +646,27 @@
     font-style: normal;
     font-weight: 500;
   }
+  .lesson01-link {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson01-link01 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
   .lesson01-navlink2 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
   }
-  .lesson01-navlink3 {
+  .lesson01-link02 {
+    color: var(--dl-color-default-primary_3);
+    font-style: normal;
+    font-weight: 500;
+  }
+  .lesson01-link03 {
     color: var(--dl-color-default-primary_3);
     font-style: normal;
     font-weight: 500;
@@ -745,7 +708,7 @@
     font-weight: 400;
     line-height: 24px;
   }
-  .lesson01-navlink4 {
+  .lesson01-navlink3 {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
@@ -798,14 +761,14 @@
     font-style: normal;
     font-weight: 600;
   }
-  .lesson01-link09 {
+  .lesson01-link13 {
     color: var(--dl-color-gray-white);
     font-style: normal;
     font-weight: 400;
     margin-left: var(--dl-space-space-twounits);
     text-decoration: none;
   }
-  .lesson01-link10 {
+  .lesson01-link14 {
     color: var(--dl-color-gray-white);
     font-style: normal;
     font-weight: 400;
@@ -823,7 +786,7 @@
   .lesson01-text86 {
     color: var(--dl-color-gray-white);
   }
-  .lesson01-link11 {
+  .lesson01-link15 {
     color: var(--dl-color-default-primary_1);
   }
 }
@@ -860,9 +823,11 @@
   }
 }
 @media(max-width: 767px) {
-  .lesson01-header-lesson {
+  .lesson01-header-other {
+    padding-top: var(--dl-space-space-oneandhalfunits);
     padding-left: var(--dl-space-space-twounits);
     padding-right: var(--dl-space-space-twounits);
+    padding-bottom: var(--dl-space-space-oneandhalfunits);
   }
   .lesson01-nav {
     display: none;
@@ -874,17 +839,17 @@
   .lesson01-navlink1 {
     margin-bottom: var(--dl-space-space-unit);
   }
-  .lesson01-navlink2 {
+  .lesson01-link {
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
-  .lesson01-navlink3 {
+  .lesson01-link01 {
     margin-left: 0;
     margin-bottom: var(--dl-space-space-unit);
   }
   .lesson01-burger-menu {
-    width: 40px;
-    height: 40px;
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -892,6 +857,20 @@
   .lesson01-icon {
     width: 24px;
     height: 24px;
+  }
+  .lesson01-nav3 {
+    gap: var(--dl-space-space-oneandhalfunits);
+  }
+  .lesson01-navlink2 {
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .lesson01-link02 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
+  }
+  .lesson01-link03 {
+    margin-left: 0;
+    margin-bottom: var(--dl-space-space-unit);
   }
   .lesson01-hero {
     padding-left: var(--dl-space-space-oneandhalfunits);
@@ -939,15 +918,34 @@
   }
 }
 @media(max-width: 479px) {
-  .lesson01-header-lesson {
+  .lesson01-header-other {
     padding: var(--dl-space-space-unit);
+  }
+  .lesson01-burger-menu {
+    width: var(--dl-size-size-small);
+    height: var(--dl-size-size-small);
   }
   .lesson01-icon {
     width: 24px;
     height: 24px;
   }
   .lesson01-mobile-menu {
+    top: 0px;
     padding: 16px;
+  }
+  .lesson01-container01 {
+    margin-top: 4px;
+  }
+  .lesson01-close-mobile-menu {
+    width: 40px;
+    height: 40px;
+  }
+  .lesson01-icon2 {
+    width: 24px;
+    height: 24px;
+  }
+  .lesson01-nav3 {
+    gap: var(--dl-space-space-unit);
   }
   .lesson01-hero {
     padding-top: var(--dl-space-space-twounits);
